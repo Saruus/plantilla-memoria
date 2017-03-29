@@ -27,9 +27,11 @@
 \usepackage{url}
 %\usepackage[dvipdfm]{graphicx}
 \usepackage{graphicx}
+\usepackage{subfig}
 \usepackage{float}  %% H para posicionar figuras
 \usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
 \usepackage{latexsym}  %% Logo LaTeX
+\usepackage{listings} %% para poner codigo
 
 \title{Memoria del Proyecto}
 \author{Nombre del autor}
@@ -61,26 +63,26 @@
 \vspace{3cm}
 
 \Large
-TITULACIÓN EN MAYÚSCULAS
+INGENIERÍA EN SISTEMAS AUDIOVISUALES Y MULTIMEDIA
 
 \vspace{0.4cm}
 
 \large
-Curso Académico 2020/2021
+Curso Académico 2016/2017
 
 \vspace{0.8cm}
 
-Trabajo Fin de Carrera/Grado/Máster
+Trabajo Fin de Grado
 
 \vspace{2.5cm}
 
 \LARGE
-TÍTULO DEL TRABAJO EN MAYÚSCULAS
+CREACIÓN DE LA PLATAFORMA DR.PENCILCODE
 
 \vspace{4cm}
 
 \large
-Autor : Nombre del Alumno \\
+Autor : Sara Blázquez Calderay \\
 Tutor : Dr. Gregorio Robles
 \end{center}
 \end{titlepage}
@@ -103,17 +105,17 @@ Tutor : Dr. Gregorio Robles
 
 \vspace{1cm}
 \large
-FIXME: Título
+CREACIÓN DE LA PLATAFORMA DR.PENCILCODE
 
 \vspace{1cm}
 \large
-\textbf{Autor :} FIXME \\
+\textbf{Autor :} Sara Blázquez Calderay \\
 \textbf{Tutor :} Dr. Gregorio Robles Martínez
 
 \end{center}
 
 \vspace{1cm}
-La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 20XX, siendo calificada por el siguiente tribunal:
+La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 2017, siendo calificada por el siguiente tribunal:
 
 
 \vspace{0.5cm}
@@ -135,7 +137,7 @@ y habiendo obtenido la siguiente calificación:
 
 \vspace{1cm}
 \begin{flushright}
-Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 20XX
+Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 2017
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -144,8 +146,8 @@ Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 20XX
 \chapter*{}
 \pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
 \begin{flushright}
-\textit{Dedicado a \\
-mi familia / mi abuelo / mi abuela}
+\textit{Dedicado a mis hermanos,\\
+Alejandro y Nuria, os quiero.}
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -229,66 +231,79 @@ el mismo, dando la información sobre el contexto en el que se ha desarrollado.
 
 No te olvides de echarle un ojo a la página con los cinco errores de escritura más frecuentes\footnote{\url{http://www.tallerdeescritores.com/errores-de-escritura-frecuentes}}.
 
-\section{}
-\label{sec:}
+\section{Marco General}
+\label{sec:marco-general}
 
-\subsection{Estilo}
-\label{subsec:estilo}
+\section{Pencilcode}
+\label{sec:pencilcode}
 
-Sobre el uso de las comas\footnote{\url{http://narrativabreve.com/2015/02/opiniones-de-un-corrector-de-estilo-11-recetas-para-escribir-correctamente-la-coma.html}}
+Pencilcode\footnote{\url{https://pencilcode.net/}} es una aplicación web creada por David Bau, miembro del equipo educativo de Google. Enfocada en su totalidad a la enseñanza, Pencilcode trata de introducir a sus usuario al mundo de la programación de una manera más fácil y sencilla.
 
- \begin{figure}
-    \centering
-    \includegraphics[bb=0 0 800 600, width=12cm, keepaspectratio]{img/foro1}
-    \caption{Página con enlaces a hilos}
-    \label{figura:foro_hilos}
- \end{figure}
+Su objetivo principal es
+facilitar el aprendizaje orientado a lenguajes de programación de .
 
-{\footnotesize
-\begin{verbatim}
-    From gaurav at gold-solutions.co.uk  Fri Jan 14 14:51:11 2005
-    From: gaurav at gold-solutions.co.uk (gaurav_gold)
-    Date: Fri Jan 14 19:25:51 2005
-    Subject: [Mailman-Users] mailman issues
-    Message-ID: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
 
-    Dear Sir/Madam,
-    How can people reply to the mailing list?  How do i turn off
-    this feature? How can i also enable a feature where if someone
-    replies the newsletter the email gets deleted?
-    Thanks
+- Soporta CoffeScript, html, css y Javascript.
 
-    From msapiro at value.net  Fri Jan 14 19:48:51 2005
-    From: msapiro at value.net (Mark Sapiro)
-    Date: Fri Jan 14 19:49:04 2005
-    Subject: [Mailman-Users] mailman issues
-    In-Reply-To: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-    Message-ID: <PC173020050114104851057801b04d55@msapiro>
 
-    gaurav_gold wrote:
-    >How can people reply to the mailing list?  How do i turn off
-    this feature? How can i also enable a feature where if someone
-    replies the newsletter the email gets deleted?
+- A diferencia de Scratch, Pencilcode ofrece la posibilidad de porgramar en bloques o codigo. Se explica las categorias y los bloques.
 
-    See the FAQ
-    >Mailman FAQ: http://www.python.org/cgi-bin/faqw-mm.py
-    article 3.11
-\end{verbatim}
-}
+
+Pencil Code was created by Googler David Bau, and provides a step up from the block-based coding of Scratch. With Pencil Code, students can code art, music, and more in block-based form to begin, and then transition to directly to Javascript, HTML, and CSS when they?re ready, merely with the click of a ?Gear? button.
+
+Learn professional programming languages using an editor that lets you work in either blocks or text.
+
+Imagenes de la pagina principal del logo, decir que está basado en CoffeeScript
+Poner los ejemplos de bloques explicar un poco las secciones. y explicar en sí lo que hace pencilcode.\newline
+
+
+\includegraphics[width=16cm, keepaspectratio]{img/intropencilcode.png}
+
+\begin{itemize}
+
+\item {Move:}
+
+\item \textbf{Art:}
+
+\item \textbf{Text:}
+
+\item \textbf{Sound:}
+
+\item \textbf{Control:}
+
+\item \textbf{Operators:}
+
+
+\end{itemize}
+
+[fotos ejemplos de bloques de pencilcode]
+
+\section{Marco de Referencia}
+\label{sec:marco-referencia}
+
 
 \section{Estructura de la memoria}
 \label{sec:estructura}
 
-En esta sección se debería introducir la esctura de la memoria. Así:
+En esta sección se debería introducir la estructura de la memoria. Así:
 
 \begin{itemize}
-  \item En el primer capítulo se hace una intro al proyecto.
+
+  \item \textbf{Resumen:}
+
+  \item \textbf{Introducción:}
   
-  \item En el capítulo~\ref{chap:objetivos} se muestran los objetivos del proyecto.
+  \item \textbf{Objetivos:}
   
-  \item A continuación se presenta el estado del arte.
+  \item \textbf{Estado del arte:} En esta sección se enumeran las tecnologías utilizadas en el desarrollo de este proyecto, tanto en el back-end como en el fron-end, realizando una breve descripción de cada una de ellas.
+
+ 
+  \item \textbf{Diseño e implementación:}
   
-  \item \ldots
+  \item \textbf{Resultados:}
+  
+  \item \textbf{Conclusiones:}
+  
 \end{itemize}
 
 
@@ -323,17 +338,245 @@ label{sec:planificacion-temporal}
 \cleardoublepage
 \chapter{Estado del arte}
 
-Descripción de las tecnologías que utilizas en tu trabajo. Con dos o tres párrafos por cada tecnología, vale.
+Cliente - servidor. Hablar un poco de esto.
+
 
 
 Puedes citar libros, como el de Bonabeau et al. sobre procesos estigmérgicos~\cite{bonabeau:_swarm}. % Nota que el ~ añade un espacio en blanco, pero no deja que exista un salto de línea. Imprescindible ponerlo para las citas.
 
-También existe la posibilidad de poner notas al pie de página, por ejemplo, 
-una para indicarte que visite la página de 
-LibreSoft\footnote{\url{http://www.libresoft.es}}.
 
-\section{Sección 1} 
-\label{sec:seccion1}
+\section{Frontend}
+\label{sec:frontend}
+
+El front-end es la capa de presentación de cualquier página o aplicación web. Situada en el lado del cliente, ésta se centra en el diseño de la interfaz con el propósito de que el usuario sea capaz de interactuar con ella de una forma más sencilla, cómoda e intuitiva.
+
+Las tecnologías más utilizadas para desarrollar el front-end de este proyecto han sido las enumeradas a continuación:\newline
+
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=12cm, keepaspectratio]{img/front-end.png}
+   \caption{Tecnologías utilizadas en el front-end}
+   \label{figura:front-end}
+\end{figure}
+
+
+\subsection{HTML}
+HTML (en inglés, HyperText Markup Language) es un lenguaje de etiquetas, también denominado lenguaje de marcado, con el que se pueden crear páginas y aplicaciones web. A través de las marcas o etiquetas, HTML permite dar estructura al texto dividiéndolo en secciones y párrafos, además de incorporar contenido multimedia en sitios web. Actualmente, se trata del estandar más útilizado por todos los navegadores.\newline
+
+En general, por cada elemento, es necesario añadir una etiqueta de apertura junto con su respectiva etiqueta de cierre, ésta última no siempre necesaria. El contenido mostrado en la página será el escrito entre dichas etiquetas. Las etiquetas de apertura pueden incluir atributos, que proporcionan información adicional sobre el contenido del elemento.\newline
+
+Las páginas HTML se suelen dividir en dos secciones principales: la cabecera y el cuerpo, ambas partes delimitadas por sus correspondientes etiquetas $<$head$>$$<$/head$>$ y $<$body$>$$<$/body$>$.
+En la cabecera se incluye información relevante, no visible para el usuario, sobre la página web, como metadatos, enlaces a documentos externos o información acerca del estilo de la página, mientras que en el cuerpo se incorpora todo el contenido que el usuario puede ver en pantalla como texto y multimedia.\newline
+
+A continuación se muestra como sería la estructura básica de un archivo HTML: \newline
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=14cm, keepaspectratio]{img/ejemplohtml.png}
+   \caption{Documento básico de HTML}
+   \label{figura:basic-html}
+\end{figure}
+
+
+\subsection{CSS}
+
+Las Hojas de estilo en cascada (cuyas siglas en inglés significan Cascading StyleSheets) describen como los elementos de un documento escrito en lenguaje de marcado, como puede ser HTML, deberían de ser mostrados o presentados en pantalla. Se utiliza principalmente para el diseño visual de la interfaz de usuario de páginas web, mejorando, así, su apariencia. \newline
+
+A pesar de que en los documentos HTML se puede definir el estilo de sus contenidos no es nada recomendable debido al costoso mantenimiento que esto acarrea. CSS tiene como objetivo marcar la separación del contenido del documento y la forma de presentación o aspecto de éste.\newline
+
+CSS consiste en un conjunto de reglas o normas. Para indicar que norma de estilo debe seguir un elemento HTML, dicho elemento debe identificarse con un atributo de tipo id o class que también será indicado en la regla que se le quiera aplicar.
+Otra opción sería indicar la etiqueta deseada seguida de las reglas de estilo que se quieran incluir.\newline
+
+Algunas ventajas de utilizar CSS en nuestra web son:
+
+\begin{itemize}
+\item Compatibilidad con distintos dispositivos: mayor flexibilidad de adaptación a las diferentes plataformas, e.g, dispositivos móviles, impresoras, ordenadores, etc. 
+
+\item Reducción de la complejidad del documento HTML, evitando la repetición de código fuente.
+
+\item Consistencia y ahorro de tiempo: Es aconsejable escribir el código CSS en un documento separado del código HTML. CSS ofrece la posibilidad de aplicar el mismo estilo, escrito en un documento externo .css, a diferentes archivos HTML y múltiples páginas web. 
+\end{itemize}
+
+Independientemente de como se quieran aplicar las normas de estilo, es necesario incluir en el HTML la etiqueta $<$link$>$ para hacer referencia al documento css que se va a utilizar. 
+
+
+\begin{figure}[H]
+ \centering
+  \subfloat[html]{
+   \label{f:htmlcss}
+    \includegraphics[width=0.6\textwidth]{img/css.png}}
+  \subfloat[css]{
+   \label{f:css}
+    \includegraphics[width=0.35\textwidth]{img/css2.png}}
+ \caption{Ejemplo de aplicación de estilo CSS}
+ \label{f:animales}
+\end{figure}
+
+\subsection{JavaScript}
+
+JavaScript, conocido comunmente como JS, es un lenguaje de programación interpretado orientado a objetos que se utiliza principalmente para añadir dinamísmo a las páginas web. A pesar de su similitud con el nombre del lenguaje de programación Java, no debe confundirse con éste ya que ambos tienen finalidades muy diferentes.\newline
+
+Proporciona al usuario un mayor control sobre el navegador, además de añadir mejoras en la interfaz, dotando a la web de una mayor usabilidad, interactividad y navegabilidad.
+
+Usado generalmente en el lado del cliente, JavaScript también es utilizado, junto con otras tecnologías o herramientas, para enviar y recibir información del servidor.
+
+
+\subsection{jQuery}
+
+jQuery es una biblioteca de JavaScript de código abierto y software libre que permite simplificar y facilitar el uso de este lenguage en nuestra página web.\newline
+ 
+Entre las numerosas funcionalidades que jQuery ofrece, una de las más importantes es la manipulación del arbol DOM (Document Object Model). Mediante el uso de las funciones \textbf{jQuery()} o \textbf{\textdollar()} es posible modificar el contenido de la web sin tener que recargarla. \newline
+
+El DOM es una representación de todos los elementos que conforman una página web. Sigue una estructura en forma de árbol donde los elementos de XHTML, denominados nodos, están interconectados, especificando la relación que existe entre cada uno de ellos. jQuery simplifica la sintaxis para encontrar, seleccionar y manipular dichos elemetos DOM.\newline
+
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=12cm, keepaspectratio]{img/DOM.png}
+   \caption{Document Object Model}
+   \label{figura:DOM}
+\end{figure}
+
+
+Otras características de esta biblioteca multiplataforma son:
+
+\begin{itemize}
+
+\item Eventos HTML
+
+\item Manipulación de CSS.
+
+\item Animaciones y efectos.
+
+\item AJAX.
+
+\end{itemize}
+
+\subsection{Bootstrap}
+
+Bootstrap\footnote{\url{http://getbootstrap.com/}} es uno de los frameworks más conocidos para la creación de páginas web. Desarrollado por Twitter, Bootstrap contiene plantillas basadas en HTML y CSS que facilitan la implementación del diseño web, así como extensiones adicionales de JavaScript. Su principal finalidad es convertir el desarrollo del front-end en una tarea más sencilla, rápida y eficaz.
+
+Algunas de las características que hacen de Bootstrap una herramienta tan popular entre los desarrolladores web son las mencionadas a continuación:
+
+
+\begin{itemize}
+
+\item Se trata de una herramienta de código abierto, disponible en GitHub\footnote{\url{https://github.com/twbs/bootstrap}}, por lo que se puede usar de forma gratuita.
+
+\item Tiene compatibilidad con la mayoría de los navegadores web.
+
+\item Desde la version 2.0, soporta diseño web responsive. Esta funcionalidad favorece la adaptación dinámica de la interfaz al tamaño del dispositivo (ya sean tablets, teléfonos móviles, pantallas de ordenador, etc) que se esté utilizando para acceder al sitio web.
+
+\item Incluye Grid system, útil para diseñar y maquetar por columnas. Este sistema permite añadir hasta un total de 12 columnas en la página.
+
+\end{itemize}
+
+\section{Backend}
+\label{sec:backend}
+
+El back-end de una página web, también denominado capa de acceso a datos, se ejecuta en el lado del servidor. Éste es el encargado de analizar los datos de entrada del front-end y de realizar acciones tales como cálculos, procesamiento de la información, gestión de ficheros, interacciones de bases de datos, rendimiento, etc.
+ 
+Las tecnologías elegidas en esta capa en el desarrollo del proyecto han sido:
+
+
+
+\textbf{Python} como lenguaje de programación.
+\textbf{Django} como framework para la creación del sitio web.
+\textbf{Sqlite3} como base de datos.
+\textbf{CoffeLint} como analizador de código CoffeScript.
+\textbf{Servidor HTTP Apache} 
+
+
+
+
+\subsection{Django}
+
+Escrito en el lenguaje de programación Python, \textbf{Django}, es un framework de software libre y código abierto enfocado al desarrollo web que tiene como objetivo ayudar al programador a crear aplicaciones web complejas de una manera más rápida y clara.
+
+Sigue el patrón de arquitectura de software llamado \textbf{Modelo-Vista-Controlador} o MVC, éste divide la aplicación en tres partes interconectadas entre sí con el fin de separar la representación de la información y la forma en la que la información es presentada y aceptada por el usuario (interación con el usuario). 
+
+\begin{enumerate}
+
+\item \textbf{Modelo}: es el componente principal del patrón. Gestiona el acceso y procesamiento de datos, las peticiones para acceder a la base de datos se realizan a través del Controlador.
+
+\item \textbf{Vista}: se encarga de presentar al usuario la información disponible en un formato adecuado (generalmente como interfaz de usuario, página HTML) para que éste pueda interactuar con ella. Dicha información se obtiene a traves del Modelo.
+
+\item \textbf{Controlador}: esta capa se encarga de gestionar y responder las solicitudes realizadas por el usuario apoyándose tanto en el Modelo como en la Vista.
+
+\end{enumerate}
+
+En el caso de Django, el patrón de diseño sigue la estructura mostrada a continuación:
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=16cm, keepaspectratio]{img/django.png}
+   \caption{Patrón de diseño MVC de Django}
+   \label{figura:MVC-django}
+\end{figure}
+
+
+Algunas de las características más destacadas de Django son:
+
+\begin{itemize}
+
+\item
+
+\item
+
+\item
+
+\item
+
+\end{itemize}
+
+
+\subsection{Python}
+
+Desarrollado por Guido van Rossum a finales de los ocheta y con el objetivo de mejorar y ampliar las funcionalidades del \textit{lenguaje de programación ABC}, \textbf{Python}, es un lenguaje de programación de alto nivel, interpretado y orientado a objetos que se caracteriza por su concisión, legibilidad y transparencia.
+Debe su nombre a los humoristas británicos \textit{Monthy Python}.\newline
+
+Python ofrece un amplio abanico de posibilidades, desde la pogramación web tanto en el lado del cliente como del servidor(Django), hasta la programación con bases de datos. Es considerado como uno de los lenguajes más populares en lo que al mundo de Open Source se refiere.
+
+Se conocen tres versiones, 1.X, 2.X y 3.X, la primera de ellas obsoleta, cuyos últimos lanzamientos han sido las versiones 1.6, 2.7 y 3.4 respectivamente. Desde la versión 2.1, Python posee una licencia compatible con \textit{GNU General Public License}, denominada \textbf{Python Software Foundation License}, además, desde entonces, Python Software Foundation es la fundación sin ánimo de lucro responsable del código del lenguaje y de procesos como la administración de los derechos de autor y la obtención de fondos para la comunidad Python. \newline
+% derechos de propiedad intelectual
+
+Las caraterísticas más significativas de este lenguaje son:
+
+\begin{itemize}
+
+\item Orientado a objetos:
+
+\item Multiplataforma: se puede implementar en diferentes plataformas informáticas.
+
+\item Open Source:
+
+%es el software distribuido y desarrollado libremente. Se focaliza más en los beneficios %prácticos (acceso al código fuente) que en cuestiones éticas o de libertad que tanto se %destacan en el software libre. Para muchos el término «libre» hace referencia al hecho de %adquirir un software de manera gratuita, pero más que eso, la libertad se refiere al %poder modificar la fuente del programa sin restricciones de licencia, ya que 
+
+\item Interpretado: el código se ejecuta directamente mediante un interprete, siendo innecesaria la compilación previa del programa a código máquina. 
+
+\item Multiparadigma: soporta el uso de dos o más paradigmas de programación. Python es orientado a objetos, imperativo, reflexivo y funcional.
+
+\item Fuertemente tipado: si lo tipos no son exactamente iguales, no es posible pasar una variable como parámetro de procedimiento. Se debe realizar una conversión con anterioridad para que coincidan.
+
+\item Librerias: Hay cantidad de librerias disponibles para ampliar la funcionalidad de Python.
+
+\end{itemize}
+
+¿Por qué Python?
+
+
+\subsection{Apache}
+
+\subsection{Sqlite Mysql}
+
+\subsection{CoffeeLint}
+CoffeLint es un analizador estático de programas escritos en CoffeScript, se trata de un software de código abierto\footnote{\url{https://github.com/clutchski/coffeelint}} bajo la licencia MIT (Massachusetts Institute of Technology) que puede instalarse vía línea de comandos. Éste se encarga de comprobar que el programa sea consistente, limpio y esté correctamente escrito.
+
+By default, CoffeeLint will help ensure you are writing idiomatic CoffeeScript, but every rule is optional and configurable so it can be tuned to fit your preferred coding style
+
+helps enforcing a coding standard
+
 
 
 
@@ -393,24 +636,51 @@ encontrado y qué medidas se han tomado para mitigar esos problemas.
 \section{Aplicación de lo aprendido}
 \label{sec:aplicacion}
 
-Aquí viene lo que has aprendido durante el Grado/Máster y que has aplicado
-en el TFG/TFM. Una buena idea es poner las asignaturas más relacionadas y
-comentar en un párrafo los conocimientos y habilidades puestos en práctica.
+A medida que he ido trabajando y avanzando en el proyecto, he sido testigo del valor de los conocimientos adquiridos en las asignaturas cursadas a lo largo de la carrera. Este proyecto ha sido un claro ejemplo de ello ya que, durante su desarollo, he aplicado gran parte de lo aprendido en asignaturas como:
 
 \begin{enumerate}
-  \item a
-  \item b
+
+\item \textbf{Informatica I:} me permitió un primer contacto con el mundo de la programación, gracias a ella, aprendí, desde cero, las técnicas y conceptos básicos de la programación de computadores. Qué era una función, qué era un procedimiento, un bucle, un array, una condición, etc. Términos que han sido necesarios para poder llevar a cabo este proyecto. 
+
+\item \textbf{Informatica II:} Al igual que Informática I, esta asignatura continuó con mi formación como programadora, aunque el lenguaje con el que trabajé fue Ada y no el utilizado en este proyecto (Python), fue muy útil para seguir mejorando mis habilidades y conocimientos.
+
+\item \textbf{Arquitectura de Internet:} fue la primera que cursé sobre el campo de las Redes de Ordenadores e Internet. En concreto, la asignatura me enseñó como está estructurada la red, así como las arquitecturas de los principales protocolos de redes de ordenadores.
+
+\item \textbf{Sistemas Telematicos para Medios Audiovisuales:} siguiendo con los prótocolos, aquí conocí el funcionamiento del protocolo HTTP, entre otros.
+
+\item \textbf{Protocolos para la transmisión de Audio y Video en Internet:} fundamental para la realización de este proyecto ya que fue aquí donde aprendí a programar en Python y gracias a la cual he podido llevar un seguimiento más sencillo en el desarrollo del fichero views.py.
+
+\item \textbf{Construcción de Servicios y Aplicaciones Audiovisuales en Internet:} En la cual, adquirí los conocimientos básicos de HTML, CSS y Javascript, todos ellos empleados en el desarrollo de Dr.Pencilcode.
+
+\item \textbf{Gráficos y visualización en 3D:} Aunque ésta estaba orientada a la creación de videojuegos tanto en 2D como 3D, los lenguajes utilizados para ello fueron WebGL y Javascript, lo que me permitió sequir puliendo mi pensamiento computacional.
+
 \end{enumerate}
 
 
 \section{Lecciones aprendidas}
 \label{sec:lecciones_aprendidas}
 
-Aquí viene lo que has aprendido en el Trabajo Fin de Grado/Máster.
+Con el desarrollo de Dr.Pencilcode he conseguido ampliar y mejorar los conocimientos adquiridos durante la carrera además de aprender muchos otros:
 
 \begin{enumerate}
-  \item a
-  \item b
+
+\item He aprendido a aprender de forma autodidacta. Django.
+
+\item  Nuevas tecnologias: MysQL, squlite3: 
+\item  regex, python
+\item  json,
+\item  Latex
+\item  Servidor Apache, maquinas virtuales
+\item  He ganado experiencia en el area de Diseño Web, no solo a nivel de diseño gráfico web,(html, css) sino tambien considerando pensando a nivel de usuario, usabilidad, interactividad.facilidad con que las personas pueden utilizar una herramienta 
+Bootstrap, jQuery, JavaScript.
+
+
+\item pensamiento computacional
+
+\item Rúbricas. pensar forma de evaluar. quizá ha sido lo más complicado.
+
+En definitiva, coom diferentes tecnologías se unen/se coordinan con un objetivo/fin común.
+
 \end{enumerate}
 
 
