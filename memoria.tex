@@ -170,7 +170,7 @@ no sea para siempre, pero tu madre sí.
 \markboth{RESUMEN}{RESUMEN} % encabezado
 
 
-En la actualidad, las nuevas tecnologías y la programación están ganando terreno en el area de la educación, la LOMCE añade una nueva competencía clave, la competencia digital, cuyo objetivo es ayudar a los alumnos a resolver de forma eficiente los problemas de la vida cotidiana mediante el uso de recursos tecnológicos y el uso la programación.\newline
+En la actualidad, las nuevas tecnologías y la programación están ganando terreno en el area de la educación, la LOMCE añade una nueva competencía clave, la competencia digital, cuyo objetivo es ayudar a los alumnos a resolver de forma eficiente los problemas de la vida cotidiana mediante el uso de recursos tecnológicos y el uso de la programación.\newline
 
 Dr. Pencilcode es una aplicación web de software libre y código abierto - enfocada a la enseñanza - que se encarga de realizar análisis estáticos de proyectos desarrollados con Pencil Code con el fin de impulsar la capacidad tecnológica y la creatividad de los usuarios.\newline
 
@@ -236,6 +236,12 @@ el mismo, dando la información sobre el contexto en el que se ha desarrollado.
 \section{Marco General}
 \label{sec:marco-general}
 
+\subsection{Impacto de la tecnología y la programación en la actualidad.}
+
+dentro del contexto actual.
+
+\subsection{La programación en la educación.}
+
 \section{Pencil Code}
 \label{sec:pencilcode}
 
@@ -298,6 +304,11 @@ Cualquier programa creado con Pencil Code es público por lo que puede ser visto,
 \section{Marco de Referencia}
 \label{sec:marco-referencia}
 
+\subsection{Dr. Pencilcode}
+
+\subsection{Coffee-Mastery}
+
+Desarrollar un plugin que analice programas de CoffeeScript para medir el desarrollo del pensamiento computacional de un usuario principiante mediante la evaluación de estructuras de programación y elementos en el código. 
 
 \section{Estructura de la memoria}
 \label{sec:estructura}
@@ -340,29 +351,45 @@ Basandonome en Dr.scratch crear Dr.pencilcode.
 \section{Objetivos específicos}
 \label{sec:objetivos-especificos}
 
+Como se ha mencionado anteriormente, Dr. Pencilcode trata de seguir los pasos de Dr. Scratch. Al comienzo de este proyecto ya existía una versión avanzada de Dr.Scratch en la web, partiendo de esto, cabe destacar que los objetivos principales fueron:
+
+\begin{enumerate}
+
+\item \textbf{Adaptación de la implementación básica a Pencil Code}. El primer objetivo consistió en añadir y modificar código de Dr. Scratch para conseguir adaptar la página web a las necesidades de Pencil Code. 
+
+\item Para realizar esta adaptación fue necesaria la \textbf{creación de un Plugin} - Coffee-Mastery - capaz de analizar proyectos Pencil Code. Éste debería asignar una puntuación en función del grado de maestría de programación del usuario en las diferentes categorias disponibles: Move, Art, Text, Control, Sound, Operators.
+
+\item Añadir \textbf{nuevas funcionalidades} y secciones a la página web - orientadas a Pecil Code - con el objetivo de seguir mejorando la plataforma.
+
+\item \textbf{Aplicación en producción}. El siguiente paso, una vez conseguido el funcionamiento de la web, era tener la página en producción para que pudiera ser utilizada por cualquier usuario y éstos pudieran dar retroalimentacion y ayudar a mejorar la herramienta.
+
+\end{enumerate}
+
+Para lograr alcanzar estos objetivos fue necesaria la realización de un serie de pasos aún más específicos como:
+
 \begin{itemize}
 
 \item Diseñar una rúbrica para evaluar los proyectos creados con Pencil Code.
 
-\item Desarrollar un plugin que analice programas de CoffeeScript para medir el desarrollo del pensamiento computacional de un usuario principiante mediante la evaluación de estructuras de programación y elementos en el código. 
+\item Analizar proyectos Pencil Code mediante URL.
 
 \item Mejorar la página mostrada tras el analisis de un proyecto, incluir más dinamismo y elementos visuales con el objetivo de conseguir mayor inteligibilidad por parte del usuario.
 
 \item Añadir bonus en las puntuaciones - incluyendo estrellas en el dashboard - por complejidad, por diversidad, por bloques duplicados, por uso de todas las categorias.
 
-\item Incluir una sección donde se indiquen los bloques utilizados en cada una de las categorias de Pencil Code, así como una descripción/especificación de los bonus obtenidos.
+\item Incluir una sección donde se indiquen los bloques utilizados en cada una de las categorias de Pencil Code, así como una explicación de los bonus obtenidos.
 
 \item Incluir una sección donde dar consejos para que los usuarios puedan mejorar sus proyectos y puntuaciones.
 
-\item Crear un fórmulario para poder recibir retroalimentación (feedback) de los usuarios guardando sus respuestas en la base de datos.
+\item Crear un fórmulario para poder recibir retroalimentación - feedback - de los usuarios guardando sus respuestas en la base de datos.
 
-\item Eliminar la puntuación máxima con el fin de motivar a los programadores a seguir mejorando y evitar que piensen que hay un tope o se conformen con la mayor puntuación.
+\item Eliminar la puntuación máxima con el fin de motivar a los programadores a seguir mejorando y evitar que piensen que hay un límite o que se conformen con la mayor puntuación.
 
-\item Programar seis páginas, una por cada categoría, incluyendo ejemplos de como mejorar el programa Pencil Code y como utilizar los bloques de la categoría seleccionada, dando soporte al usuario.
+\item Diseñar seis páginas, una por cada categoría, incluyendo ejemplos de como mejorar el programa Pencil Code y como utilizar los bloques de la categoría seleccionada, dando soporte al usuario.
 
-\item Añadir tres nuevas páginas explicando los bloques que se pueden utilizar en cada categoria, la obtención de las puntuacións y la adquisición de los bonus.
+\item Añadir tres nuevas páginas explicando los bloques que se pueden utilizar en cada categoria, la obtención de las puntuaciones y la adquisición de los bonus.
 
-
+\item Configurar un Servidor HTTP Apache donde poder subir la aplicación web.
 
 \end{itemize}
 
@@ -380,11 +407,78 @@ Basandonome en Dr.scratch crear Dr.pencilcode.
 \cleardoublepage
 \chapter{Estado del arte}
 
-Cliente - servidor. Hablar un poco de esto.
+En esta sección se realizará una breve explicación de las bases tecnológicas, arquitecturas y protocolos más significativos en las que está basado este proyecto.
+
+\section{Modelo Cliente-Servidor}
+\label{sec:cliente-servidor}
+
+El término cliente-servidor aparece en diferentes contextos dentro de la informática, uno de ellos es la arquitectura de red conocida como \textit{Arquitectura Cliente-Servidor} y utilizada en este proyecto. Se trata de un modelo para aplicaciones distribuidas - formadas por distintos elementos que se ejecutan en diferentes entornos - en el que las tareas se reparten entre clientes y servidores. Estos dos componentes interaccionan entre sí mediante peticiones y respuestas.
+
+\begin{itemize}
+
+\item \textbf{Cliente}: es la parte encargada de solicitar las peticiones al servidor, esperar y recibir sus repuestas. Mediante una interfaz gráfica de usuario, el cliente, interactua de forma directa con los usuarios.
+
+\item \textbf{Servidor}: funciona como proovedor de servicios, compartiendo sus recursos con los clientes. Éste espera la llegada de las peticiones, las procesa y, posteriormente, envia una respuesta a los clientes.
+
+\end{itemize}
+
+El objetivo de la arquitectura cliente-servidor es proporcionar servicios que permitan compartir recursos a los usuarios de red.
 
 
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=12cm, keepaspectratio]{img/arquitecturaCS.png}
+   \caption{Arquitectura Cliente - Servidor}
+   \label{figura:Architecture}
+\end{figure}
 
-Puedes citar libros, como el de Bonabeau et al. sobre procesos estigmérgicos~\cite{bonabeau:_swarm}. % Nota que el ~ añade un espacio en blanco, pero no deja que exista un salto de línea. Imprescindible ponerlo para las citas.
+[estructura]
+las funcionalidades de cada aplicación puedan divi­dirse en tres niveles: presentación, aplicación y servicio. Según esto, la arquitecturade software de una aplicación distribuida, o una aplicación cliente-servidor, se puede describir de la siguiente manera:
+
+Nivel de presentación. En el lado del servidor, se necesita una interfaz de usua­
+rio. Front-end.
+
+Nivel de lógica de aplicación: En el lado del servidor, necesita obtenerse la hora del dia del sistema y mandarla a la maquina cliente. En el lado del cliente, hay que enviar al servidor la peticions de usuario y mostrarle la respuesta al servidor.
+
+Nivel de servicios. Back-end.
+
+
+\section{HTTP}
+\label{sec:HTTP}
+
+\textbf{Hypertext Transfer Protocol}, conocido por su abreviatura HTTP, es el protocolo de comunicación utilizado por los usuarios de la \textit{Word Wide Web} para transferir documentos hypermedia y, por tanto, el protocolo usado en el modelo Cliente-Servidor para el intercambio de mensajes entre sus componentes. 
+
+Los mensajes HTTP son de texto plano y, generalmente, se estructuran en tres partes: 
+
+\begin{itemize}
+
+\item \textbf{Linea inicial}: ésta es diferente para peticiones y respuestas. Su labor es la de describir el mensaje especificando el recurso que se solicita, indicando el método y la versión HTTP utilizada, etc.
+
+\item \textbf{Linea de cabecera}: Incluye información adicional -metadatos- sobre los mensajes de petición y respuesta. Los datos sueles ser listas de atributos con forma \textit{nombre:valor}. La cabecera acaba con una linea en blanco.
+
+\item \textbf{Cuerpo (opcional)}: contiene cualquier tipo de datos. Los cuerpos de las peticiones llevan información al servidor, mientras que los de las respuestas llevan la información de vuelta al cliente. A diferencia de la linea inicial y la cabecera, el cuerpo puede incluir datos binarios (audio, imágenes, video, etc) además de texto.
+
+\end{itemize}
+
+En las solicitudes HTTP se pueden incluir una serie de metodos ya predefinidos. Los métodos se encuentran en la linea de inicio e indican al servidor la acción que debe realizar sobre el recurso indicado. Entre los más utilizados en este proyecto se encuentran:
+
+\begin{enumerate}
+
+\item \textbf{GET}: solicita un objeto al servidor especificando su URL. Los datos son visibles por cualquier usuario. 
+
+\item \textbf{POST}: este método envía datos al servidor - normalmente los introducidos en un formulario, ocultos al usuario. Los datos van en el cuerpo del mensaje. 
+
+\end{enumerate}
+
+Códigos de respuesta como 200 - OK o 404 - Not Found entre otros.
+ 
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=14cm, keepaspectratio]{img/HTTP.png}
+   \caption{Modelo mensajes HTTP}
+   \label{figura:http}
+\end{figure}
 
 
 \section{Frontend}
@@ -588,39 +682,81 @@ Las caraterísticas más significativas de este lenguaje son:
 
 \begin{itemize}
 
-\item Orientado a objetos:
+\item \textbf{Orientado a objetos}: todo son objetos.
 
-\item Multiplataforma: al igual que Django, se puede implementar en diferentes plataformas informáticas.
+\item \textbf{Multiplataforma}: al igual que Django, se puede implementar en diferentes plataformas informáticas.
 
-\item Open Source:
+\item \textbf{Open Source}.
 
-%es el software distribuido y desarrollado libremente. Se focaliza más en los beneficios %prácticos (acceso al código fuente) que en cuestiones éticas o de libertad que tanto se %destacan en el software libre. Para muchos el término «libre» hace referencia al hecho de %adquirir un software de manera gratuita, pero más que eso, la libertad se refiere al %poder modificar la fuente del programa sin restricciones de licencia, ya que 
+\item \textbf{Interpretado}: el código se ejecuta directamente mediante un interprete, siendo innecesaria la compilación previa del programa a código máquina. 
 
-\item Interpretado: el código se ejecuta directamente mediante un interprete, siendo innecesaria la compilación previa del programa a código máquina. 
+\item \textbf{Multiparadigma}: soporta el uso de dos o más paradigmas de programación. Python es orientado a objetos, imperativo, reflexivo y funcional.
 
-\item Multiparadigma: soporta el uso de dos o más paradigmas de programación. Python es orientado a objetos, imperativo, reflexivo y funcional.
+\item \textbf{Fuertemente tipado}: si lo tipos no son exactamente iguales, no es posible pasar una variable como parámetro de procedimiento. Se debe realizar una conversión con anterioridad para que coincidan.
 
-\item Fuertemente tipado: si lo tipos no son exactamente iguales, no es posible pasar una variable como parámetro de procedimiento. Se debe realizar una conversión con anterioridad para que coincidan.
+\item \textbf{Librerias}: Hay cantidad de librerias disponibles para ampliar la funcionalidad de Python.
 
-\item Librerias: Hay cantidad de librerias disponibles para ampliar la funcionalidad de Python.
+\item \textbf{Case sensitive}: sensible a mayúsculas y minúsculas.
 
 \end{itemize}
 
 ¿Por qué Python?
+Está ganando terreno.
+
+\subsection{Servidor HTTP Apache}
+
+\subsection{Mysql}
+
+En la actualidad, el uso de bases de datos es esencial para que los sitios web puedan recopilar información de una forma más eficiente, por ello, es necesario un sitemas gestor que se encargue del almacenamiento, recuperación y administración de datos. 
+\textbf{MySQL} es un sistema de gestión de base de datos relacional desarrollado por \textit{Oracle Corporation}. Se trata, junto con Oracle y Microsoft SQL Server, de uno de los sistemas de gestion de bases de datos más populares y más utilizados en el ámbito mundial, como se puede observar en la \textit{figura 3.7}\footnote{\url{https://db-engines.com/en/ranking}}.
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=16cm, keepaspectratio]{img/ranking2.png}
+   \caption{Ranking de sistemas de gestión de base de datos}
+   \label{figura:MVC-django}
+\end{figure}
 
 
-\subsection{Apache}
+Algunas característica de MySQL son:
+ 
 
-\subsection{Sqlite Mysql}
+\begin{itemize}
+\item Diseñado para ser \textbf{multihilos}, capaz ejecutar múltiples hilos de ejecución, usando hilos kernel. 
+
+\item Soporta gran cantidad de datos, hasta 50 millones de registros.
+
+\item Es rápido y fácil de usar.
+
+\item Los clientes usan sockets TCP/IP para conectarse al servidor MySQL.
+
+\item Es fiable, ofrece fuerte protección de datos mediante sistemas de contraseñas y privilegios.
+
+\item Es \textbf{multiplataforma}, se puede implementar en distintas plataformas informáticas\footnote{\url{https://www.mysql.com/support/supportedplatforms/database.html}}.\end{itemize}
+
 
 \subsection{CoffeeLint}
 CoffeLint es un analizador estático de programas escritos en CoffeScript, se trata de un software de código abierto\footnote{\url{https://github.com/clutchski/coffeelint}} bajo la licencia MIT (Massachusetts Institute of Technology) que puede instalarse vía línea de comandos. Éste se encarga de comprobar que el programa sea consistente, limpio y esté correctamente escrito.
+
+\begin{figure}[H]
+ \centering
+  \subfloat[Programa Coffeescript]{
+   \label{f:Coffeescript}
+    \includegraphics[width=0.5\textwidth]{img/coffeescript.png}}
+  \subfloat[Análisis]{
+   \label{f:css}
+    \includegraphics[width=0.4\textwidth]{img/coffeelint.png}}
+ \caption{Análisis con CoffeeLint}
+ \label{f:animales}
+\end{figure}
+
 
 By default, CoffeeLint will help ensure you are writing idiomatic CoffeeScript, but every rule is optional and configurable so it can be tuned to fit your preferred coding style
 
 helps enforcing a coding standard
 
-
+\section{Google Analytics}
+\label{sec:backend}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -703,28 +839,32 @@ A medida que he ido trabajando y avanzando en el proyecto, he sido testigo del v
 \section{Lecciones aprendidas}
 \label{sec:lecciones_aprendidas}
 
-Con el desarrollo de Dr.Pencilcode he conseguido ampliar y mejorar los conocimientos adquiridos durante la carrera además de aprender muchos otros:
+Con el desarrollo de Dr.Pencilcode he conseguido ampliar y mejorar los conocimientos adquiridos durante la carrera además de aprender otros totalmente nuevos. 
+Entre ellos cabe destacar el aprendizaje de nuevas tecnologías - nunca antes vistas - como por ejemplo:
+
 
 \begin{enumerate}
 
-\item He aprendido a aprender de forma autodidacta. Django.
+\item \textbf{Django} es la base de este proyecto, para poder llevarlo acabo ha sido necesario informarse y profundizar en este framework de desarrollo web desde cero.
 
-\item  Nuevas tecnologias: MysQL, squlite3: 
-\item  regex, python
-\item  json,
-\item  Latex
-\item  Servidor Apache, maquinas virtuales
-\item  He ganado experiencia en el area de Diseño Web, no solo a nivel de diseño gráfico web,(html, css) sino tambien considerando pensando a nivel de usuario, usabilidad, interactividad.facilidad con que las personas pueden utilizar una herramienta 
-Bootstrap, jQuery, JavaScript.
+\item \textbf{Diseño gráfico web}: Además de ampliar mis conocimientos de HTML y CSS como desarrolladora de front-end, también he aprendido a utilizar \textbf{Bootstrap} y \textbf{jQuery} para añadir mayor interacción, usabilidad y dinamismo a mis páginas web, dándoles un aire más profesional.
 
+\item \textbf{Bases de datos}: Gracias a Dr.Pencilcode he aprendido a trabajar con bases de datos con sistemas como \textbf{MySQL} o \textbf{Sqlite} con el fin de guardar y gestionar la información de los usuarios que utilizan la aplicación para el análisis de sus proyectos.
 
-\item pensamiento computacional
+\item \textbf{Conceptos avanzados de Python}: A medida que el proyecto iba avanzando, he mejorado mis habilidades de programadora en Python utilizando nuevas estructuras y nuevos módulos como \textit{sets} y \textit{expresiones regulares} (regex).
 
-\item Rúbricas. pensar forma de evaluar. quizá ha sido lo más complicado.
-
-En definitiva, coom diferentes tecnologías se unen/se coordinan con un objetivo/fin común.
+\item \textbf{Json}
+\item \textbf{Servidor Apache y maquinas virtuales}
 
 \end{enumerate}
+
+No todo lo aprendido está relacionado con las tecnologías. Participar en este proyecto, ligado a \textit{Scratch} y \textit{Dr.Scratch}, me dio la oportunidad de formar parte de diversos talleres orientados a niños y personas con discapacidad donde daba soporte y consejos sobre programación.\newline 
+
+Con esto, entra en juego un nuevo concepto que nunca antes habia escuchado, el \textbf{pensamiento computacional}. He descubierto que con ayuda de los conceptos básicos de la programación es posible aprender a resolver problemas de la vida cotidiana, analizando la información, organizandola, identificando posible solucciones de forma algorítmica (pasos ordenados), etc. La introducción de la programación en la educación promueve el desarrollo del pensamiento computacional.\newline
+
+Estos eventos, escasos pero intensos, me ayudaron a desenvolverme un poco más como persona e impulsaron mi deseo de seguir creciendo con este proyecto con el fin de enseñar lo útil que puede llegar a ser la programación en la enseñanza.\newline
+
+Por último, he aprendendido a realizar evaluaciones objetivas de los proyectos analizados. Quizás, esta parte es la que más tiempo me ha llevado pues la creación de una \textbf{rúbrica}, la evaluación de una tarea, engloba numerosas variables que hay que tener en cuenta. Esto me ha ayudado a ver las cosas desde el punto de vista del docente y no del alumno.
 
 
 \section{Trabajos futuros}
