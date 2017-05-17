@@ -20,6 +20,7 @@
 \documentclass[a4paper, 12pt]{book}
 %\usepackage[T1]{fontenc}
 
+\usepackage[spanish, es-tabla]{babel}
 \usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
 \usepackage{times}
 \usepackage[latin1]{inputenc}
@@ -274,7 +275,7 @@ Igualmente precisa del desarrollo de diversas destrzas realcionadas con el acces
 \subsection{Dr. Pencilcode}
 
 
-Hablar sobre la creación de pencilcode y que esta basado en drScratch y que surje la idea de drPencilcode
+Hablar sobre la creación de pencilcode y que esta basado en drScratch y que surge la idea de drPencilcode
 y que es un lenguaje de programacion de proposito general por lo que es mas complicado de analizar.
 
 
@@ -315,11 +316,6 @@ primero me quise formar, ver como funcionaba dr.scratch. talleres blababalab y y
 \cleardoublepage
 \chapter{Objetivos}
 \label{chap:objetivos}
-
-El principal objetivo de todo proyecto es cubrir la necesidad que ha sido observada y que
-ha motivado la realizacion del mismo. Pero para poder llegar a dicho resultado es necesario
-detallar concretamente y sin ambigüedad que es lo que queremos conseguir en cada etapa. En
-este capítulo se describen los objetivos iniciales.
 
 \section{Objetivo general}
 \label{sec:objetivo-general}
@@ -612,7 +608,7 @@ En el caso de Django, el patrón de diseño sigue la estructura mostrada a continu
 
 \begin{figure}[H]
    \centering
-   \includegraphics[width=16cm, keepaspectratio]{img/django.png}
+   \includegraphics[width=14cm, keepaspectratio]{img/django.png}
    \caption{Patrón de diseño MVC de Django}
    \label{figura:MVC-django}
 \end{figure}
@@ -782,29 +778,65 @@ Cualquier programa creado con Pencil Code es público por lo que puede ser visto,
 \cleardoublepage
 \chapter{Diseño e implementación}
 
-Aqui cuento de lo que voy a hablar en este capitulo y cabe destacar los mensajes intercambiados con yana, que nos servian para cambiar y mejorar cosas, los tuvimos muy encuenta porque es la que se dedica a trabajar con pencilcode.
+Como ya se ha mencionado, Dr. Pencilcode se basó en Dr. Scratch. Para poder realizar este proyecto, primero tuve que entender como funcionaba la aplicación de Dr. Scratch y, para ello, también tuve que aprender a utilizar Django.
+
+Dr. Pencilcode ha ido evolucionando con el paso del tiempo gracias a la colaboración de mi tutor, Gregorio Robles, y Yana Malysheva\footnote{\url{https://sites.google.com/site/yanamalportfolio/home/pencil-code}}, responsable de Pencil Code en Boston.
+
+En este capítulo se explicará la arquitectura general de la plataforma y las distintas fases por las que ha pasado el proyecto, centrándome en la última versión para detallar las funcionalidades de la aplicación.
+
 
 \section{Arquitectura general} 
 \label{sec:arquitectura}
 
+Todo lo que se explica en los siguientes apartados se encuentra disponible en la web gracias a la máquina virtual que me proporcionó la universidad Rey Juan Carlos;
+En ella tuve que instalar Apache, lo que me llevo un tiempo, para poder gestionar la applicación. Acualmente, la web se puede encontrar con el dominio \url{http://drpencilcode.libresoft.info/} o con la IP \url{http://193.147.79.206/}.
+
+\subsection{Django} 
+
+Como ya se ha menciondo en el capítulo 3 de la memoria, Dr. Pencilcode es una plataforma desarrollada con Django. En la \textit{Figura ~\ref{figura:folder}}, se puede observar el árbol de ficheros y directorios que componen la aplicación.
+
 
 \begin{figure}[H]
    \centering
-   \includegraphics[width=11cm, keepaspectratio]{img/folders.jpg}
-   \textit{\caption{Carpetas y ficheros del proyecto.}}
-   \label{figura:diff}
+   \includegraphics[width=11cm, keepaspectratio]{img/folder.jpg}
+   \caption{Carpetas y ficheros del proyecto.}
+   \label{figura:folder}
 \end{figure}
+
+Apache es el encargado de enviar las peticiones HTTP a Django. El fichero \texttt{urls.py} es el encargado de gestionar dichas peticiones y de comprobar si el recurso solicitado por el cliente es servido o no por nuestra aplicación.
+\texttt{urls.py} no es más que una lista en la que se especifican los recursos que son servidor por Dr. Pencilcode.
+
+En el caso de que el recurso solicitado - la url - no coincida con ninguno de los indicados en \texttt{urls.py}, se redirigirá al usuario a la página principal; en caso contrario, Django, pasará la petición a la función asociada de \texttt{views.py}.
+
+Una vez encontrada la función asociada a dicha url, ejecutado el código y procesado toda la información, dicha función deberá devolver una página de respuesta HTML - template - renderizada con los datos que se quieren mostrar en dicho HTML. La arquitectura general se muestra en la \textit{Figura \ref{fig:architecture}}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=14cm, keepaspectratio]{img/architecture.png}
+  \caption{Arquitectura general de Dr. Pencilcode}
+  \label{fig:architecture}
+\end{figure}
+
 
 \subsection{Bases de datos} 
 
-En local sqlite ya que es la base de datos que usa django por defecto.
-Cuando subi la página al servidor cambié a Mysql.
+Para poder almacenar y gestionar toda la información, Dr. Pencilcode, dispone de una base de datos.
+SQLite es la base de datos que se usa en Django por defecto y es la que se utilizó en local durante el desarrollo del proyecto. Sin embargo, a la hora de subir la aplicación al servidor, decidí cambiar a MySQL - versión 5.5.53 - ya que es un sistema de gestión mucho más potente, pudiendo soportar mayor cantidad de datos. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=6cm, keepaspectratio]{img/bbdd.png}
+  \caption{Base de datos Dr. Pencilcode}
+  \label{fig:bbdd}
+\end{figure}
+
+Como se puede observar en la \textit{Figura \ref{fig:bbdd}}, existen algunas tablas cuyos nombres comienzan por app, auth y django. Estas dos últimas, son tablas que se definen automáticamente por Django y que se encargan de funcionalidades como las sesiones, las migraciones, la autenticación, etc. Las tablas que comienzan por app son las que realemente se crean en \texttt{models.py}.
 
 
 \section{Página principal}
 \label{sec:mainpage}
 
-
+Lo primero que se observa nada más acceder a al sitio web es el diseño mostrado en la \textit{Figura ~\ref{fig:mainpage}}. En esta sección se hace una breve presentación de la herramienta y se muestra el cuadro en el que se introduce la URL para dar paso al analisis del proyecto.
 
 \begin{figure}[H]
   \centering
@@ -813,81 +845,144 @@ Cuando subi la página al servidor cambié a Mysql.
   \label{fig:mainpage}
 \end{figure}
 
+La mayoría de los ñiños podrían no saber lo que es una URL, para soluccionar esta cuestión, se desarrolló una ventana modal en la que se incluía información extra de cómo conseguir la URL de los proyectos Pencil Code. La ventana modal se muestra en la \textit{Figura ~\ref{fig:ventanaurl}} y ésta aparece cuando el usuario pincha sobre la palabra \textcolor{red}{url} que está marcada en rojo.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=9cm, keepaspectratio]{img/queesurl.png}
+  \caption{Ventana modal URL}
+  \label{fig:ventanaurl}
+\end{figure}
+
+A parte de esta visión, la página principal incluye 4 secciones más donde se habla de diferentes aspectos relacionados con Dr. Pencilcode:
+
 \begin{enumerate}
 
-\item \textbf{Why?}:
+\item \textbf{Why?} explica los puntos fuertes de la aplicación y los motivos por los que su uso es tan positivo. Además, se hace hincapié en el continuo deseo de mejorar la plataforma teniendo en cuenta la opinión del usuario. Sección mostrada en la  \textit{Figura ~\ref{fig:mainwhy}}.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=14cm, keepaspectratio]{img/mainWhy.png}
-  \caption{Diseño página principal}
-  \label{fig:mainpage}
+  \caption{Página principal Why}
+  \label{fig:mainwhy}
 \end{figure}
 
-\item \textbf{How?}:
+\item \textbf{How?} guía a los usuarios principiantes en su primer análisis indicándoles los pasos a seguir. El diseño de esta sección se puede ver en la \textit{Figura~\ref{fig:mainhow}}.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=14cm, keepaspectratio]{img/mainHow.png}
   \caption{Página principal How}
-  \label{fig:detalles}
+  \label{fig:mainhow}
 \end{figure}
 
-\item \textbf{Comming soon}:
+\item \textbf{Comming soon} En esta sección se explican las nuevas funcionalidades que se quieren incluir a la aplicación en un futuro cercano, como puede ser la traducción de la página a distintos idiomas, la introducción de cuentas de usuarios o la creación de un plug-in en Firefox y Chrome para tener Dr. Pencilcode siempre a la vista. Por el momento, ninguna de ellas ha sido implementada, aunque espero continuar con este proyecto y realizarlas en un futuro cercano. El aspecto de esta sección se muestra en la \textit{Figura~\ref{fig:mainfeatures}}.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=14cm, keepaspectratio]{img/mainComing.png}
-  \caption{Página principal How}
-  \label{fig:main}
+  \caption{Página principal New Features}
+  \label{fig:mainfeatures}
 \end{figure}
 
-\item \textbf{Contact}:
+\item \textbf{Contact} muestra todas las vías (twitter, email y github) por las que el usuario puede ponerse en contacto con el equipo de Dr. Pencilcode. Esto nos permitirá conocer diferentes puentos de vista y opiniones acerca de la aplicación y si está cumpliendo, o no, su propósito. Su diseño se puede ver en la \textit{Figura~\ref{fig:maincontact}}.
+
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=14cm, keepaspectratio]{img/mainContact.png}
-  \caption{Página principal How}
-  \label{fig:main}
+  \caption{Página principal Contact}
+  \label{fig:maincontact}
 \end{figure}
+
+Actualmente, el equipo de Dr. Pencilcode no dispone de cuentas de e-mail y twitter propias por lo que se remite a los usuarios a las cuentas de Dr. Scratch.
 
 \end{enumerate}
 
 \section{Rúbrica de Dr. Pencilcode}
 
-Durante el diseño de la página web fue necesario detenerme a pensar cómo quería que se analizaran los proyectos de Pencil Code. Quizá, ésta fue la parte que más tiempo me llevó ya que al tratarse de un lenguaje de programación de propósito general y por tanto, un lenguaje más complejo, no tenía claro como podía enfocar dicha evaluación.\newline
+Durante el diseño de la página web fue necesario detenerme a pensar cómo quería que se analizaran los proyectos de Pencil Code. Quizá, ésta fue una de las partes que más tiempo me llevó ya que al tratarse de un lenguaje de programación de propósito general y por tanto, un lenguaje más complejo, no tenía claro como podía enfocar dicha evaluación.\newline
 
 La rúbrica inicial es muy diferente a la que ésta disponible acualmente en la web. A lo largo de mi año de trabajo, se han ido realizando diferentes modificaciones hasta llegar al método de evaluación que estábamos buscando. Se pueden distiguir tres fases principales en el desarrollo de la rúbrica:
 
 
 \subsection{FASE I}
 
-Al comienzo del proyecto se decidió realizar el análisis de la misma forma que Dr. Scratch.
-El objetivo era evaluar los proyectos calificando aspectos del pensamiento computacional - \textit{pensamiento lógico}, \textit{control de flujo}, \textit{abstracción}, \textit{paralelismo}, \textit{interactividad con el usuario}, \textit{representación de la información} y \textit{sincronización} - en función de los bloques utilizados por el usuario.
+Al comenzar el proyecto se decidió realizar el análisis de la misma forma que en Dr. Scratch. El objetivo era evaluar los programas calificando aspectos del pensamiento computacional - \textit{pensamiento lógico}, \textit{control de flujo}, \textit{abstracción}, \textit{paralelismo}, \textit{interactividad con el usuario}, \textit{representación de la información} y \textit{sincronización} - en función de los bloques utilizados. \newline
+En cada uno de los 7 aspectos se podía obtener un total de 3 puntos, lo que conllevaba una puntuación máxima de 21 puntos. Dependiendo de la puntuación obtenida, el usuario podía tener un nivel \textit{basic}, \textit{developing} o \textit{proficiency}, tal y como se muestra en la \textit{Tabla \ref{tabla:clasif1}}
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\cellcolor[HTML]{A1EDEB}Nivel & \cellcolor[HTML]{A1EDEB}Puntos \\
+\hline \hline
+Basic & Puntos $<$ 7 \\ \hline
+Developing & 7 $<$ Puntos $<$ 15 \\ \hline
+Proficiency & 15 $<$ Puntos $<$ 21 \\ \hline
+\end{tabular}
+\caption{Clasificación de niveles fase I}
+\label{tabla:clasif1}
+\end{center}
+\end{table}
 
 
+Tras varios correos con Yana y a medida que se probaba y se desarrollaba la rúbrica, nos dimos cuenta de que algunos de los aspectos de Pensamiento Computacional, como la sincronización y el paralelismo, no eran aplicables a Pencil Code ya que eran dimensiones más específicas de Scratch. A partir de ese momento, se decidió rediseñar el metodo de evaluación dando lugar a las Fase II.
 
 
 \subsection{FASE II}
 
-Se evalua en porcentajes. Esto era inviable debido a la capacidad de Pencil Code de cambiar el modo de programación de bloques a código. El usuario podría escribir más bloques no visibles en las categorias.
+Visto que lo comentado en el apartado anterior era inviable, decidimos evaluar los proyectos centrándonos en las dimensiones más significativas de Pencil Code: \textit{Move}, \textit{Text}, \textit{Sound}, \textit{Art}, \textit{Control} y \textit{Operators}.
+
+En esta fase, se quitaron las puntuaciones y los niveles, las categorías se evaluaban en función del número de bloques utilizados en cada una de ellas y, además, se cambiaron las fracciones por porcentajes.
+
+Para medir el porcentaje de bloques usados, se contó el número de bloques visibles que aparecían por defecto en las categorías de Pencil Code - denominado \textit{maxblocks}- y, a continuación, se aplicaron las reglas mostradas en la \textit{Tabla \ref{tabla:clasif}}. El número de bloques en cada categoría era:
+Maxblocks = $\{$'Move': 12, 'Art': 12, 'Text': 8, 'Sound': 6, 'Control': 15, 'Operators': 18$\}$
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\cellcolor[HTML]{A1EDEB}Bloques utilizados & \cellcolor[HTML]{A1EDEB}Condición \\
+\hline \hline
+100$\%$ & 3/4 · maxblocks $<$ nº bloques $<$ maxblocks \\ \hline
+75$\%$  & 1/2 · maxblocks $<$ nº bloques $<$ 3/4 · maxblocks \\ \hline
+50$\%$  & 1/4 · maxblocks $<$ nº bloques $<$ 1/2 · maxblocks \\ \hline
+25$\%$  & 0 $<$ nº bloques $<$ 1/4 · maxblocks \\ \hline
+0$\%$  & nº bloques = 0 \\ \hline
+\end{tabular}
+\caption{Porcentajes fase II}
+\label{tabla:clasif}
+\end{center}
+\end{table}
+
+
+Una vez más, tras probar la rúbrica, decidimos volver a cambiar la forma de evaluar principalmente por dos motivos:
+
+\begin{enumerate}
+
+\item Debido a la capacidad de Pencil Code de cambiar el modo de programación de bloques a código, el número total de bloques por categoría no era posible indicarlo con determinación ya que el usuario podía escribir tanto código como quisiera, incluyendo bloques no visibles en la interfaz de cada categoría.
+
+\item Este método, realmente, no evaluaba los proyectos, si no que mostraba el porcentaje de bloques que se habían utilizado. Desde mi punto de vista, esta rúbrica no impulsaba tanto el deseo de mejorar y aprender a prograr como lo podía hacer la rúbrica de la fase 1 (con niveles y puntuaciones).
+
+\end{enumerate}
+ 
 
 \subsection{FASE III}
 
+Para tener en cuenta todas las posibilidades, se buscó información sobre todos los bloques que se podían utilizar en cada categoría, incluyendo tanto los que aparecen por defecto en Pencil Code como los que no se muestran en la interfaz. Se introdujeron de nuevo los niveles y las puntuaciones y se cambió de porcentajes a fracciones. \newline
 
-La última rúbrica y la que se aplica actualmente.
+La rúbrica final de Dr. Pencilcode y la que se encuentra disponible actualmente en la web es la que se explica a continuación:
 
-Se busco información sobre los principales bloques utilizado en cada categoria, incluyendo los que no se muestran en la pagína, 
-	
-Se decide quitar la puntuación máxima.
+\begin{itemize}
 
+\item En cada categoría se puede obtener un máximo de 3 puntos, dependiendo del tipo de bloque utilizado en dichas categorías, se pondran obtener 1, 2 o 3 puntos.
+\item Sumando los puntos obtenidos en cada categoría se puede llegar a obtener un total de 18 puntos.
+\item La puntuación máxima se consigue usando bloques de nivel 3 en todas las categorías y obteniendo todos los bonus.
+\item En función de los puntos obtenidos, el nivel de programación del usuario puede ser: Basico, intermedio, avanzado o experto, mostrado en la \textit{Tabla \ref{tabla:clasif3}}.
 
-En cada categoría se puede obtener un máximo de 3 puntos, dependiendo del tipo de bloque utilizado en dichas categorías, se pondran obtener 1, 2 o 3 puntos.
-
-Sumando los puntos obtenidos en cada categoria se puede llegar a obtener un total de 18 puntos.
-La puntuación máxima se consigue usando bloques de nivel 3 en todas las categorias y completando todos los bonus.
-
-En función de los puntos obtenidos, el nivel de programación del usuario puede ser: Basico, intermedio, avanzado o experto.
+\end{itemize}
 
 \begin{table}[htbp]
 \begin{center}
@@ -900,162 +995,111 @@ Intermedio & 6 $<$ Puntos $<$ 12 \\ \hline
 Avanzado & 12 $<$ Puntos $<$ 18 \\ \hline
 Experto & Puntos $>$ 18 \\ \hline
 \end{tabular}
-\caption{Clasificación de niveles}
-\label{tabla:clasif}
+\caption{Clasificación de niveles fase III}
+\label{tabla:clasif3}
 \end{center}
 \end{table}
 
 
-According to the points you get, your level as a programmer can be:
+Finalmente, para motivar aún más a los niños, se decidió añadir Bonus. Por el momento hay 4 tipos de bonus disponibles:
 
-
-
-Finalmente, se decidió añadir Bonus. Por el momento hay 4 tipos de Bonus:
-
-\begin{itemize}
+\begin{enumerate}
 
 \item \textbf{Bonus por diversidad}: se obtiene cuando el usuario utiliza bloques pertenecientes a los 3 niveles de una misma categoría.
 
-\item \textbf{Bonus por complejidad}: se consigue cuando el usuario utiliza más bloques de nivel 3 que bloques de niveles inferiores en la misma categoria
+\item \textbf{Bonus por complejidad}: se consigue cuando el usuario utiliza más bloques de nivel 3 que bloques de niveles inferiores en la misma categoría.
 
 \item \textbf{Bonus por todas las categorias}: Como ya sabemos, Pencil Code está formado por 6 categorías principales, este bonus se obtiene si el programa analizado contiene bloques de las 6 categorías.
 
-\item \textbf{Bonus por repetición de bloques}: cuando se usa el mismo bloque más de una vez.
+\item \textbf{Bonus por repetición de bloques}: se obtiene cuando se utiliza el mismo bloque más de una vez.
 
-\end{itemize}
+\end{enumerate}
 
 \section{Dashboard}
 \label{sec:Dashboard}
 
-A medida que se iba modificando la rúbrica de Dr. Pencilcode, también lo iba haciendo el diseño de la página de análisis. En esta sección se explicará y se mostrará la evolución - modificaciones, nuevas funcionalidades - del dashboard durante las fases mencionadas anteriormente. 
+A medida que se iba modificando la rúbrica de Dr. Pencilcode, también lo iba haciendo el diseño de la página de análisis. En esta sección se explicará y se mostrará la evolución - modificaciones y nuevas funcionalidades - del dashboard durante las fases mencionadas anteriormente. 
 
 \subsection{FASE I}
 
-La primera versión de la página constaba de tres secciones principales:
-
-\begin{enumerate}
-
-\item \textbf{Puntos y nivel}:
-
-\item \textbf{Tabla de puntuaciones}:
-
-\item \textbf{Want to level up?}:
-
-\end{enumerate}
-
+Al tratarse de la primera rúbrica, la apariencia del dashboard era muy similar al de Dr.Scratch, véase \textit{Figura ~\ref{fig:dashboardf1}}. Esta versión de la página constaba de cuatro secciones principales:
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=14cm, keepaspectratio]{img/fase1dashboard.png}
   \caption{Dashboard Fase I}
-  \label{fig:detalles}
+  \label{fig:dashboardf1}
 \end{figure}
-
-
-\subsection{FASE II}
-
-El cambio de rúbrica pasando del análisis de los aspectos del pensamiento computacional al análisis de las principales categorias de Pencil Code conllevó la realización de varias modificaciones en el dashboard.
-
-En cuanto a las 3 secciones principales:
 
 \begin{enumerate}
 
-\item \textbf{Puntos y nivel}:
+\item \textbf{Cabecera superior}: esta sección incluía el logo de Dr. Pencilcode, presentaba iconos con enlances a algunas redes sociales de nuestro equipo como e-mail y twitter y, además, contenía un botón de ayuda - \textit{Tour}\footnote{\url{http://bootstraptour.com/}} - encargado de explicar cada una de las secciones del dashboard. 
 
-\item \textbf{Tabla de puntuaciones}:
+\item \textbf{Puntos y nivel}: mostraba la puntuación total adquirida sobre 18 junto con el nivel obtenido (basic, developing o proficiency). En esta sección tambien se ofrecía la posibilidad de publicar la puntuación en twitter, tal y como se muestra en la \textit{Figura ~\ref{fig:twitter}}.
 
-\item \textbf{Want to know more?}:
+\item \textbf{Tabla de puntuaciones}: aquí se mostraban las puntuaciones parciales de cada uno de los aspectos del pensamiento computacional. Como se puede observar en la imagen, las habilidades de \textit{Sincronización} y \textit{Paralelismo} aparecían vacías debido a que no estaban definidas para Pencil Code. Además, incluía un enlace para poder volver al proyecto Pencil Code y seguir con la programación.
+
+\item \textbf{Want to level up?}: ofrecía enlaces a páginas de ayuda, donde los usuarios podían encontrar ejemplos para subir su putuación final. En ese momento las páginas de ayuda todavía no estaban adaptadas a Pencil Code.
 
 \end{enumerate}
 
-Se eliminaron las puntuaciones y los niveles sustituyéndose por un mensaje que motivara a los usuarios a mantener su curiosidad y seguir programando.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=7cm, keepaspectratio]{img/twitter.png}
+  \caption{Publicación en twitter}
+  \label{fig:twitter}
+\end{figure}
 
-Se cambió la sección \textit{want to level up?} a \textit{want to know more?} donde se añadieron enlaces a las páginas de ayuda de las distintas categorias.
+\subsection{FASE II}
 
-Se modificó por completo la tabla de las puntuaciones, cambiando los nombres de los aspectos al de las categorías y cambiando las barras de progreso a porcentajes, pudiendo obtenerse un 25$\%$, 50$\%$, 75$\%$ o 100$\%$.
+El cambio de rúbrica pasando del análisis de los aspectos del pensamiento computacional al análisis de las principales categorías de Pencil Code - Move, Art, Sound, Text, Control, Operators - conllevó la realización de varias modificaciones en el dashboard.
+
+En cuanto a las 4 secciones principales:
+
+\begin{enumerate}
+
+\item \textbf{Cabecera superior}: se mantuvo el mismo aspecto que en la fase I, exceptuando la omisión del botón \textit{Tour}.
+
+\item \textbf{Puntos y nivel}: Se eliminaron las puntuaciones y los niveles sustituyéndose por un mensaje que motivara a los usuarios a mantener su curiosidad y seguir programando. El botón de twitter y el enlace al proyecto de Pencil Code se trasladaron a esta sección.
+
+\item \textbf{Tabla de puntuaciones}: Se modificó por completo la tabla cambiando los nombres de los aspectos de pensamiento computacional al de las categorías de Pencil Code y cambiando las barras de progreso de fracciones a porcentajes, pudiendo obtenerse un 25$\%$, 50$\%$, 75$\%$ o 100$\%$ en cada categoría.
+
+\item \textbf{Want to know more?}: al desaparecer las puntuaciones se cambió la sección \textit{want to level up?} a \textit{want to know more?} donde se añadieron enlaces a las páginas de ayuda de las distintas categorías.
+
+\end{enumerate}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=16cm, keepaspectratio]{img/fase2dashboard.png}
   \caption{Dashboard Fase II}
-  \label{fig:detalles}
+  \label{fig:dashboardf2}
 \end{figure}
 
-Además, para que los usuario pudieran obtener más información acerca de su programa, se añadió una \textbf{nueva sección} \textit{Blocks Details} en la que se mostraban las categorías y los bloques utilizados en cada una de ellas. En el caso de que en alguna de las categorías no se hubiera utilizado ningún bloque se indicaba con \textbf{Not used} asociado a dicha categoría. Para poder ver esta sección los usuarios debía hacer scroll en la pantalla.
+Además, para que los usuario pudieran obtener más información acerca de su programa, se añadió una \textbf{nueva sección} \textit{Blocks Details} en la que se mostraban las categorías y los bloques utilizados en cada una de ellas. En el caso de que en alguna de las categorías no se hubiera utilizado ningún bloque se indicaba con un \textbf{Not used} asociado a dicha categoría. Para poder ver esta sección los usuarios tenían que hacer scroll en la pantalla; su diseño se puede observar en la \textit{Figura ~\ref{fig:detallesf2}}.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=14cm, keepaspectratio]{img/fase2details.png}
   \caption{Sección Details Fase II}
-  \label{fig:detalles}
+  \label{fig:detallesf2}
 \end{figure}
 
 \subsection{FASE III}
 
-
-Se añaden nuevas funcionalidades, sección de consejos sobre el que podría mejorarse.
-
-Cateoría Bonus, que se indican con 4 estrellas, una por cada bonus.
-
-Sección Detalles desplegables dongle se pueden ver los bloques que se han utilizado en cada categoria.
-Boton Help us que dirige a una pagina con un formulario
-Boton Certificate para descargarse el certificado
-
-A la par que la rúbrica iba cambiando tambien lo iba haciendo la apariencia de la página.
-
-
-\begin{enumerate}
-
-\item \textbf{Puntos y nivel}: 
-
-\item \textbf{Tabla de puntuaciones}:
-
-\item \textbf{What can you improve?}:
-
-\item \textbf{Details: Used Blocks}:
-
-\end{enumerate}
-
-Se vuelven a añadir niveles y puntuación, pero no puntuación máxima.
-
-El hecho de tener una sección dedicada únicamente a los enlaces de las páginas de ayuda quitaba demasido espacio, por ello, se decidió habilitar los enlaces en la tabla de puntuaciones y aprovechar la sección, ahora llamada \textit{What can you improve?}, para introducir consejos sobre como mejorar el programa.
-
-Como funcionan estos mensajes?
-Se centran en las categorías en las que se ha conseguido el nivel más bajo.
-
-Con la introducción de los Bonus se añade una nueva fila a la tabla de puntuaciones en la que estos quedan representados con estrellas. Se rellenaran tantas estrellas como bonus se consigan. 
-
-Además, para conocer exactamente los bonus conseguidos se añade a la sección \textit{Details} un desplegable \textit{Bonus} donde se especifica porqué se han obtenido.
-Se añaden elementos visuales para dotar a la web de mayor inteligibilidad.
-
-Se añaden 2 botones.
-
+Con la nueva y última modificación del método de evaluación se volvió a cambiar el diseño del dashboard. Además de los cambios en la secciones, se añadieron nuevas implementaciones y un mayor número de elementos visuales para dotar a la web de mayor inteligibilidad, véase \textit{Figura ~\ref{fig:dashboardf3}}. 
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=14cm, keepaspectratio]{img/Fase3dashboard.png}
   \caption{Dashboard Fase III}
-  \label{fig:detalles}
+  \label{fig:dashboardf3}
 \end{figure}
 
-Como el scroll no lo hacen los niños, se decidio comprimir todo un poquito mas y hacer la sección Details desplegable, si los niños quieren saber mas información lo unico que tienen que hacer es pinchar en la flecha de despliegue.
+En cuanto a las secciones previamente definidas:
 
+\begin{enumerate}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=14cm, keepaspectratio]{img/dashboard.png}
-  \caption{Página Final Dashboard}
-  \label{fig:detalles}
-\end{figure}
-
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=14cm, keepaspectratio]{img/details.png}
-  \caption{Detalles de los resultados}
-  \label{fig:detalles}
-\end{figure}
-
+\item \textbf{Cabecera superior}: Se habilitó de nuevo el botón \textit{Help} añadiendo 3 pasos adicionales al Tour, uno por cada nueva sección: \textit{Details: Used Blocks, Download Certificate y Help us!}. El aspecto del tour es el que se muestra en  \textit{Figura ~\ref{fig:Tourdashboard}}.
 
 \begin{figure}[H]
   \centering
@@ -1064,20 +1108,94 @@ Como el scroll no lo hacen los niños, se decidio comprimir todo un poquito mas y
   \label{fig:Tourdashboard}
 \end{figure}
 
+\item \textbf{Puntos y nivel}: Se volvieron a incluir puntuación y niveles (\textit{basic, intermediate, master y expert}), pero no puntuación máxima. 
 
-\section{Análisis de proyectos Pencil Code FASE III}
+\item \textbf{Tabla de puntuaciones}: Con la introducción de los Bonus, se añadió una nueva fila a la tabla de puntuaciones en la que éstos quedaban representados con estrellas; se rellenan tantas estrellas como bonus se consigan.
+Además, el hecho de tener una sección dedicada únicamente a los enlaces de las páginas de ayuda quitaba demasido espacio, por ello, se decidió habilitar los enlaces en la tabla de puntuaciones y aprovechar la sección, ahora llamada, \textit{What can you improve?} para introducir consejos sobre como mejorar el programa.
+
+\item \textbf{What can you improve?}: se introdujeron mensajes donde se aconsejaba al usuario en cual de las categorías debía trabajar más para subir su nivel, así como sugerencias para completar todos los bonus. Estos mensajes se centran en las categorías en las que se ha conseguido el nivel más bajo.
+
+\item \textbf{Details: Used Blocks}: para conocer los bonus conseguidos de una forma más específica, se añadió a la sección \textit{Details} un desplegable \textit{Bonus} donde se explicaba porqué motivo se habían obtenido. También se añadieron elementos visuales.
+
+\end{enumerate}
+
+A esta altura del proyecto, surgió la idea de crear un formulario para recopilar diferentes opiniones sobre la web y, además, añadir un diploma que pudiera descargarse.
+Por ello, se decidió habilitar dos nuevos botones, uno de ellos para redirigir al formulario y otro para descargar el certificado.\newline
+
+Finalmente, se llevó a cabo una última modificación que dió lugar al diseño actual de la plataforma, didponible en la web \url{http://drpencilcode.libresoft.info/}.
+
+Por lo general, los niños no suelen hacer scroll en la pantalla, ésto podía desencadenar que la sección de \textit{Details} y los nuevos botones añadidos en la parte inferior fueran ignorados por el usuario, por ello, se decidió agrupar las categorías de tal forma que todas fueran visibles al cargar la página \texttt{dashboard.html}.
+
+Al tratarse de información adicional, la sección \textit{Details}, se hizo desplegable; así, si el usuario quiere conocer más sobre su proyecto, lo único que tiene que hacer es pinchar en la flecha de despliegue. 
+La última versión del dashboard es la que se muestran en las \textit{Figuras \ref{fig:dashboardfinal} y \ref{fig:detallesf3}}.
+
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=14cm, keepaspectratio]{img/dashboard.png}
+  \caption{Página Final Dashboard}
+  \label{fig:dashboardfinal}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=14cm, keepaspectratio]{img/details.png}
+  \caption{Detalles de los resultados}
+  \label{fig:detallesf3}
+\end{figure}
+
+
+
+\section{Análisis de proyectos Pencil Code}
 \label{sec:analisis}
 
-Nos centramos en la fase III que es la que tiene la aplicacion actualmente para explicar el analisis de proyectos (back-end).
+A pesar de la gran evolución que ha tenido el proyecto, a partir de ahora, me centraré únicamente en la Fase III - ya que es la que está implementada actualmente y es así como funciona realmente la aplicación.\newline
 
-Al igual que Dr.Scratch realiza el análisis de los proyectos apoyándose en plugins de Hairball, era necesario crear un nuevo plugin, \texttt{coffee-mastery.py}, para llevar a cabo la implementación de la rúbrica de Dr.Pencilcode. En esta sección se explica como se analizan los proyetos, desde que se introduce la URL hasta que se muestran los resultados en el dashboard.\newline
+Al igual que Dr.Scratch realiza el análisis apoyándose en plugins de Hairball, era necesario crear un nuevo plugin, \texttt{coffee-mastery.py}, para llevar a cabo la implementación de la rúbrica de Dr.Pencilcode. En esta sección se explica como se analizan los proyetos, desde que se introduce la URL hasta que se muestran los resultados en el dashboard.\newline
 
 El analisis de los proyectos sigue una esctructura similar a la de Dr. Scratch, sin embargo, se han tenido que hacer modificaciones en las funciones \textit{selector}, \textit{processStringUrl}, \textit{sendRequestgetJSON}, \textit{handler$\_$upload} y \textit{analyzeProject} que son las principales encargadas de realizar todo el proceso de análisis.
 
 
+
+\subsection{Coffee-Mastery}
+
+Como se ha comentado, con el objetivo impletar la rúbrica de Dr. Pencilcode se desarrolló \texttt{coffee-mastery.py}; en él se definen seis funciones - una por categoría - donde se encuentran los conjuntos\footnote{NOTA: Un conjunto es una lista no ordenada y sin elementos repetidos. Los conjuntos soportan operaciones matemáticas como la unión, la intersección y la diferencia. La función set() puede utilizarse para crear conjuntos.} (básico, intermedio y avanzado) en los que se determinan a que niveles pertenecen los bloques de cada categoría. Coffee-mastery es el que realmente se encarga de analizar los proyectos de Pencil Code, su finalidad es devolver información del proyecto analizado.\newline
+
+Para analizar un proyecto con Coffee-mastery se debe introducir el comando \texttt{python coffee-mastery.py colors.coffee}, especificando como parámetro el nombre del archivo CoffeeScript. La salida del programa es la que se muestra en la \textit{Figura \ref{fig:coffee-mastery}}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=16cm, keepaspectratio]{img/salidacoffemastery.png}
+  \caption{Salida de coffee-mastery.py}
+  \label{fig:coffee-mastery}
+\end{figure}
+
+Como se puede obsevar, coffee-mastery ofrece información sobre los bloques que se han utilizado en cada una de las categorías, indicándose también el nivel al que pertenece cada bloque; los bloques duplicados y el número de veces que se ha repetido cada uno de ellos y, por último, el número total de puntos que se ha obtenido en cada categoría.
+
+El proceso que sigue Coffee-mastery hasta conseguir toda esta información es el siguiente:
+
+\begin{enumerate}
+
+\item Lo primero que hace el plugin es leer el contenido del fichero .coffee
+
+\item A continuación, elimina los comentarios del programa, así como los caracteres numéricos, los paréntesis y todo texto que vaya entre comillas.
+
+\item Una vez que el código está "limpio", se crea una lista de tokens - tokenList - con lo que queda del código del programa.
+
+\item Se llama a la función \textit{duplicates()}, pasando como parámetro tokenList, que devuelve un diccionario con los bloques repetidos.
+
+\item Se llama seis veces a la función \textit{check()},  una vez por cada categoría. Ésta se encarga de realizar la intersección entre el set() del código del programa - tokenSet - y los Sets() básico, intermedio y avanzado de esa categoría. Si en alguna categoría no se encuentran elementos comunes con el código del programa, la función le asignará un \textit{False}; en caso contrario, se devolverá un diccionario con los niveles y los bloques utilizados en el nivel correspondiente.
+
+\item Por último, se llama a la función \textit{niveles()} y ésta, a su vez, a la función \textit{checking()}. \textit{Checking()} comprueba mediante intersección de Sets que niveles se han utilizado en el programa y devuelve el nivel más alto. \textit{Niveles()} recoge esta información y crea un diccionario con las categorías y sus puntuaciones.
+
+\end{enumerate}
+
+
 \subsection{Análisis por URL}
 
-A la hora de introducir la URL en Dr.Scratch, si ésta no es correcta, pueden aparecer 3 tipos de errores: si la url está mal escrita, si la url/proyecto no existe en los servidores de Pencil Code o si en la url no se ha introducido ningún valor.
+A la hora de introducir la URL en Dr.Scratch, si ésta no es correcta, pueden aparecer 3 tipos de errores: si la url está mal escrita, si la url/proyecto no existe en los servidores de Scratch o si en la url no se ha introducido ningún valor.
 
 
 \begin{figure}[H]
@@ -1095,7 +1213,7 @@ A la hora de introducir la URL en Dr.Scratch, si ésta no es correcta, pueden apa
  \label{f:animales}
 \end{figure}
 
-En Dr.Pencilcode, además de esos tres, se incluye un nuevo error, \textbf{code$\_$error}, el cual se invoca cuando el código del programa no está correctamente escrito. Para poder lanzar este error se hace uso de la herramienta CoffeeLint que, como se ha explicado en el capítulo anterior, es un analizador estático de código CoffeeScript.
+En Dr.Pencilcode, además de esos tres, se incluye un nuevo error, \textbf{code$\_$error}, el cual se invoca cuando el código del programa Pencil Code no está correctamente escrito. Para poder lanzar este error se hace uso de la herramienta CoffeeLint que, como se ha explicado en el capítulo anterior, es un analizador estático de código CoffeeScript.
 
 \begin{figure}[H]
   \centering
@@ -1104,37 +1222,41 @@ En Dr.Pencilcode, además de esos tres, se incluye un nuevo error, \textbf{code$\
   \label{fig:codeerror}
 \end{figure}
 
-\subsection{Coffee-Mastery}
 
-
-Desarrollar un plugin que analice programas de CoffeeScript para medir el desarrollo del pensamiento computacional de un usuario principiante mediante la evaluación de estructuras de programación y elementos en el código. 
-
-El plugin coffe-mastery.py es el que, realmente, se encarga de analizar los projectos de Pencilcode ofreciendo información sobre:
-
-\begin{itemize}
-
-\item Todos los bloques que se han utilizado en el programa y los niveles de las categorias a los que pertenecen cada uno de los bloques.
-
-\item Los bloques duplicados y el número de veces que ha sido repetido cada uno de ellos.
-
-\item El número de puntos obtenidos en cada categoría.
-
-\end{itemize}
-
-\texttt{python coffee-mastery.py colors.coffee}
+A continuación explicaré, a grandes rangos, los pasos que se siguen para el análisis de los proyectos y, posteriormente, mostraré los diagramas de flujo de cada una de las funciones implicadas (Anexo).
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=16cm, keepaspectratio]{img/salidacoffemastery.png}
-  \caption{Salida de coffee-mastery.py}
+  \includegraphics[width=12cm, keepaspectratio]{img/funciones.jpg}
+  \caption{Relación entre funciones.}
   \label{fig:coffee-mastery}
 \end{figure}
+
+\begin{enumerate}
+
+\item Una vez introducida la URL, se llama a la función \textit{selector()}; ésta se encarga de devolver la página \texttt{dashboard.html} (renderizada con un diccionario que contiene toda la información del análisis de ese proyecto) o la página 	\texttt{main.html} (con alguno de los 4 errores comentados anteriormente) en función de si ha habido o no problemas a la hora de ejecutar el resto de funciones.
+
+\item \textit{urlUnregistered()} comprueba si el formulario es válido y llama a las funciones \textit{ProcessStringUrl()}, \textit{sendRequestgetJSON()} y \textit{analyzeProject()}. Al final, devuelve un diccionario a \textit{selector()} con informacion del proyecto o información de error (code$\_$error, no$\_$exists y error analyzing) dependiendo de si las funciones a las que llama se ejecutan correctamente o no.
+
+\item \textit{processStringUrl()} comprueba si la URL introducida por el usuario está correctamente escrita; si es así, devolverá la url con el siguiente formato: \url{http://sarabc.pencilcode.net/load/first}, en caso contraio, devolverá un error de ID (id$\_$error).
+
+\item \textit{sendRequestgetJSON()} Guarda información del proyecto en la base de datos y en logFile.txt. Además, realiza la petición a Pencil Code, abre la URL \url{http://sarabc.pencilcode.net/load/first}, lee los datos que contiene (en este caso el código del programa analizado) y escribe todo en un fichero .json.
+
+\item \textit{handler$\_$upload()} se encarga de comprobar si el fichero *.json exite ya en la carpeta de \textit{/uploads}. En caso de que exista, el documento recibirá un nombre con formato \textbf{*(num).json} donde num es el número de veces que el documento original está repetido.
+ 
+\item \textit{AnalyzeProject()} es la encargada de analizar los proyectos haciendo uso del plugin coffee-mastery y la función \textit{procMastery()}. Comprueba si el código del programa esta bien escrito usando CoffeeLint. Finalmente, devuelve el resultado del análisis en un diccionario, que es el que llega a \textit{selector()}.
+
+\item \textit{ProcMastery()} se encarga de montar el diccionario y guardar todo en la base de datos; suma los puntos, comprueba los bonus llamando a \textit{CalculoBonus()} y comprueba los mensajes de ayuda de la sección \textit{What can you improve?} llamando a \textit{wtimprove()}. 
+
+\end{enumerate}
+
 
 \section{Paginas de ayuda}
 \label{sec:ayuda}
 
-Al tratarse de una herramienta educativa, en Dr. Pencilcode, se incluyen nueve nuevas páginas de ayuda que dan soporte a los usuarios. A través del documento \texttt{base.html}, podemos acceder a cada una de ellas via enlace.
-Seis (\texttt{Move.html}, \texttt{Art.html}, \texttt{Text.html}, \texttt{Sound.html}, \texttt{Control.html}, \texttt{Operators.html}) contienen información sobre las diferentes categorias de Pencil Code. Estas páginas son muy útiles cuando el usuario quiere subir su puntuación; en ellas se incluyen varios ejemplos, con las respectivas explicaciones del programa, de como utilizar los bloques de cada nivel. Además, al final de cada página, se añaden enlances a páginas externas donde hay gran cantidad de programas con los que pueden aprender.
+Al tratarse de una herramienta educativa, en Dr. Pencilcode, se incluyen nueve nuevas páginas de ayuda que dan soporte a los usuarios. Estas páginas son extensiones del documento \texttt{base.html} que es el que contiene el diseño básico de todo el conjunto. A través de \texttt{base.html} o \texttt{dashboard.html}, podemos acceder a cada una de las páginas de ayuda via enlace. \texttt{base.html}. 
+
+Seis de ellas (\texttt{Move.html}, \texttt{Art.html}, \texttt{Text.html}, \texttt{Sound.html}, \texttt{Control.html}, \texttt{Operators.html}) contienen información sobre las diferentes categorias de Pencil Code. Estas páginas son muy útiles cuando el usuario quiere subir su puntuación; en ellas se incluyen varios ejemplos, con las respectivas explicaciones del programa, de como utilizar los bloques de cada nivel. Además, al final de cada página, se añaden enlances a páginas externas donde hay gran cantidad de programas con los que pueden aprender.\newline
 
 Para acceder a las páginas de ayuda se debe pinchar en los enlaces (con el nombre de las categorías) que aparecen tras analizar un proyecto. El diseño de estas seis páginas es similar y es el que se observa en la \textit{Figura~\ref{fig:helpmove}}
 
@@ -1157,7 +1279,7 @@ En la \textit{Figura~\ref{fig:helpoints}} se muestra, como ejemplo, el diseño de
 \end{figure}
 
 
-Durante el diseño de esta sección se mantuvo intercambio de correos con Yana para explicarle la idea del desarrollo de las páginas de ayuda; propuesta que le pareció muy acertada. [ANEXO]
+Durante el diseño de esta sección se mantuvo intercambio de correos con Yana para explicarle la idea del desarrollo de las páginas de ayuda; propuesta que le pareció muy acertada.
 
 
 \section{Formulario}
@@ -1166,15 +1288,15 @@ Durante el diseño de esta sección se mantuvo intercambio de correos con Yana par
 Con la finalidad de recibir retroalimentación y tener en cuenta las opiniones de todos los usuarios - tanto alumnos como docentes - para seguir mejorando la herramienta y las funcionalidades de ésta, se decidió realizar un formulario.\newline
 
 En primer lugar, el formulario se realizó en papel. Éste se centraba en conocer los niveles de usabilidad, interactividad e inteligibilidad de la herramienta desde el punto de vista del usuario. La encuesta incluía preguntas relacionadas con la apariencia de la web, el deseo del alumno de seguir mejorando su proyecto una vez analizado y conocida su puntuación, la capacidad para moverse por las diferentes páginas... concluyendo con un apartado de libre opinión. 
-La idea principal era que cada usuario que utilizara Dr. Pencilcode rellenara el formulario y nos lo enviara por correo.
+La idea principal era que cada usuario que utilizara Dr. Pencilcode rellenara el formulario y nos lo enviara por correo.\newline
 
 
 Una vez diseñada la encuesta, nos pusimos en contacto con Yana para conocer su opinión acerca de esta nueva idea.
 Como se puede leer en el correo \textit{Apéndice~\ref{app:emails}}, había preocupación en las palabras y expresiones utilizadas en la primera versión del formulario. Al tratarse de una encuesta enfocada especialmente a niños, Yana sugirío modificar las preguntas y adaptar las palabras con el fin de que fueran comprensibles para los más pequeños.
 
-Además, para no utilizar papel y hacer todo más fácil y rápido, decidimos añadir una nueva funcionalidad implementando el formulario en la página web.
+Además, para no utilizar papel y hacer todo más fácil y rápido, decidimos añadir una nueva funcionalidad implementando el formulario en la página web.\newline
 
-Para acceder al formulario, simplemente, se tiene que pinchar en el boton \textbf{Help us} habilitado en la página de análisis del proyecto o \textit{Dashboard}. Al pinchar, se abre una nueva pestaña en el navegador dando paso a la página del formulario \textbf{Helpus.html}. 
+Para acceder al formulario, simplemente, se tiene que pinchar en el botón \textbf{Help us} habilitado en la página de análisis del proyecto o \textit{Dashboard}. Al pinchar, se abre una nueva pestaña en el navegador dando paso a la página del formulario \textbf{Helpus.html}. 
 
 \begin{figure}[H]
   \centering
@@ -1193,7 +1315,7 @@ El diseño de la página del formulario es el mostrado en la \textit{Figura~\ref{f
   \label{fig:PagForm}
 \end{figure}
 
-Una vez que el usuario pulsa el botón \textbf{Submit} se lleva a cabo una petición HTTP POST con el recurso /helpus. El documento urls.py se encarga de enlazar con la función \textit{getFeedback()} de views.py. \newline
+Para desarrollar esta funcionalidad se crea una nueva función en views.py llamada \textit{getFeedback()}. Una vez que el usuario pulsa el botón \textbf{Submit} se lleva a cabo una petición HTTP POST con el recurso /helpus. El documento urls.py es el encargado de enlazar con la función \textit{getFeedback()} de views.py. \newline
 
 \textbf{getFeedback} inicializa dos variables booleanas - form$\_$filled y data$\_$exist - a False, dependiendo de los valores que vayan tomando estas variables a lo largo de la función, se mostrará por pantalla uno de los siguientes mensajes: success, warning o danger (warning por defecto).
 
@@ -1221,7 +1343,20 @@ Para poder comprender el trabajo de la función \textbf{getFeedback}, se muestra 
 \section{Certificado}
 \label{sec:Certificado}
 
-Para motivar aun más a los niños, Dr. Pencilcode, ofrece la posibilidad de conseguir tu propio certificado; en él se indica el nombre del proyecto que se ha analizado y la puntuación asociada al mismo, tal y como se muestra en la \textit{Figura ~\ref{fig:certificado}}.
+Con la intención de motivar aun más a los niños, Dr. Pencilcode, ofrece la posibilidad de conseguir tu propio certificado; en él se indica el nombre del proyecto que se ha analizado y la puntuación asociada al mismo, tal y como se muestra en la \textit{Figura ~\ref{fig:certificado}}. 
+Son varios los documentos/funciones que participan en la generación del diploma: 
+
+\begin{itemize}
+
+\item \texttt{certix.tex} es la plantilla LaTeX del certificado; en ella se insertan el nombre del proyecto y la puntuación que se pasan como parámetros a pyploma.py.
+
+\item \texttt{output.tex} es un fichero LaTeX que se crea cada vez que un usuario se descarga el diploma; en él se guardan todos los cambios realizados en certix.py.
+
+\item \texttt{pyploma.py} es el script encargado de gestionar los documentos certix.tex y output.tex, así como de realizar la conversión de output.tex a output.pdf.
+
+\item \texttt{download$\_$certificate} es la función de views.py encargada de llamar a pyploma.py pasándole como parámetros el nombre del proyecto y su puntuación total. Una vez que se ha generado el pdf del certificado, esta función crea una respuesta HTTP que permitirá descargar el diploma automaticamente.
+
+\end{itemize}
 
 \begin{figure}[H]
   \centering
@@ -1230,21 +1365,38 @@ Para motivar aun más a los niños, Dr. Pencilcode, ofrece la posibilidad de conse
   \label{fig:certificado}
 \end{figure}
 
-pyploma.py encargada de generar el certificado.
+Para descargar el diploma, como en el caso del formulario, hay que pinchar en el botón \textbf{Download Certificate} habilitado en la página de análisis.
+Cuando el botón es pulsado se lleva a cabo una petición HTTP POST con el recurso /download$\_$certificate y \texttt{urls.py} enlaza con la función, de mismo nombre,  \textbf{download$\_$certificate} de \texttt{views.py}.\newline
 
-\section{Scratch y Dr. Scratch} 
-\label{sec:arquitectura}
+\textbf{Download$\_$certificate} llama a la función pyploma.py pasando como parámetros el nombre del proyecto analizado y su puntuación total; ésta crea un fichero LaTeX \texttt{output.tex} para cada usuario. Una vez que los nuevos parámetros se insertan en la plantilla \texttt{certix.tex}, los cambios se guardan en el fichero \texttt{output.tex} creado para ese usuario y se pasa a documento PDF.\newline
 
-Dr. Pencilcode se basa en Scratch. 
+Finalmente, \textbf{download$\_$certificate} crea una respuesta HTTP con MIME application/pdf y con el documento output.pdf, de esta forma el diploma se descargará automaticamente.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{img/esquemacertif.png}
+  \caption{Esquema certificado}
+  \label{fig:certificado}
+\end{figure}
 
 \section{Diferencias entre Dr. Pencilcode y Dr. Scratch}
 \label{sec:pencilvsscrath}
+
+Como ya se ha explicado, no todas las funcionalidades de Dr. Pencilcode son nuevas, ya que este proyecto partió de Dr. Scratch. 
+
+Aún así, la mayoría de los archivos se han tenido que modificar para poder adaptarlos a Pencil Code.
+
+ Algunas funcionalidades de Dr. Pencilcode ya existían previamente en Dr. Scratch, sin embargo, para poder adaptarlas a Pencil Code, la mayor parte los archivos se han tenido que modificar. 
+
+A estas modificaciones se incluyen también las nuevas funcionalidades y plugins desarrollados en este proyecto, como las 9 páginas de ayuda, las nuevas secciones en la página de dashboard.html (sección details, bonus, botones), el fórmulario, coffee-mastery.py.  
 
 Para el desarrollo de Dr. Pencilcode se ha partido de la version de Dr. Scratch disponible en la web.
 Se han tenido que realizar numerosas modificaciones para llevar a cabo el proyecto. 
 En este apartado solo mencionaré las cosas que se han modificado y las que se han añadido.
 [Aqui menciono todo lo que se ha cambiado modificado y lo que se ha creado] y luego voy uno a uno.
 El resto o no se han tocado o tienen cambios insignificantes como añadir algun estilo css, cambios de nombre de variables, etc.
+
+Para poder mostrar que, realmente, ha habido modificaciones. He realizado una comparación entre el repositiorio de la ultima version de Dr. Pencilcode y el repositorio master de Dr. Scratch.
 
 \texttt{cd drPencilcode}
 
@@ -1262,12 +1414,6 @@ El resto o no se han tocado o tienen cambios insignificantes como añadir algun e
    \label{figura:diff}
 \end{figure}
 
-\subsection{Qué he modificado}
-\subsection{Qué he añadido}
-\subsection{Qué no he tocado}
-
-\section{Subida al servidor}
-\label{sec:servidor}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1341,8 +1487,7 @@ Entre ellos cabe destacar el aprendizaje de nuevas tecnologías - nunca antes vis
 
 \item \textbf{Conceptos avanzados de Python}: A medida que el proyecto iba avanzando, he mejorado mis habilidades de programadora en Python utilizando nuevas estructuras y nuevos módulos como \textit{sets} y \textit{expresiones regulares} (regex).
 
-\item \textbf{Json}
-\item \textbf{Servidor Apache y maquinas virtuales}
+\item \textbf{Servidor Apache y maquinas virtuales.}
 
 \end{enumerate}
 
