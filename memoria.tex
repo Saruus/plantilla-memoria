@@ -15,7 +15,7 @@
 %%   make
 %% (las imágenes deben ir en PNG o JPG)
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[a4paper, 12pt]{book}
 %\usepackage[T1]{fontenc}
@@ -36,6 +36,7 @@
 \usepackage{listings} %% para poner codigo
 \usepackage{pdfpages}
 \usepackage[toc,page]{appendix}
+\usepackage{acronym}
 
 \title{Memoria del Proyecto}
 \author{Nombre del autor}
@@ -86,7 +87,7 @@ CREACIÓN DE LA PLATAFORMA DR.PENCILCODE
 \vspace{4cm}
 
 \large
-Autor : Sara Blázquez Calderay \\
+Autora: Sara Blázquez Calderay \\
 Tutor : Dr. Gregorio Robles
 \end{center}
 \end{titlepage}
@@ -113,7 +114,7 @@ CREACIÓN DE LA PLATAFORMA DR.PENCILCODE
 
 \vspace{1cm}
 \large
-\textbf{Autor :} Sara Blázquez Calderay \\
+\textbf{Autora :} Sara Blázquez Calderay \\
 \textbf{Tutor :} Dr. Gregorio Robles Martínez
 
 \end{center}
@@ -163,18 +164,18 @@ Alejandro y Nuria, os quiero.}
 
 No ha sido un camino fácil pero he de admitir que ésta ha sido una de las mejores y, a la vez, más difíciles etapas de mi vida. Creo que no podría haber elegido una carrera mejor con todo lo que ello conlleva. Durante todos estos años, he recibido el ánimo y el cariño de muchas personas a las que quiero agradecérselo infinitamente:
 
-En primer lugar, quiero dar las gracias a mi familia, me siento afortunada por teneros a todos.
-El mayor gracias se lo doy a mis padres que, desde pequeña, me han inculcado los valores que me han convertido en quien soy hoy. Mamá, me has enseñado a luchar, luchar por lo que quiero, a ser perseverante  y a que "todo ocurre por una razón", de mayor quiero ser como tú. Papá, gracias por apoyarme tanto y haberme enseñado a tomarme la vida con un toque de humor, humor Blázquez, no se que hubiera sido de mí sin eso. Sois las personas a las que más admiro del mundo, gracias por confiar en mi más que yo misma. Os quiero mucho.
+En primer lugar, quiero agradecer a mi familia, me siento afortunada por teneros a todos.
+El mayor gracias se lo doy a mis padres que, desde pequeña, me han inculcado los valores que me han convertido en quien soy hoy. Mamá, me has enseñado a luchar por lo que quiero, a ser perseverante y a que "todo ocurre por una razón", de mayor quiero ser como tú. Papá, gracias por apoyarme tanto y haberme enseñado a tomarme la vida con un toque de humor Blázquez, no se que hubiera sido de mí sin eso. Sois las personas a las que más admiro del mundo, gracias por confiar en mi más que yo misma. Os quiero mucho.
 
-A Carlos y Marivi, segundo pilar 
+A Carlos y a Marivi, que por diversas circunstancias, se han convertido en el segundo pilar fundamental de mi día a día. Gracias por saber escucharme y guiarme a lo largo de este recorrido. Os quiero.
 
-A mis hermanos, Alex y Nuria, que siempre sacáis lo mejor de mí. Sois el regalo más grande que he podido tener. Vosotros me transmitís toda la energía que necesito para seguir, estar con vosotros me llena de felicidad. Os adoro.
+A mis hermanos, Alex y Nuria, que siempre sacáis lo mejor de mí. Sois el regalo más grande que he podido tener y estar con vosotros me llena de felicidad. Os adoro.
 
 Gracias a mis amigas de siempre, Cristina, Barbara y Cristina, que a pesar de seguir rumbos distintos y no vernos a menudo siempre han estado al pie del cañón, apoyándome cuando más lo necesitaba y soportando mis batallas.
 
 También quiero agradecer a mis amigos de la universidad, sin los cuales, llegar hasta este punto no hubiera sido posible. Gracias, a Raquel y Alba, compañeras de estudio y de vida, por haberme levantado cuando ya no podía más y por haber luchado conmigo hasta el final. Estoy orgullosa de vosotras. A Luismo, Miguel, Diego y Diana por sacarme una sonrisa siempre que os veo. Sé que sois para siempre.
 
-Gracias a mi segunda casa, Suecia, por haberme enseñado a ser independiente y a valorar aún más lo que se tiene, por darme la posibilidad de conocer a gente tan maravillosa que, en poco tiempo, me ha ayudado a crecer como persona y, por haberme enseñado grandes lecciones. Aunque estéis lejos siempre os llevo conmigo.
+Gracias a mi segunda casa, Suecia, por haberme enseñado a ser independiente y a valorar aún más lo que se tiene, por darme la posibilidad de conocer a gente tan maravillosa que, en tan poco tiempo, me ha ayudado a crecer como persona y, por haberme enseñado grandes lecciones. Aunque estéis lejos siempre os llevo conmigo.
 
 Por último, quiero dar las gracias a mi tutor, Gregorio Robles, por haber confiado en mí y haberme ofrecido la gran oportunidad de trabajar en este proyecto que, con el tiempo, espero seguir mejorando.
 
@@ -187,11 +188,11 @@ Por último, quiero dar las gracias a mi tutor, Gregorio Robles, por haber confia
 \markboth{RESUMEN}{RESUMEN} % encabezado
 
 
-En la actualidad, las nuevas tecnologías y la programación están ganando terreno en el área de la educación, la LOMCE añade una nueva competencia clave, la competencia digital, cuyo objetivo es ayudar a los alumnos a resolver de forma eficiente los problemas de la vida cotidiana mediante el uso de recursos tecnológicos y el uso de la programación.\newline
+En la actualidad, las nuevas tecnologías y la programación están ganando terreno en el área de la educación; la LOMCE añade una nueva competencia clave, la competencia digital, cuyo objetivo es ayudar a los alumnos a resolver de forma eficiente los problemas de la vida cotidiana mediante el uso de recursos tecnológicos y el uso de la programación.\newline
 
-Dr. Pencilcode es una aplicación web de software libre y código abierto - enfocada a la enseñanza - que se encarga de realizar análisis estáticos de proyectos desarrollados con Pencil Code con el fin de impulsar la capacidad tecnológica y la creatividad de los usuarios.\newline
+Dr. Pencilcode es una aplicación web de software libre y código abierto - enfocada a la enseñanza - que se encarga de realizar análisis estáticos de proyectos desarrollados con Pencil Code con la intención de impulsar la capacidad tecnológica y la creatividad de los usuarios.\newline
 
-El objetivo principal de este proyecto es el de crear una plataforma inteligible y amigable con el fin de ayudar y dar soporte a usuarios que se están iniciando en el mundo de la programación, en especial a niños y profesores. Además, Dr. Pencilcode, trata de promover el desarrollo del pensamiento computacional y servir de motivación a los usuarios para fomentar su deseo de mejorar como programadores mediante el uso de puntuaciones y \emph{bonus}.\newline
+El objetivo principal de este proyecto es el de crear una plataforma inteligible y amigable con el fin de ayudar y dar soporte a usuarios que se están iniciando en el mundo de la programación, en especial a niños y profesores. Además, Dr. Pencilcode, trata de promover el desarrollo del pensamiento computacional y servir de motivación a los usuarios para fomentar su deseo de mejorar como programadores mediante el uso de puntuaciones y bonus.\newline
 
 Las tecnologías front-end que más se han utilizado para el desarrollo de esta aplicación han sido CSS y HTML apoyándose en tecnologías como  Javascript, Bootstrap y jQuery para añadir dinamismo a la web y mejorar la interactividad y usabilidad de la herramienta. Por otro lado, la parte del servidor, se ha desarrollado principalmente con el framework Django además de otras tecnologías de gestión de bases de datos como MySQL.\newline
   
@@ -227,14 +228,68 @@ Some of the most used front-end technologies for the development of this applica
 
 %%%% Índice de contenidos
 \tableofcontents 
+
+
+%%%%\addcontentsline{toc}{chapter}{Lista de figuras} % para que aparezca en el indice de contenidos
+
+
+\chapter*{Acrónimos y abreviaturas}
+\markboth{ACRÓNIMOS Y ABREVIATURAS}{ACRÓNIMOS Y ABREVIATURAS} % encabezado
+
+\begin{acronym}
+
+\acro{AJAX} {Asynchronous JavaScript and XML}
+
+\acro{CSRF} {Cross-Site Request Forgery}
+
+\acro{CSS} {Cascading Style Sheets}
+
+\acro{DOM} {Document Object Mode}
+
+\acro{FICOD} {Foro Internacional de Contenidos Digitales}
+
+\acro{GSYC} {Grupo de Sistemas y Comunicaciones}
+
+\acro{HTML} {HyperText Markup Language}
+
+\acro{HTTP} {The Hypertext Transfer Protocol}
+
+\acro{IEEE} {Institute of Electrical and Electronics Engineers}
+
+\acro{JSON} {JavaScript Object Notation}
+
+\acro{LaTeX} {Lamport TeX}
+
+\acro{LOMCE} {Ley Orgánica para la mejora de la calidad educativa}
+
+\acro{MIME} {Multipurpose Internet Mail Extensions}
+
+\acro{MIT} {Massachusetts Institute of Technology}
+
+\acro{MVC} {Model-View-Controller}
+
+\acro{PDF} {Portable Document Format}
+
+\acro{TCP/IP} {Transmission Control Protocol/Internet Protocol}
+
+\acro{URJC} {Universidad Rey Juan Carlos}
+
+\acro{URL} {Uniform Resource Locator}
+
+\acro{WebGL} {Web Graphics Library}
+
+\acro{XHTML} {Extensible Hypertext Markup Language}
+
+\end{acronym}
+
 %%%% Índice de figuras
 \cleardoublepage
-%\addcontentsline{toc}{chapter}{Lista de figuras} % para que aparezca en el indice de contenidos
 \listoffigures % indice de figuras
+
 %%%% Índice de tablas
-%\cleardoublepage
-%\addcontentsline{toc}{chapter}{Lista de tablas} % para que aparezca en el indice de contenidos
-%\listoftables % indice de tablas
+\cleardoublepage
+%%%\addcontentsline{toc}{chapter}{Lista de tablas} % para que aparezca en el indice de contenidos
+\listoftables % indice de tablas
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -249,14 +304,17 @@ Some of the most used front-end technologies for the development of this applica
 \section{Marco General}
 \label{sec:marco-general}
 
-La competencia digital es aquella que implica el uso creativo, crítico y seguro de las tecnologías de la información y la comunicación para alcazar objetivos relacionados con el trabajo, la empleabilidad, el aprendizaje, el uso del tiempo libre, la inclusión y la participación en la sociedad.
+Vivimos dentro de una sociedad en constante cambio y esto se debe, en gran medida, al desarrollo tecnológico que está teniendo lugar en los último años.
+A consecuencia de la evolución, el ser humano debe adaptarse a lo que ésta demanda para poder seguir progresando y ofrecer, así, una buena educación.\newline
+ 
 
-Esta competencia supone, además de la adecuación a los cambios que introducen las nuevas tecnologiás en la alfabetización, la lectura y la escritura, un conjunto nuevo de conocimientos, habilidades y actitudes necesarias hoy en día para ser competente en un entorno digital.
+Con la introducción de las nuevas tecnologías y con el fin de mejorar la calidad educativa, la LOMCE, incorpora en las aulas la competencia digital. "La competencia digital es aquella que implica el uso de las tecnologías de la información y la comunicación para alcanzar objetivos relacionados con el trabajo, la empleabilidad, el aprendizaje y la participación en la sociedad. Igualmente precisa del desarrollo de diversas destrezas relacionadas con el acceso a la información, el procesamiento, la creación de contenidos y la resolución de problemas, tanto en contextos formales como informales". \cite{boe2015} \newline
 
-Igualmente precisa del desarrollo de diversas destrezas relacionadas con el acceso a la información, el procesamiento y uso para la comunicación, la creación de contenidos, la seguridad y la resolución de problemas, tanto en contextos formales como no formales e informales. La persona ha de ser capaz de hacer uso habitual de los recursos tecnológicos disponibles con el fin de resolver problemas reales de un modo eficiente, así como evaluar y seleccionar nuevas fuentes de información e innovaciones tecnológicas, a medida que van a apareciendo, en función d su utilidad para acometer tareas u objetivos específicos.
+Cada vez más, hay que concienciar a los niños de la importancia de la programación. Actualmente, se ha demostrado que con la programación se ayuda al desarrollo del pensamiento computacional, lo que contribuye al alcance de los objetivos fijados por la LOMCE pues el pensamiento computacional implica resolver problemas, diseñar sistemas y comprender el comportamiento humano, basándose en los conceptos fundamentales de la informática. \cite{Wing2006compthinking}\newline
 
+Así mismo, en un futuro no muy lejano, se solicitará tener fundamentos de programación para la mayoría de los puestos de trabajo, por ello, poco a poco, se está introduciendo la programación en las aulas. Sin embargo, al tratarse de algo totalmente nuevo, no todos los docentes disponen de los conocimientos básicos de la programación; muchos de ellos deben hacer un triple esfuerzo, aprendiendo a programar, enseñando a su vez a los alumnos y evaluando los programas realizados por el alumnado.\newline
 
-\subsection{El Pensamiento computacional.}
+En cualquier ámbito, no solo en el educativo, es indispensable disponer de los recursos adecuados para poder realizar bien tu trabajo. Tanto los alumnos como los docentes necesitan la incorporación de nuevas herramientas capaces de desarrollar la competencia tecnológica y el pensamiento computacional y plataformas capaces de facilitar a los maestros todo el proceso que este cambio conlleva; es en este punto cuando surge Dr. Pencilcode.
 
 
 \section{Marco de Referencia}
@@ -265,19 +323,20 @@ Igualmente precisa del desarrollo de diversas destrezas relacionadas con el acce
 
 Para poder entender correctamente este proyecto, antes de introducirlo, hay que mencionar las dos herramientas en las que está basado: Scratch y Dr.Scratch.\newline
 
-Scratch es en un lenguaje de programación formado por bloques y orientado a la enseñanza. Éste permite al usuario crear videojuegos, historias y animaciones sin necesidad de tener conocimientos - ni siquiera básicos - sobre programación, centrándose, únicamente, en la lógica del programa.\newline
+\textbf{Scratch} es en un lenguaje de programación formado por bloques y orientado a la enseñanza. Éste permite al usuario crear videojuegos, historias y animaciones sin necesidad de tener conocimientos - ni siquiera básicos - sobre programación, centrándose únicamente en la lógica del programa.\newline
 
-Hace un par de años, en el Grupo de Sistemas y Comunicaciones (Gsyc) de la Universidad Rey Juan Carlos (URJC), brotó la iniciativa de crear una herramienta - Dr. Scratch - destinada a analizar proyectos Scratch y a aportar realimentación sobre los diferentes aspectos del Pensamiento Computacional para potenciar, de esta forma, el aprendizaje de la programación.\newline
+Hace un par de años, en el Grupo de Sistemas y Comunicaciones (Gsyc) de la Universidad Rey Juan Carlos (URJC), brotó la iniciativa de crear una herramienta - \textbf{Dr. Scratch} - destinada a analizar proyectos Scratch y a aportar realimentación y soporte sobre los diferentes aspectos del Pensamiento Computacional para potenciar, de esta forma, el aprendizaje de la programación. \cite{mluz2016scratch}\newline
 
-Tras el gran éxito que esto supuso, mi tutor en este proyecto, Gregorio Robles, tuvo la gran idea de extender este prototipo de herramienta educativa a otros lenguajes de programación. El primer candidato para implementar dicha idea fue Pencil Code, lenguaje que sigue la linea de Scratch en cuanto a la programación con bloques.
-Pencil Code soporta CoffeeScript como lenguaje principal y, además, ofrece la posibilidad de escribir tu propio código. Se trata de un lenguaje de programación de propósito general por lo que el análisis de los proyectos Pencil Code será más complicado que el de los proyectos Scratch.\newline
+Tras el gran éxito que esto supuso, mi tutor en este proyecto, Gregorio Robles, tuvo la gran idea de extender este prototipo de herramienta educativa a otros lenguajes de programación. El primer candidato para implementar dicha idea fue \textbf{Pencil Code}, lenguaje que sigue la línea de Scratch en cuanto a programación con bloques.
+Pencil Code soporta CoffeeScript como lenguaje principal y, además, ofrece la posibilidad de escribir tu propio código. Al tratarse de un lenguaje de programación de propósito general, el análisis de los proyectos Pencil Code será más complicado que el de los proyectos Scratch.\newline
  
-La decisión de realizar la aplicación para este lenguaje de programación surgió gracias a Gregorio Robles tras ponerse en contacto con el creador de Pencil Code, David Bau, a quien le propuso la idea. David Bau nos remitió a Yana Malysheva, responsable de Pencil Code en Boston durante este año académico, con quien hemos trabajado, recibiendo retroalimentación y distintos puntos de vista, durante el desarrollo de este proyecto.\newline
+La decisión de desarrollar la aplicación para este lenguaje de programación surgió gracias a Gregorio Robles, tras ponerse en contacto con el creador de Pencil Code, David Bau, y proponerle la idea. Debido a su indisponibilidad, David Bau\footnote{\url{http://davidbau.com/}}, tuvo la amabilidad de remitirnos a Yana Malysheva\footnote{\url{https://sites.google.com/site/yanamalportfolio/home/pencil-code}}, responsable de Pencil Code en Boston durante el año académico 2016/2017, con quien hemos intercambiado diferentes puntos de vista acerca de la web y hemos mantenido contacto durante toda la realización del proyecto.\newline
 
-Para analizar un proyecto realizado con Pencil Code es necesario inspeccionar su código. Dr. Pencilcode guarda el código del programa en un JSON y analiza su contenido. La tarea de analizar toda la información del fichero JSON se atribuye al software \texttt{Coffee-mastery.py}, plugin que tuvo que desarrollarse en paralelo junto con Dr. Pencilcode para poder realizar dicho análisis.\newline
+Dr. Pencilcode guarda el código de los programas en un JSON y analiza su contenido. La tarea de analizar toda la información del fichero JSON se atribuye al software \textit{coffee-mastery.py}, plugin que tuvo que desarrollarse en paralelo junto con Dr. Pencilcode para poder realizar dicho análisis.\newline
 
 Por último, cabe destacar que la versión presentada en esta memoria no es más que
-la version BETA de la aplicación, Dr. Pencilcode es un proyecto incipiente al que se le podría sacar mucho partido y que podría seguir creciendo exponencialmente con la inclusión de nuevas funcionalidades e ideas.
+la version BETA de la aplicación; Dr. Pencilcode es un proyecto incipiente al que se le podría sacar mucho partido y que podría seguir creciendo exponencialmente con la inclusión de nuevas funcionalidades e ideas.
+\newpage
 
 \section{Estructura de la memoria}
 \label{sec:estructura}
@@ -286,9 +345,9 @@ Con el fin de facilitar la lectura de la memoria, se incluye esta sección donde 
 
 \begin{itemize}
 
-  \item \textbf{Introducción:} En este apartado, entre otras cosas, se enmarca y contextualiza el proyecto. Por otro lado, se da una explicación de como surgió Dr. Pencilcode y se indica la planificación temporal del mismo.
+  \item \textbf{Introducción:} En este apartado, entre otras cosas, se enmarca y contextualiza el proyecto y se indica como surgió Dr. Pencilcode.
     
-  \item \textbf{Objetivos:}  Capítulo en el que se determinan los objetivos generales y específicos que fueron fijados durante el desarrollo del proyecto.
+  \item \textbf{Objetivos:}  Capítulo en el que se determinan los objetivos generales y específicos que fueron fijados durante el desarrollo del proyecto y, además, se explica la planificación temporal del mismo.
 
   \item \textbf{Estado del arte:} En esta sección se enumeran las tecnologías y la arquitectura utilizada en el desarrollo del proyecto realizando una breve descripción de cada una de ellas.
  
@@ -322,7 +381,7 @@ Además, la finalidad de la plataforma es evaluar los programas creados con Penci
 
 Con este proyecto se pretende transmitir ciertos valores como la perseverancia, el superarse a sí mismo, y el querer seguir aprendiendo. Es una forma más atractiva de aprender a programar y de transmitir que la programación puede llegar a ser muy divertida.\newline
 
-En definitiva, se pretende adaptar la página Dr. Scratch al entorno Pencil Code (teniendo en cuenta que es un lenguaje de propósito general, mucho más complejo que Scratch) y hacer entender que se trata de una herramienta para aprender, no sólo evaluar.
+En definitiva, se pretende adaptar la página Dr. Scratch al entorno Pencil Code - teniendo en cuenta que es un lenguaje de propósito general, mucho más complejo que Scratch - y hacer entender que se trata de una herramienta para aprender, no sólo evaluar.
 
 
 \section{Objetivos específicos}
@@ -334,7 +393,7 @@ Como se ha mencionado anteriormente, Dr. Pencilcode sigue los pasos de Dr. Scrat
 
 \item \textbf{Adaptación de la implementación básica a Pencil Code}. El primer objetivo consistió en añadir y modificar código de Dr. Scratch para conseguir adaptar la página web a las necesidades de Pencil Code. 
 
-\item Para realizar esta adaptación fue necesaria la \textbf{creación de un Plugin} - Coffee-Mastery - capaz de analizar proyectos Pencil Code. Éste debería asignar una puntuación en función del grado de maestría de programación del usuario en las diferentes categorías disponibles: Move, Art, Text, Control, Sound, Operators
+\item Para realizar esta adaptación fue necesaria la \textbf{creación de un Plugin} - Coffee-Mastery - capaz de analizar proyectos Pencil Code. Éste debería asignar una puntuación en función del grado de maestría de programación del usuario en las diferentes categorías disponibles: Move, Art, Text, Control, Sound y Operators.
 
 \item Añadir \textbf{nuevas funcionalidades} y secciones a la página web - orientadas a Pecil Code - con el objetivo de seguir mejorando la plataforma.
 
@@ -350,7 +409,7 @@ Para lograr alcanzar estos objetivos fue necesaria la realización de un serie de
 
 \item Analizar proyectos Pencil Code mediante URL.
 
-\item Mejorar la página mostrada tras el análisis de un proyecto, incluir más dinamismo y elementos visuales con el objetivo de conseguir mayor inteligibilidad por parte del usuario.
+\item Mejorar la página mostrada tras el análisis de un proyecto e incluir más dinamismo y elementos visuales con el objetivo de conseguir mayor inteligibilidad por parte del usuario.
 
 \item Añadir bonus en las puntuaciones - incluyendo estrellas en el dashboard - por complejidad, por diversidad, por bloques duplicados, por uso de todas las categorías.
 
@@ -373,7 +432,7 @@ Para lograr alcanzar estos objetivos fue necesaria la realización de un serie de
 \section{Planificación temporal}
 \label{sec:estructura}
 
-Al igual que la mayoría de proyectos, el desarrollo de Pencil Code ha supuesto numerosas horas de trabajo. Se trata de un proyecto desarrollado únicamente por mi junto con el soporte de mi tutor, Gregorio Robles, y la retroalimentación de Yana Malysheva. Este proyecto abarca una duración aproximada de dos años (cursos académicos) pudiéndo divirse en dos fases principales.\newline
+Al igual que la mayoría de proyectos, el desarrollo de Pencil Code ha supuesto numerosas horas de trabajo. Se trata de un proyecto desarrollado únicamente por mí, junto con el soporte de mi tutor, Gregorio Robles, y la retroalimentación de Yana Malysheva. Este proyecto abarca una duración aproximada de dos años (cursos académicos) pudiéndo dividirse en dos fases principales.\newline
 
 
 \textbf{FASE I o Fase de Aprendizaje}:  engloba el primer año del proyecto, desde noviembre de 2015 hasta mayo de 2016. Antes de comenzar a desarrollar cualquier proyecto, lo mejor es conocer su contexto, documentarse, ordenar las ideas y entender el propósito general del mismo.  
@@ -392,8 +451,8 @@ En esta etapa los objetivos que se fijaron fueron los siguientes:
 \end{itemize}
 
 \textbf{FASE II o Fase de Desarrollo}: este periodo abarca desde Octubre de 2016, como fecha de inicio, hasta Marzo de 2017, fecha en la que comencé a redactar esta memoria.
-Fue en esta fase donde conseguimos ponernos en contacto con Yana Malysheva con quien intercambiamos diferentes ideas y opiniones via e-mail. A partir de aquí, comencé con el desarrollo completo de la web manteniéndola activa en el servidor.
-Los objetivos que se establecieron en esta fase son, prácticamente, todos los mencionados en el apartado de \textit{Objetivos específicos}.
+Fue en esta fase donde conseguimos ponernos en contacto con Yana Malysheva con quien intercambiamos diferentes ideas y opiniones vía e-mail. A partir de aquí, comencé con el desarrollo completo de la web manteniéndola activa en el servidor.
+Los objetivos que se establecieron en esta fase fueron, prácticamente, todos los mencionados en el apartado de \textit{Objetivos específicos}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -409,7 +468,7 @@ En esta sección se realizará una breve explicación de las bases tecnológicas, ar
 \section{Modelo Cliente-Servidor}
 \label{sec:cliente-servidor}
 
-El término cliente-servidor aparece en diferentes contextos dentro de la informática, uno de ellos es la arquitectura de red conocida como \textit{Arquitectura Cliente-Servidor} y utilizada en este proyecto. Se trata de un modelo para aplicaciones distribuidas - formadas por distintos elementos que se ejecutan en diferentes entornos - en el que las tareas se reparten entre clientes y servidores. Estos dos componentes interaccionan entre sí mediante peticiones y respuestas.
+El término cliente-servidor aparece en diferentes contextos dentro de la informática, uno de ellos es la arquitectura de red conocida como \textit{Arquitectura Cliente-Servidor} \cite{Liu2004dis} y utilizada en este proyecto. Se trata de un modelo para aplicaciones distribuidas - formadas por distintos elementos que se ejecutan en diferentes entornos - en el que las tareas se reparten entre clientes y servidores. Estos dos componentes interaccionan entre sí mediante peticiones y respuestas.
 
 \begin{itemize}
 
@@ -420,7 +479,6 @@ El término cliente-servidor aparece en diferentes contextos dentro de la informá
 
 El objetivo de la arquitectura cliente-servidor es proporcionar servicios que permitan compartir recursos a los usuarios de red.
 
-
 \begin{figure}[H]
    \centering
    \includegraphics[width=11.5cm, keepaspectratio]{img/arquitecturaCS.png}
@@ -428,7 +486,7 @@ El objetivo de la arquitectura cliente-servidor es proporcionar servicios que pe
    \label{figura:Architecture}
 \end{figure}
 
-La arquitectura de software de una aplicación distribuida, o una aplicación cliente-servidor, se puede dividir en tres capas: capa de presentación (\textit{front-end}), capa de lógica de negocio y capa de datos (\textit{back-end}). 
+La arquitectura de software de una aplicación distribuida, o una aplicación cliente-servidor, se puede dividir en tres capas: capa de presentación (\textit{front-end}), capa de lógica de aplicación y capa de servicio (\textit{back-end}). 
 
 En los siguientes puntos de la memoria se explicarán los términos front-end y back-end y se hará hincapié en las tecnologías utilizadas en cada una de las capas. 
 
@@ -443,15 +501,15 @@ Los mensajes HTTP son de \textbf{texto plano} y, generalmente, se estructuran en
 
 \begin{itemize}
 
-\item \textbf{Linea inicial}: ésta es diferente para peticiones y respuestas. Su labor es la de describir el mensaje especificando el recurso que se solicita, indicando el método y la versión HTTP utilizada, etc.
+\item \textbf{Línea inicial}: ésta es diferente para peticiones y respuestas. Su labor es la de describir el mensaje especificando el recurso que se solicita, indicando el método y la versión HTTP utilizada, etc.
 
-\item \textbf{Linea de cabecera}: Incluye información adicional -metadatos- sobre los mensajes de petición y respuesta. Los datos sueles ser listas de atributos con forma \textit{nombre:valor}. La cabecera acaba con una linea en blanco.
+\item \textbf{Línea de cabecera}: Incluye información adicional -metadatos- sobre los mensajes de petición y respuesta. Los datos sueles ser listas de atributos con forma \textit{nombre:valor}. La cabecera acaba con una línea en blanco.
 
-\item \textbf{Cuerpo (opcional)}: contiene cualquier tipo de datos. Los cuerpos de las peticiones llevan información al servidor, mientras que los de las respuestas llevan la información de vuelta al cliente. A diferencia de la linea inicial y la cabecera, el cuerpo puede incluir datos binarios (audio, imágenes, vídeo, etc) además de texto.
+\item \textbf{Cuerpo (opcional)}: contiene cualquier tipo de datos. Los cuerpos de las peticiones llevan información al servidor, mientras que los de las respuestas llevan la información de vuelta al cliente. A diferencia de la línea inicial y la cabecera, el cuerpo puede incluir datos binarios (audio, imágenes, vídeo, etc) además de texto.
 
 \end{itemize}
 
-En las solicitudes HTTP se pueden incluir una serie de métodos ya predefinidos. Los métodos se encuentran en la linea de inicio e indican al servidor la acción que debe realizar sobre el recurso indicado. Entre los más utilizados en este proyecto se encuentran:
+En las solicitudes HTTP se pueden incluir una serie de métodos ya predefinidos. Los métodos se encuentran en la línea de inicio e indican al servidor la acción que debe realizar sobre el recurso indicado. Entre los más utilizados en este proyecto se encuentran:
 
 \begin{enumerate}
 
@@ -461,7 +519,7 @@ En las solicitudes HTTP se pueden incluir una serie de métodos ya predefinidos. 
 
 \end{enumerate}
 
-Los mensajes enviados por el servidor incluyen un código de respuesta. Éste informa al cliente sobre el estado de la solicitud, si ha tenido existo o si se requiere alguna otra acción. Los más comunes son: \textbf{200 - OK} o \textbf{404 - Not Found} entre otros.
+Los mensajes enviados por el servidor incluyen un código de respuesta. Éste informa al cliente sobre el estado de la solicitud, si ha tenido éxito o si se requiere alguna otra acción. Los más comunes son: \textbf{200 - OK} o \textbf{404 - Not Found} entre otros.
  
 \begin{figure}[H]
    \centering
@@ -487,14 +545,14 @@ Las tecnologías más utilizadas para desarrollar el front-end de este proyecto ha
 
 
 \subsection{HTML}
-HTML (en inglés, HyperText Markup Language) es un lenguaje de etiquetas, también denominado lenguaje de marcado, con el que se pueden crear páginas y aplicaciones web. A través de las marcas o etiquetas, HTML permite dar estructura al texto dividiéndolo en secciones y párrafos, además de incorporar contenido multimedia en sitios web. Actualmente, se trata del estándar más utilizado por todos los navegadores.\newline
+HTML \cite{jav2008html} - en inglés, HyperText Markup Language - es un lenguaje de etiquetas, también denominado lenguaje de marcado, con el que se pueden crear páginas y aplicaciones web. A través de las marcas o etiquetas, HTML permite dar estructura al texto dividiéndolo en secciones y párrafos, además de incorporar contenido multimedia en sitios web. Actualmente, se trata del estándar más utilizado por todos los navegadores.\newline
 
 En general, por cada elemento, es necesario añadir una etiqueta de apertura junto con su respectiva etiqueta de cierre, ésta última no siempre necesaria. El contenido mostrado en la página será el escrito entre dichas etiquetas. Las etiquetas de apertura pueden incluir atributos, que proporcionan información adicional sobre el contenido del elemento.\newline
 
 Las páginas HTML se suelen dividir en dos secciones principales: la cabecera y el cuerpo, ambas partes delimitadas por sus correspondientes etiquetas $<$head$>$$<$/head$>$ y $<$body$>$$<$/body$>$.
 En la cabecera se incluye información relevante, no visible para el usuario, sobre la página web, como metadatos, enlaces a documentos externos o información acerca del estilo de la página, mientras que en el cuerpo se incorpora todo el contenido que el usuario puede ver en pantalla como texto y multimedia.\newline
 
-A continuación se muestra como sería la estructura básica de un archivo HTML: \newline
+A continuación se muestra cómo sería la estructura básica de un archivo HTML: \newline
 
 \begin{figure}[H]
    \centering
@@ -503,14 +561,13 @@ A continuación se muestra como sería la estructura básica de un archivo HTML: \n
    \label{figura:basic-html}
 \end{figure}
 
-
 \subsection{CSS}
 
-Las Hojas de estilo en cascada (cuyas siglas en inglés significan Cascading StyleSheets) describen como los elementos de un documento escrito en lenguaje de marcado, como puede ser HTML, deberían de ser mostrados o presentados en pantalla. Se utiliza principalmente para el diseño visual de la interfaz de usuario de páginas web, mejorando, así, su apariencia. \newline
+Las Hojas de estilo en cascada \cite{jav2008css} - cuyas siglas en inglés significan Cascading StyleSheets - describen como los elementos de un documento escrito en lenguaje de marcado, por ejemplo HTML, deberían ser mostrados o presentados en pantalla. Se utiliza principalmente para el diseño visual de la interfaz de usuario de páginas web, mejorando, así, su apariencia. \newline
 
 A pesar de que en los documentos HTML se puede definir el estilo de sus contenidos no es nada recomendable debido al costoso mantenimiento que esto acarrea. CSS tiene como objetivo marcar la separación del contenido del documento y la forma de presentación o aspecto de éste.\newline
 
-CSS consiste en un conjunto de reglas o normas. Para indicar que norma de estilo debe seguir un elemento HTML, dicho elemento debe identificarse con un atributo de tipo id o class que también será indicado en la regla que se le quiera aplicar.
+CSS consiste en un conjunto de reglas o normas. Para indicar qué norma de estilo debe seguir un elemento HTML, dicho elemento debe identificarse con un atributo de tipo id o class que también será indicado en la regla que se le quiera aplicar.
 Otra opción sería indicar la etiqueta deseada seguida de las reglas de estilo que se quieran incluir.\newline
 
 Algunas ventajas de utilizar CSS en nuestra web son:
@@ -524,7 +581,6 @@ Algunas ventajas de utilizar CSS en nuestra web son:
 \end{itemize}
 
 Independientemente de como se quieran aplicar las normas de estilo, es necesario incluir en el HTML la etiqueta $<$link$>$ para hacer referencia al documento css que se va a utilizar. 
-
 
 \begin{figure}[H]
  \centering
@@ -540,7 +596,7 @@ Independientemente de como se quieran aplicar las normas de estilo, es necesario
 
 \subsection{JavaScript}
 
-JavaScript, conocido comúnmente como JS, es un lenguaje de programación interpretado orientado a objetos que se utiliza principalmente para añadir dinamismo a las páginas web. A pesar de su similitud con el nombre del lenguaje de programación Java, no debe confundirse con éste ya que ambos tienen finalidades muy diferentes.\newline
+JavaScript \cite{jav2008js}, conocido comúnmente como JS, es un lenguaje de programación interpretado orientado a objetos que se utiliza principalmente para añadir dinamismo a las páginas web. A pesar de su similitud con el nombre del lenguaje de programación Java, no debe confundirse con éste ya que ambos tienen finalidades muy diferentes.\newline
 
 Proporciona al usuario un mayor control sobre el navegador, además de añadir mejoras en la interfaz, dotando a la web de una mayor usabilidad, interactividad y navegabilidad.
 
@@ -558,7 +614,7 @@ El DOM es una representación de todos los elementos que conforman una página web
 
 \begin{figure}[H]
    \centering
-   \includegraphics[width=12cm, keepaspectratio]{img/DOM.png}
+   \includegraphics[width=10.5cm, keepaspectratio]{img/DOM.png}
    \caption{Document Object Model}
    \label{figura:DOM}
 \end{figure}
@@ -584,26 +640,27 @@ Algunas de las características que hacen de Bootstrap una herramienta tan popula
 
 \begin{itemize}
 
-\item Se trata de una herramienta de código abierto, disponible en GitHub\footnote{\url{https://github.com/twbs/bootstrap}}, por lo que se puede usar de forma gratuita.
+\item Se trata de una herramienta de código abierto, disponible en GitHub\footnote{\url{https://github.com/twbs/bootstrap}} de forma gratuita.
 \item Tiene compatibilidad con la mayoría de los navegadores web.
 \item Desde la versión 2.0, soporta diseño web responsive. Esta funcionalidad favorece la adaptación dinámica de la interfaz al tamaño del dispositivo (ya sean tablets, teléfonos móviles, pantallas de ordenador, etc) que se esté utilizando para acceder al sitio web.
 \item Incluye Grid system, útil para diseñar y maquetar por columnas. Este sistema permite añadir hasta un total de 12 columnas en la página.
 
 \end{itemize}
 
+\newpage
+
 \section{Backend}
 \label{sec:backend}
 
 El back-end de una página web, también denominado capa de acceso a datos, se ejecuta en el lado del servidor. Éste es el encargado de analizar los datos de entrada del front-end y de realizar acciones tales como cálculos, procesamiento de la información, gestión de ficheros, interacciones de bases de datos, rendimiento, etc.
- 
-\pagebreak 
+  
 Las tecnologías elegidas en esta capa para desarrollo del proyecto han sido:
 
 \begin{itemize}
 
 \item \textbf{Python} como lenguaje de programación.
 \item \textbf{Django} como framework para la creación del sitio web.
-\item \textbf{Sqlite3} como base de datos.
+\item \textbf{MySQL} como base de datos.
 \item \textbf{CoffeLint} como analizador de código CoffeScript.
 \item \textbf{Servidor HTTP Apache} 
 
@@ -639,11 +696,11 @@ Algunas otras características de Django son:
 
 \begin{itemize}
 
-\item Seguro. Django tiene muy en cuenta la seguridad y ayuda a los desarrolladores a evitar errores como cross-site scripting y cross-site request forgery (csrf).
-\item Rápido y eficaz. Django fue diseñado para ayudar a los desarrolladores a crear sitios web lo más rápido posible.
-\item Sigue el principio de desarrollo de software Don't Repeat Yourself para evitar, así, la repetición de código.
-\item Soporta diferentes bases de datos entre las cuales están: PostgreSQL, MySQL, Oracle o SQLite.
-\item Multiplataforma: interopera en diversas plataformas informáticas. 
+\item \textbf{Seguro}. Django tiene muy en cuenta la seguridad y ayuda a los desarrolladores a evitar errores como cross-site scripting y cross-site request forgery (CSRF).
+\item \textbf{Rápido y eficaz}. Django fue diseñado para ayudar a los desarrolladores a crear sitios web lo más rápido posible.
+\item Sigue el principio de desarrollo de software \textbf{Don't Repeat Yourself} para evitar, así, la repetición de código.
+\item Soporta diferentes \textbf{bases de datos} entre las cuales están: PostgreSQL, MySQL, Oracle o SQLite.
+\item \textbf{Multiplataforma}: interopera en diversas plataformas informáticas. 
 
 \end{itemize}
 
@@ -653,7 +710,7 @@ Algunas otras características de Django son:
 Desarrollado por Guido van Rossum a finales de los ochenta y con el objetivo de mejorar y ampliar las funcionalidades del \textit{lenguaje de programación ABC}, \textbf{Python}, es un lenguaje de programación de alto nivel, interpretado y orientado a objetos que se caracteriza por su concisión, legibilidad y transparencia.
 Debe su nombre a los humoristas británicos \textit{Monthy Python}.\newline
 
-Python ofrece un amplio abanico de posibilidades, desde la programación web tanto en el lado del cliente como del servidor(Django), hasta la programación con bases de datos. Es considerado como uno de los lenguajes más populares en lo que al mundo de Open Source se refiere.
+Python ofrece un amplio abanico de posibilidades, desde la programación web tanto en el lado del cliente como del servidor (Django), hasta la programación con bases de datos. Es considerado como uno de los lenguajes más populares en lo que al mundo de Open Source se refiere.
 
 Se conocen tres versiones, 1.X, 2.X y 3.X, la primera de ellas obsoleta, cuyos últimos lanzamientos han sido las versiones 1.6, 2.7 y 3.4 respectivamente. Desde la versión 2.1, Python posee una licencia compatible con \textit{GNU General Public License}, denominada \textbf{Python Software Foundation License}, además, desde entonces, Python Software Foundation es la fundación sin ánimo de lucro responsable del código del lenguaje y de procesos como la administración de los derechos de autor y la obtención de fondos para la comunidad Python. \newline
 % derechos de propiedad intelectual
@@ -673,7 +730,7 @@ Las características más significativas de este lenguaje son:
 
 \end{itemize}
 
-Python está ganando terreno, fue situado en tercera posición por el IEEE en el \textit{ranking} de los lenguajes de programación más populares del 2016\footnote{\url{http://spectrum.ieee.org/computing/software/the-2016-top-programming-languages}}. 
+Python está ganando terreno. Fue situado en tercera posición por el IEEE en el \textit{ranking} de los lenguajes de programación más populares del 2016\footnote{\url{http://spectrum.ieee.org/computing/software/the-2016-top-programming-languages}}. 
 
 \subsection{Servidor HTTP Apache}
 
@@ -707,9 +764,9 @@ Algunas característica de MySQL son:
 \item Diseñado para ser \textbf{multihilos}, capaz ejecutar múltiples hilos de ejecución, usando hilos kernel. 
 
 \item Soporta gran cantidad de datos, hasta 50 millones de registros.
-\item Es rápido y fácil de usar.
+\item Es \textbf{rápido} y \textbf{fácil} de usar.
 \item Los clientes usan sockets TCP/IP para conectarse al servidor MySQL.
-\item Es fiable, ofrece fuerte protección de datos mediante sistemas de contraseñas y privilegios.
+\item Es \textbf{fiable}, ofrece fuerte protección de datos mediante sistemas de contraseñas y privilegios.
 \item Es \textbf{multiplataforma}, se puede implementar en distintas plataformas informáticas\footnote{\url{https://www.mysql.com/support/supportedplatforms/database.html}}.\end{itemize}
 
 \pagebreak
@@ -731,6 +788,7 @@ CoffeLint es un analizador estático de programas escritos en CoffeScript, se tra
 
 Por defecto, CoffeLint asegura que el programa esté escribiendo en CoffeScript idiomático, sin embargo, todas las reglas son opcionales y configurables, por lo que se pueden modificar para adaptarse a las necesidades o estilo de programación del usuario.
 
+\newpage
 \section{Pencil Code}
 \label{sec:pencilcode}
 
@@ -750,7 +808,7 @@ Con ayuda de un editor, Pencil Code permite dibujar, tocar música, crear juegos 
 
 La pantalla de la web está dividida en dos partes, en la mitad izquierda se encuentra el código fuente mientras que en la derecha se muestra la salida del programa.
 Pencil Code ofrece la posibilidad de programar de dos formas diferentes, usando bloques o escribiendo código. Mientras que los programadores avanzados optan por escribir en los lenguajes estándar Javascript, CoffeeScript y HTML, los principiantes, pueden editar esos mismos lenguajes haciendo uso de bloques. 
-Para poder programar a tu gusto, Pencil Code tiene habilitados dos botones, uno de ellos para seleccionar el lenguaje en el que quieres trabajar y el otro para pasar de la programación con bloques a texto - y viceversa.\newline
+Para poder programar a tu gusto, Pencil Code tiene habilitados dos botones, uno de ellos para seleccionar el lenguaje en el que quieres trabajar y el otro para pasar de la programación con bloques a texto y viceversa.\newline
 
 \begin{figure}[H]
    \centering
@@ -788,7 +846,7 @@ Entre las ocho categorías, mencionadas anteriormente, se encuentran: Move, Art, 
    \label{figura:categorias}
 \end{figure}
 
-Cualquier programa creado con Pencil Code es público por lo que puede ser visto, compartido y copiado por cualquier usuario. De esta forma, es posible aprender a programar apoyándose en proyectos realizados por otros usuarios además de colaborar y aportar tus ideas a estos.
+Cualquier programa creado con Pencil Code es público por lo que puede ser visto, compartido y copiado por cualquier usuario. De esta forma, es posible aprender a programar apoyándose en proyectos realizados por otros usuarios además de colaborar y aportar tus ideas a los mismos.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -799,22 +857,22 @@ Cualquier programa creado con Pencil Code es público por lo que puede ser visto,
 \cleardoublepage
 \chapter{Diseño e implementación}
 
-Como ya se ha mencionado, Dr. Pencilcode se basó en Dr. Scratch. Para poder realizar este proyecto, primero tuve que entender como funcionaba la aplicación de Dr. Scratch y, para ello, también tuve que aprender a utilizar Django.
+Como ya se ha mencionado en varias ocasiones, Dr. Pencilcode se basó en Dr. Scratch. Para poder realizar este proyecto, primero tuve que entender como funcionaba la aplicación de Dr. Scratch y, para ello, también tuve que aprender a utilizar Django.
 
-Dr. Pencilcode ha ido evolucionando con el paso del tiempo gracias a la colaboración de mi tutor, Gregorio Robles, y Yana Malysheva\footnote{\url{https://sites.google.com/site/yanamalportfolio/home/pencil-code}}, responsable de Pencil Code en Boston.
+Dr. Pencilcode ha ido evolucionando con el paso del tiempo gracias a la colaboración de mi tutor, Gregorio Robles, y Yana Malysheva, responsable de Pencil Code en Boston.\newline
 
-En este capítulo se explicará la arquitectura general de la plataforma y las distintas fases por las que ha pasado el proyecto, centrándome en la última versión para detallar las funcionalidades de la aplicación.
+En este capítulo se explicará la arquitectura general de la plataforma y las distintas fases por las que ha pasado el proyecto, centrándome únicamente en la última versión para detallar las funcionalidades de la aplicación.
 
 
 \section{Arquitectura general} 
 \label{sec:arquitectura}
 
 Todo lo que se explica en los siguientes apartados se encuentra disponible en la web gracias a la máquina virtual que me proporcionó la universidad Rey Juan Carlos;
-En ella tuve que instalar Apache, lo que me llevo un tiempo, para poder gestionar la aplicación. Actualmente, la web se puede encontrar con el dominio \url{http://drpencilcode.libresoft.info/} o con la IP \url{http://193.147.79.206/}.
+en ella tuve que instalar Apache, lo que me llevo un tiempo, para poder gestionar la aplicación. Actualmente, la web se puede encontrar con el dominio \url{http://drpencilcode.libresoft.info/} o con la IP \url{http://193.147.79.206/}.
 
 \subsection{Django} 
 
-Como ya se ha mencionado en el capítulo 3 de la memoria, Dr. Pencilcode es una plataforma desarrollada con Django. En la \textit{Figura ~\ref{figura:folder}}, se puede observar el árbol de ficheros y directorios que componen la aplicación.
+Como ya se ha explicado en el capítulo 3 de la memoria, Dr. Pencilcode es una plataforma desarrollada con Django \cite{djangoGirls}. En la \textit{Figura ~\ref{figura:folder}}, se puede observar el árbol de ficheros y directorios que componen la aplicación.
 
 
 \begin{figure}[H]
@@ -824,12 +882,12 @@ Como ya se ha mencionado en el capítulo 3 de la memoria, Dr. Pencilcode es una p
    \label{figura:folder}
 \end{figure}
 
-Apache es el encargado de enviar las peticiones HTTP a Django. El fichero \texttt{urls.py} es el encargado de gestionar dichas peticiones y de comprobar si el recurso solicitado por el cliente es servido o no por nuestra aplicación.
-\texttt{urls.py} no es más que una lista en la que se especifican los recursos que son servidor por Dr. Pencilcode.
+Apache tiene como objetivo enviar las peticiones HTTP a Django. El fichero \texttt{urls.py} es el encargado de gestionar dichas peticiones y de comprobar si el recurso solicitado por el cliente es servido o no por nuestra aplicación.
+\texttt{urls.py} no es más que una lista en la que se especifican los recursos que son servidos por Dr. Pencilcode.
 
 En el caso de que el recurso solicitado - la URL - no coincida con ninguno de los indicados en \texttt{urls.py}, se redirigirá al usuario a la página principal; en caso contrario, Django, pasará la petición a la función asociada de \texttt{views.py}.
 
-Una vez encontrada la función asociada a dicha URL, ejecutado el código y procesado toda la información, dicha función deberá devolver una página de respuesta HTML - template - renderizada con los datos que se quieren mostrar en dicho HTML. La arquitectura general se muestra en la \textit{Figura \ref{fig:architecture}}
+Una vez encontrada la función asociada a dicha URL, ejecutado el código y procesado toda la información, dicha función deberá devolver una página de respuesta HTML - template - renderizada con los datos que se quieren mostrar en el HTML. La arquitectura general se muestra en la \textit{Figura \ref{fig:architecture}}
 
 \begin{figure}[H]
   \centering
@@ -851,13 +909,13 @@ SQLite es la base de datos que se usa en Django por defecto y es la que se utili
   \label{fig:bbdd}
 \end{figure}
 
-Como se puede observar en la \textit{Figura \ref{fig:bbdd}}, existen algunas tablas cuyos nombres comienzan por app, auth y django. Estas dos últimas, son tablas que se definen automáticamente por Django y que se encargan de funcionalidades como las sesiones, las migraciones, la autenticación, etc. Las tablas que comienzan por app son las que realmente se crean en \texttt{models.py}.
+Como se puede observar en la \textit{Figura \ref{fig:bbdd}}, existen algunas tablas cuyos nombres comienzan por app, auth y django; estas dos últimas, son tablas que se definen automáticamente por Django y que se encargan de funcionalidades como las sesiones, las migraciones, la autenticación, etc. Las tablas que comienzan por app son las que realmente se crean en el fichero \texttt{models.py}.
 
 
 \section{Página principal}
 \label{sec:mainpage}
 
-Lo primero que se observa nada más acceder a al sitio web es el diseño mostrado en la \textit{Figura ~\ref{fig:mainpage}}. En esta sección se hace una breve presentación de la herramienta y se muestra el cuadro en el que se introduce la URL para dar paso al análisis del proyecto.
+Lo primero que se observa nada más acceder al sitio web es el diseño mostrado en la \textit{Figura ~\ref{fig:mainpage}}. En esta sección se hace una breve presentación de la herramienta y se muestra el cuadro en el que se introduce la URL para dar paso al análisis del proyecto.
 
 \begin{figure}[H]
   \centering
@@ -870,7 +928,7 @@ La mayoría de los niños podrían no saber lo que es una URL, para solucionar esta
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=9cm, keepaspectratio]{img/queesurl.png}
+  \includegraphics[width=8cm, keepaspectratio]{img/queesurl.png}
   \caption{Ventana modal URL}
   \label{fig:ventanaurl}
 \end{figure}
@@ -883,8 +941,8 @@ A parte de esta visión, la página principal incluye 4 secciones más donde se hab
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=14cm, keepaspectratio]{img/mainWhy.png}
-  \caption{Página principal Why}
+  \includegraphics[width=13cm, keepaspectratio]{img/mainWhy.png}
+  \caption{Sección Why}
   \label{fig:mainwhy}
 \end{figure}
 
@@ -892,17 +950,17 @@ A parte de esta visión, la página principal incluye 4 secciones más donde se hab
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=14cm, keepaspectratio]{img/mainHow.png}
-  \caption{Página principal How}
+  \includegraphics[width=13cm, keepaspectratio]{img/mainHow.png}
+  \caption{Sección How}
   \label{fig:mainhow}
 \end{figure}
 
-\item \textbf{Comming soon} En esta sección se explican las nuevas funcionalidades que se quieren incluir a la aplicación en un futuro cercano, como puede ser la traducción de la página a distintos idiomas, la introducción de cuentas de usuarios o la creación de un plug-in en Firefox y Chrome para tener Dr. Pencilcode siempre a la vista. Por el momento, ninguna de ellas ha sido implementada, aunque espero continuar con este proyecto y realizarlas en un futuro cercano. El aspecto de esta sección se muestra en la \textit{Figura~\ref{fig:mainfeatures}}.
+\item \textbf{Comming soon} En esta sección se explican las nuevas funcionalidades que se quieren incluir a la aplicación en un futuro cercano, como puede ser la traducción de la página a distintos idiomas, la introducción de cuentas de usuarios o la creación de un plug-in en Firefox y Chrome para tener Dr. Pencilcode siempre a la vista. Por el momento, ninguna de ellas ha sido implementada, aunque espero continuar con este proyecto y realizarlas próximamente. El aspecto de esta sección se muestra en la \textit{Figura~\ref{fig:mainfeatures}}.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=14cm, keepaspectratio]{img/mainComing.png}
-  \caption{Página principal New Features}
+  \caption{Sección New Features}
   \label{fig:mainfeatures}
 \end{figure}
 
@@ -912,7 +970,7 @@ A parte de esta visión, la página principal incluye 4 secciones más donde se hab
 \begin{figure}[H]
   \centering
   \includegraphics[width=14cm, keepaspectratio]{img/mainContact.png}
-  \caption{Página principal Contact}
+  \caption{Sección Contact}
   \label{fig:maincontact}
 \end{figure}
 
@@ -924,7 +982,7 @@ En la acualidad, el equipo de Dr. Pencilcode no dispone de cuentas de e-mail y T
 
 Durante el diseño de la página web fue necesario detenerme a pensar cómo quería que se analizaran los proyectos de Pencil Code. Quizá, ésta fue una de las partes que más tiempo me llevó ya que al tratarse de un lenguaje de programación de propósito general y por tanto, un lenguaje más complejo, no tenía claro como podía enfocar dicha evaluación.\newline
 
-La rúbrica inicial es muy diferente a la que ésta disponible actualmente en la web. A lo largo de mi año de trabajo, se han ido realizando diferentes modificaciones hasta llegar al método de evaluación que estábamos buscando. Se pueden distinguir tres fases principales en el desarrollo de la rúbrica:
+La rúbrica inicial es muy diferente a la que está disponible actualmente en la web. A lo largo de mi año de trabajo, se han ido realizando diferentes modificaciones hasta llegar al método de evaluación que estábamos buscando. Se pueden distinguir tres fases principales en el desarrollo de la rúbrica:
 
 
 \subsection{FASE I}
@@ -985,14 +1043,13 @@ Una vez más, tras probar la rúbrica, decidimos volver a cambiar la forma de eval
 
 \item Debido a la capacidad de Pencil Code de cambiar el modo de programación de bloques a código, el número total de bloques por categoría no era posible indicarlo con determinación ya que el usuario podía escribir tanto código como quisiera, incluyendo bloques no visibles en la interfaz de cada categoría.
 
-\item Este método, realmente, no evaluaba los proyectos, si no que mostraba el porcentaje de bloques que se habían utilizado. Desde mi punto de vista, esta rúbrica no impulsaba tanto el deseo de mejorar y aprender a programar como lo podía hacer la rúbrica de la fase 1 (con niveles y puntuaciones).
+\item Este método, realmente, no evaluaba los proyectos, si no que mostraba el porcentaje de bloques que se habían utilizado. Desde mi punto de vista, esta rúbrica no impulsaba tanto el deseo de mejorar y aprender a programar como lo podía hacer la rúbrica de la fase I (con niveles y puntuaciones).
 
 \end{enumerate}
  
-
 \subsection{FASE III}
 
-Para tener en cuenta todas las posibilidades, se buscó información sobre todos los bloques que se podían utilizar en cada categoría, incluyendo tanto los que aparecen por defecto en Pencil Code como los que no se muestran en la interfaz. Se introdujeron de nuevo los niveles y las puntuaciones y se cambió de porcentajes a fracciones. \newline
+Para tener en cuenta todas las posibilidades, se buscó información sobre todos los bloques que se podían utilizar en cada categoría, incluyendo tanto los que aparecen por defecto en Pencil Code como los que no se muestran en la interfaz. Se introdujeron de nuevo los niveles y las puntuaciones y se pasó de porcentajes a fracciones. \newline
 
 La rúbrica final de Dr. Pencilcode y la que se encuentra disponible actualmente en la web es la que se explica a continuación:
 
@@ -1001,7 +1058,7 @@ La rúbrica final de Dr. Pencilcode y la que se encuentra disponible actualmente 
 \item En cada categoría se puede obtener un máximo de 3 puntos, dependiendo del tipo de bloque utilizado en dichas categorías, se podrán obtener 1, 2 o 3 puntos.
 \item Sumando los puntos obtenidos en cada categoría se puede llegar a obtener un total de 18 puntos.
 \item La puntuación máxima se consigue usando bloques de nivel 3 en todas las categorías y obteniendo todos los bonus.
-\item En función de los puntos obtenidos, el nivel de programación del usuario puede ser: Basico, intermedio, avanzado o experto, mostrado en la \textit{Tabla \ref{tabla:clasif3}}.
+\item En función de los puntos obtenidos, el nivel de programación del usuario puede ser: Básico, intermedio, avanzado o experto, mostrado en la \textit{Tabla \ref{tabla:clasif3}}.
 
 \end{itemize}
 
@@ -1047,7 +1104,7 @@ Al tratarse de la primera rúbrica, la apariencia del dashboard era muy similar a
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=14cm, keepaspectratio]{img/fase1dashboard.png}
+  \includegraphics[width=11.5cm, keepaspectratio]{img/fase1dashboard.png}
   \caption{Dashboard Fase I}
   \label{fig:dashboardf1}
 \end{figure}
@@ -1056,7 +1113,16 @@ Al tratarse de la primera rúbrica, la apariencia del dashboard era muy similar a
 
 \item \textbf{Cabecera superior}: esta sección incluía el logo de Dr. Pencilcode, presentaba iconos con enlaces a algunas redes sociales de nuestro equipo como e-mail y Twitter y, además, contenía un botón de ayuda - \textit{Tour}\footnote{\url{http://bootstraptour.com/}} - encargado de explicar cada una de las secciones del dashboard. 
 
-\item \textbf{Puntos y nivel}: mostraba la puntuación total adquirida sobre 18 junto con el nivel obtenido (basic, developing o proficiency). En esta sección también se ofrecía la posibilidad de publicar la puntuación en Twitter, tal y como se muestra en la \textit{Figura ~\ref{fig:twitter}}.
+\item \textbf{Puntos y nivel}: mostraba la puntuación total adquirida sobre 18 junto con el nivel obtenido (basic, developing o proficiency). En esta sección también se ofrecía la posibilidad de publicar la puntuación en Twitter, tal y como se muestra en la \textit{Figura ~\ref{fig:twitter}}.\newline
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=6cm, keepaspectratio]{img/twitter.png}
+  \caption{Publicación en Twitter}
+  \label{fig:twitter}
+\end{figure}
+
 
 \item \textbf{Tabla de puntuaciones}: aquí se mostraban las puntuaciones parciales de cada uno de los aspectos del pensamiento computacional. Como se puede observar en la imagen, las habilidades de \textit{Sincronización} y \textit{Paralelismo} aparecían vacías debido a que no estaban definidas para Pencil Code. Además, incluía un enlace para poder volver al proyecto Pencil Code y seguir con la programación.
 
@@ -1064,16 +1130,18 @@ Al tratarse de la primera rúbrica, la apariencia del dashboard era muy similar a
 
 \end{enumerate}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=7cm, keepaspectratio]{img/twitter.png}
-  \caption{Publicación en Twitter}
-  \label{fig:twitter}
-\end{figure}
 
+\newpage
 \subsection{FASE II}
 
-El cambio de rúbrica pasando del análisis de los aspectos del pensamiento computacional al análisis de las principales categorías de Pencil Code - Move, Art, Sound, Text, Control, Operators - conllevó la realización de varias modificaciones en el dashboard.
+El cambio de rúbrica pasando del análisis de los aspectos del pensamiento computacional al análisis de las principales categorías de Pencil Code - Move, Art, Sound, Text, Control, Operators - conllevó la realización de varias modificaciones en el dashboard, como se puede observar en la \textit{Figura \ref{fig:dashboardf2}}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=16cm, keepaspectratio]{img/fase2dashboard.png}
+  \caption{Dashboard Fase II}
+  \label{fig:dashboardf2}
+\end{figure}
 
 En cuanto a las 4 secciones principales:
 
@@ -1089,12 +1157,7 @@ En cuanto a las 4 secciones principales:
 
 \end{enumerate}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=16cm, keepaspectratio]{img/fase2dashboard.png}
-  \caption{Dashboard Fase II}
-  \label{fig:dashboardf2}
-\end{figure}
+
 
 Además, para que los usuario pudieran obtener más información acerca de su programa, se añadió una \textbf{nueva sección} \textit{Blocks Details} en la que se mostraban las categorías y los bloques utilizados en cada una de ellas. En el caso de que en alguna de las categorías no se hubiera utilizado ningún bloque se indicaba con un \textbf{Not used} asociado a dicha categoría. Para poder ver esta sección los usuarios tenían que hacer scroll en la pantalla; su diseño se puede observar en la \textit{Figura ~\ref{fig:detallesf2}}.
 
@@ -1109,13 +1172,6 @@ Además, para que los usuario pudieran obtener más información acerca de su progr
 
 Con la nueva y última modificación del método de evaluación se volvió a cambiar el diseño del dashboard. Además de los cambios en la secciones, se añadieron nuevas implementaciones y un mayor número de elementos visuales para dotar a la web de mayor inteligibilidad, véase \textit{Figura ~\ref{fig:dashboardf3}}. 
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=14cm, keepaspectratio]{img/Fase3dashboard.png}
-  \caption{Dashboard Fase III}
-  \label{fig:dashboardf3}
-\end{figure}
-
 En cuanto a las secciones previamente definidas:
 
 \begin{enumerate}
@@ -1124,7 +1180,7 @@ En cuanto a las secciones previamente definidas:
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=14cm, keepaspectratio]{img/help.png}
+  \includegraphics[width=8cm, keepaspectratio]{img/help.png}
   \caption{Tour Dashboard}
   \label{fig:Tourdashboard}
 \end{figure}
@@ -1140,8 +1196,15 @@ Además, el hecho de tener una sección dedicada únicamente a los enlaces de las p
 
 \end{enumerate}
 
-A esta altura del proyecto, surgió la idea de crear un formulario para recopilar diferentes opiniones sobre la web y, además, añadir un diploma que pudiera descargarse.
-Por ello, se decidió habilitar dos nuevos botones, uno de ellos para redirigir al formulario y otro para descargar el certificado.\newline
+A esta altura del proyecto, surgió la idea de crear un formulario para recopilar diferentes opiniones sobre la web y añadir un diploma que pudiera descargarse.
+Por ello, se decidió habilitar dos nuevos botones, uno de ellos para redirigir al formulario y otro para descargar el certificado. En este momento, el aspecto de la página era el mostrado en la \textit{Figura \ref{fig:dashboardf3}}. \newline
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=13cm, keepaspectratio]{img/Fase3dashboard.png}
+  \caption{Dashboard Fase III}
+  \label{fig:dashboardf3}
+\end{figure}
 
 Finalmente, se llevó a cabo una última modificación que dio lugar al diseño actual de la plataforma, disponible en la web \url{http://drpencilcode.libresoft.info/}.
 
@@ -1168,21 +1231,20 @@ La última versión del dashboard es la que se muestran en las \textit{Figuras \re
 \end{figure}
 
 
-
+\newpage
 \section{Análisis de proyectos Pencil Code}
 \label{sec:analisis}
 
-A pesar de la gran evolución que ha tenido el proyecto, a partir de ahora, me centraré únicamente en la Fase III - ya que es la que está implementada actualmente y es así como funciona realmente la aplicación.\newline
+A pesar de la gran evolución que ha tenido el proyecto, a partir de ahora, me centraré únicamente en la Fase III ya que es la que está implementada actualmente y es así como funciona realmente la aplicación.\newline
 
-Al igual que Dr.Scratch realiza el análisis apoyándose en plugins de Hairball, era necesario crear un nuevo plugin, \texttt{coffee-mastery.py}, para llevar a cabo la implementación de la rúbrica de Dr.Pencilcode. En esta sección se explica como se analizan los proyectos, desde que se introduce la URL hasta que se muestran los resultados en el dashboard.\newline
+Al igual que Dr.Scratch realiza el análisis apoyándose en plugins de Hairball, era necesario crear un nuevo plugin, \texttt{coffee-mastery.py}, para llevar a cabo la implementación de la rúbrica de Dr.Pencilcode. En esta sección se explica cómo se analizan los proyectos, desde que se introduce la URL hasta que se muestran los resultados en el dashboard.\newline
 
 El análisis de los proyectos sigue una estructura similar a la de Dr. Scratch, sin embargo, se han tenido que hacer modificaciones en las funciones \textit{selector}, \textit{processStringUrl}, \textit{sendRequestgetJSON}, \textit{handler$\_$upload} y \textit{analyzeProject} que son las principales encargadas de realizar todo el proceso de análisis.
 
 
-
 \subsection{Coffee-Mastery}
 
-Como se ha comentado, con el objetivo de implementar la rúbrica de Dr. Pencilcode se desarrolló \texttt{coffee-mastery.py}; en él se definen seis funciones - una por categoría - donde se encuentran los conjuntos\footnote{NOTA: Un conjunto es una lista no ordenada y sin elementos repetidos. Los conjuntos soportan operaciones matemáticas como la unión, la intersección y la diferencia. La función set() puede utilizarse para crear conjuntos.} (básico, intermedio y avanzado) en los que se determinan a que niveles pertenecen los bloques de cada categoría. Coffee-mastery es el que realmente se encarga de analizar los proyectos de Pencil Code, su finalidad es devolver información del proyecto analizado.\newline
+Como se ha comentado, con el objetivo de implementar la rúbrica de Dr. Pencilcode se desarrolló \texttt{coffee-mastery.py}; en él se definen seis funciones - una por categoría - donde se encuentran los conjuntos\footnote{NOTA: Un conjunto es una lista desordenada y sin elementos repetidos. Los conjuntos soportan operaciones matemáticas como la unión, la intersección y la diferencia. La función set() puede utilizarse para crear conjuntos \cite{pythonset}.} (básico, intermedio y avanzado) en los que se determinan a que niveles pertenecen los bloques de cada categoría. Coffee-mastery es el que realmente se encarga de analizar los proyectos de Pencil Code; su finalidad es devolver información del proyecto analizado.\newline
 
 Para analizar un proyecto con Coffee-mastery se debe introducir el comando \texttt{python coffee-mastery.py colors.coffee}, especificando como parámetro el nombre del archivo CoffeeScript. La salida del programa es la que se muestra en la \textit{Figura \ref{fig:coffee-mastery}}.
 
@@ -1209,14 +1271,14 @@ El proceso que sigue Coffee-mastery hasta conseguir toda esta información es el 
 
 \item Se llama seis veces a la función \textit{check()},  una vez por cada categoría. Ésta se encarga de realizar la intersección entre el set() del código del programa - tokenSet - y los Sets() básico, intermedio y avanzado de esa categoría. Si en alguna categoría no se encuentran elementos comunes con el código del programa, la función le asignará un \textit{False}; en caso contrario, se devolverá un diccionario con los niveles y los bloques utilizados en el nivel correspondiente.
 
-\item Por último, se llama a la función \textit{niveles()} y ésta, a su vez, a la función \textit{checking()}. \textit{Checking()} comprueba mediante intersección de Sets que niveles se han utilizado en el programa y devuelve el nivel más alto. \textit{Niveles()} recoge esta información y crea un diccionario con las categorías y sus puntuaciones.
+\item Por último, se llama a la función \textit{niveles()} y ésta, a su vez, a la función \textit{checking()}. \textit{Checking()} comprueba mediante intersección de Sets qué niveles se han utilizado en el programa y devuelve el nivel más alto. \textit{Niveles()} recoge esta información y crea un diccionario con las categorías y sus puntuaciones.
 
 \end{enumerate}
 
 
 \subsection{Análisis por URL}
 
-A la hora de introducir la URL en Dr.Scratch, si ésta no es correcta, pueden aparecer 3 tipos de errores: si la url está mal escrita, si la URL/proyecto no existe en los servidores de Scratch o si en la URL no se ha introducido ningún valor.
+A la hora de introducir la URL en Dr.Scratch, si ésta no es correcta, pueden aparecer 3 tipos de errores: si la URL está mal escrita, si la URL/proyecto no existe en los servidores de Scratch o si en la URL no se ha introducido ningún valor.
 
 
 \begin{figure}[H]
@@ -1234,7 +1296,7 @@ A la hora de introducir la URL en Dr.Scratch, si ésta no es correcta, pueden apa
  \label{f:animales}
 \end{figure}
 
-En Dr.Pencilcode, además de esos tres, se incluye un nuevo error, \textbf{code$\_$error}, el cual se invoca cuando el código del programa Pencil Code no está correctamente escrito. Para poder lanzar este error se hace uso de la herramienta CoffeeLint que, como se ha explicado en el capítulo anterior, es un analizador estático de código CoffeeScript.
+En Dr.Pencilcode, además de esos tres, se incluye un nuevo error, \textbf{code$\_$error}, el cual se invoca cuando el código del programa Pencil Code no está correctamente escrito. Para poder lanzar este error se hace uso de la herramienta CoffeeLint que, como se ha explicado en el capítulo anterior, es un analizador estático de código CoffeeScript.\newline
 
 \begin{figure}[H]
   \centering
@@ -1243,7 +1305,7 @@ En Dr.Pencilcode, además de esos tres, se incluye un nuevo error, \textbf{code$\
   \label{fig:codeerror}
 \end{figure}
 
-
+\newpage
 A continuación explicaré, a grandes rangos, los pasos que se siguen para el análisis de los proyectos y, posteriormente, mostraré el diagrama de flujo para tener una idea más clara de las funciones implicadas y su propósito.
 
 \begin{figure}[H]
@@ -1257,7 +1319,7 @@ A continuación explicaré, a grandes rangos, los pasos que se siguen para el anál
 
 \item Una vez introducida la URL, se llama a la función \textit{selector()}; ésta se encarga de devolver la página \texttt{dashboard.html} (renderizada con un diccionario que contiene toda la información del análisis de ese proyecto) o la página 	\texttt{main.html} (con alguno de los 4 errores comentados anteriormente) en función de si ha habido o no problemas a la hora de ejecutar el resto de funciones.
 
-\item \textit{urlUnregistered()} comprueba si el formulario es válido y llama a las funciones \textit{ProcessStringUrl()}, \textit{sendRequestgetJSON()} y \textit{analyzeProject()}. Al final, devuelve un diccionario a \textit{selector()} con informacion del proyecto o información de error (code$\_$error, no$\_$exists y error analyzing) dependiendo de si las funciones a las que llama se ejecutan correctamente o no.
+\item \textit{urlUnregistered()} comprueba si el formulario es válido y llama a las funciones \textit{ProcessStringUrl()}, \textit{sendRequestgetJSON()} y \textit{analyzeProject()}. Al final, devuelve un diccionario a \textit{selector()} con información del proyecto o información de error (code$\_$error, no$\_$exists y error analyzing) dependiendo de si las funciones a las que llama se ejecutan correctamente o no.
 
 \item \textit{processStringUrl()} comprueba si la URL introducida por el usuario está correctamente escrita; si es así, devolverá la URL con el siguiente formato: \url{http://sarabc.pencilcode.net/load/first}, en caso contrario, devolverá un error de ID (id$\_$error).
 
@@ -1265,13 +1327,15 @@ A continuación explicaré, a grandes rangos, los pasos que se siguen para el anál
 
 \item \textit{handler$\_$upload()} se encarga de comprobar si el fichero *.json exite ya en la carpeta de \textit{/uploads}. En caso de que exista, el documento recibirá un nombre con formato \textbf{*(num).json} donde num es el número de veces que el documento original está repetido.
  
-\item \textit{AnalyzeProject()} es la encargada de analizar los proyectos haciendo uso del plugin coffee-mastery y la función \textit{procMastery()}. Comprueba si el código del programa esta bien escrito usando CoffeeLint. Finalmente, devuelve el resultado del análisis en un diccionario, que es el que llega a \textit{selector()}.
+\item \textit{AnalyzeProject()} es la encargada de analizar los proyectos haciendo uso del plugin coffee-mastery y la función \textit{procMastery()}. Comprueba si el código del programa está bien escrito usando CoffeeLint. Finalmente, devuelve el resultado del análisis en un diccionario, que es el que llega a \textit{selector()}.
 
 \item \textit{ProcMastery()} se encarga de montar el diccionario y guardar todo en la base de datos; suma los puntos, comprueba los bonus llamando a \textit{CalculoBonus()} y comprueba los mensajes de ayuda de la sección \textit{What can you improve?} llamando a \textit{wtimprove()}. 
 
 \end{enumerate}
 
 En la \textit{Figura ~\ref{fig:analisis}} se puede observar el diagrama de flujo del análisis de los proyectos por URL.
+
+\newpage
 
 \begin{figure}[H]
    \centering
@@ -1283,9 +1347,9 @@ En la \textit{Figura ~\ref{fig:analisis}} se puede observar el diagrama de flujo
 \section{Páginas de ayuda}
 \label{sec:ayuda}
 
-Al tratarse de una herramienta educativa, en Dr. Pencilcode, se incluyen nueve nuevas páginas de ayuda que dan soporte a los usuarios. Estas páginas son extensiones del documento \texttt{base.html} que es el que contiene el diseño básico de todo el conjunto. A través de \texttt{base.html} o \texttt{dashboard.html}, podemos acceder a cada una de las páginas de ayuda via enlace. \texttt{base.html}. 
+Al tratarse de una herramienta educativa, en Dr. Pencilcode, se incluyen nueve nuevas páginas de ayuda que dan soporte a los usuarios. Estas páginas son extensiones del documento \texttt{base.html} que es el que contiene el diseño básico de todo el conjunto. A través de \texttt{base.html} o \texttt{dashboard.html}, podemos acceder a cada una de las páginas de ayuda vía enlace. 
 
-Seis de ellas (\texttt{Move.html}, \texttt{Art.html}, \texttt{Text.html}, \texttt{Sound.html}, \texttt{Control.html}, \texttt{Operators.html}) contienen información sobre las diferentes categorías de Pencil Code. Estas páginas son muy útiles cuando el usuario quiere subir su puntuación; en ellas se incluyen varios ejemplos, con las respectivas explicaciones del programa, de como utilizar los bloques de cada nivel. Además, al final de cada página, se añaden enlaces a páginas externas donde hay gran cantidad de programas con los que pueden aprender.\newline
+Seis de ellas (\texttt{Move.html}, \texttt{Art.html}, \texttt{Text.html}, \texttt{Sound.html}, \texttt{Control.html}, \texttt{Operators.html}) contienen información sobre las diferentes categorías de Pencil Code. Estas páginas son muy útiles cuando el usuario quiere subir su puntuación; en ellas se incluyen varios ejemplos, con las respectivas explicaciones del programa, de cómo utilizar los bloques de cada nivel. Además, al final de cada página, se añaden enlaces a páginas externas donde hay gran cantidad de programas con los que pueden aprender.\newline
 
 Para acceder a las páginas de ayuda se debe pinchar en los enlaces (con el nombre de las categorías) que aparecen tras analizar un proyecto. El diseño de estas seis páginas es similar y es el que se observa en la \textit{Figura~\ref{fig:helpmove}}
 
@@ -1297,7 +1361,7 @@ Para acceder a las páginas de ayuda se debe pinchar en los enlaces (con el nombr
 \end{figure}
 
 Por lo general, cuando una persona está siendo evaluada, ésta prefiere conocer los métodos de evaluación (rúbrica) que están siendo utilizados.
-Las tres páginas restantes (\texttt{Points.html}, \texttt{Bonus.html} y \texttt{Blocks.html}) están destinadas a la explicación de los bloques existentes por categoría y de como Dr.Pencilcode evalúa o analiza los proyectos, es decir, determina las puntuaciones y los bonus que se asignan a cada proyecto. \newline
+Las tres páginas restantes (\texttt{Points.html}, \texttt{Bonus.html} y \texttt{Blocks.html}) están destinadas a mostrar los bloques existentes por categoría y a la explicación de cómo Dr.Pencilcode evalúa o analiza los proyectos, es decir, determina las puntuaciones y los bonus que se asignan a cada proyecto. \newline
 En la \textit{Figura~\ref{fig:helpoints}} se muestra, como ejemplo, el diseño de la página \texttt{Points.html}:
 
 \begin{figure}[H]
@@ -1321,9 +1385,9 @@ La idea principal era que cada usuario que utilizara Dr. Pencilcode rellenara el
 
 
 Una vez diseñada la encuesta, nos pusimos en contacto con Yana para conocer su opinión acerca de esta nueva idea.
-Como se puede leer en el correo \textit{Apéndice~\ref{app:emails}}, había preocupación en las palabras y expresiones utilizadas en la primera versión del formulario. Al tratarse de una encuesta enfocada especialmente a niños, Yana sugirió modificar las preguntas y adaptar las palabras con el fin de que fueran comprensibles para los más pequeños.
+Como se puede leer en los correos del \textit{Apéndice~\ref{app:emails}}, había preocupación en las palabras y expresiones utilizadas en la primera versión del formulario. Al tratarse de una encuesta enfocada especialmente a niños, Yana sugirió modificar las preguntas y adaptar las palabras con el fin de que fueran comprensibles para los más pequeños.
 
-Además, para no utilizar papel y hacer todo más fácil y rápido, decidimos añadir una nueva funcionalidad implementando el formulario en la página web.\newline
+Así mismo, para no utilizar papel y hacer todo más fácil y rápido, decidimos añadir una nueva funcionalidad implementando el formulario en la página web.\newline
 
 Para acceder al formulario, simplemente, se tiene que pinchar en el botón \textbf{Help us} habilitado en la página de análisis del proyecto o \textit{Dashboard}. Al pinchar, se abre una nueva pestaña en el navegador dando paso a la página del formulario \textbf{Helpus.html}. 
 
@@ -1339,8 +1403,8 @@ El diseño de la página del formulario es el mostrado en la \textit{Figura~\ref{f
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=18cm, keepaspectratio]{img/FormularioPage.png}
-  \caption{Pagina de formulario}
+  \includegraphics[width=14cm, keepaspectratio]{img/formpage.png}
+  \caption{Página de formulario}
   \label{fig:PagForm}
 \end{figure}
 
@@ -1350,7 +1414,7 @@ Para desarrollar esta funcionalidad se crea una nueva función en views.py llamad
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=16cm, keepaspectratio]{img/mensajes.png}
+  \includegraphics[width=14cm, keepaspectratio]{img/mensajes.png}
   \caption{Mensajes del formulario}
   \label{fig:PagForm}
 \end{figure}
@@ -1372,7 +1436,7 @@ Para poder comprender el trabajo de la función \textbf{getFeedback}, se muestra 
 \section{Certificado}
 \label{sec:Certificado}
 
-Con la intención de motivar aun más a los niños, Dr. Pencilcode, ofrece la posibilidad de conseguir tu propio certificado; en él se indica el nombre del proyecto que se ha analizado y la puntuación asociada al mismo, tal y como se muestra en la \textit{Figura ~\ref{fig:certificado}}. 
+Con la intención de motivar aún más a los niños, Dr. Pencilcode, ofrece la posibilidad de conseguir tu propio certificado; en él se indica el nombre del proyecto que se ha analizado y la puntuación asociada al mismo, tal y como se muestra en la \textit{Figura ~\ref{fig:certificado}}. 
 Son varios los documentos/funciones que participan en la generación del diploma: 
 
 \begin{itemize}
@@ -1389,7 +1453,7 @@ Son varios los documentos/funciones que participan en la generación del diploma:
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=12cm, keepaspectratio]{img/certificado.png}
+  \includegraphics[width=14cm, keepaspectratio]{img/certificado.png}
   \caption{Certificado Dr. Pencilcode}
   \label{fig:certificado}
 \end{figure}
@@ -1403,7 +1467,7 @@ Finalmente, \textbf{download$\_$certificate} crea una respuesta HTTP con MIME ap
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=12cm, keepaspectratio]{img/esquemacertif.png}
+  \includegraphics[width=14cm, keepaspectratio]{img/esquemacertif.png}
   \caption{Esquema certificado}
   \label{fig:certificado}
 \end{figure}
@@ -1411,11 +1475,13 @@ Finalmente, \textbf{download$\_$certificate} crea una respuesta HTTP con MIME ap
 \section{Diferencias entre Dr. Pencilcode y Dr. Scratch}
 \label{sec:pencilvsscrath}
 
-Algunas funcionalidades de Dr. Pencilcode ya existían previamente en Dr. Scratch, sin embargo, para poder adaptarlas a Pencil Code, la mayor parte los archivos se han tenido que modificar. 
+Algunas funcionalidades de Dr. Pencilcode ya existían previamente en Dr. Scratch, sin embargo, para poder adaptarlas a Pencil Code, la mayor parte de los archivos se han tenido que modificar. \newline
 
-A estas modificaciones se incluyen también las nuevas funcionalidades y plugins desarrollados en este proyecto, como las 9 páginas de ayuda (\textit{Move.html}, \textit{Art.html}, \textit{Text.html}, \textit{Sound.html}, \textit{Control.html}, \textit{Operators.html}, \textit{Points.html}, \textit{Bonus.html} y \textit{Blocks.html}), las nuevas secciones en la página de \textit{dashboard.html} (bonus, botones, details, etc), el formulario y el plugin \textit{coffee-mastery.py}.  
+A estas modificaciones se incluyen también las nuevas funcionalidades y plugins desarrollados en este proyecto, como las 9 páginas de ayuda (\textit{Move.html}, \textit{Art.html}, \textit{Text.html}, \textit{Sound.html}, \textit{Control.html}, \textit{Operators.html}, \textit{Points.html}, \textit{Bonus.html} y \textit{Blocks.html}), las nuevas secciones en la página de \textit{dashboard.html} (bonus, botones, details, etc), el formulario y el plugin \textit{coffee-mastery.py}. \newline 
 
-Para poder demostrar que, realmente, ha habido modificaciones. He realizado una comparación entre el repositiorio de la última versión de Dr. Pencilcode y el repositorio master de Dr. Scratch.
+Para poder demostrar que, realmente, ha habido modificaciones, he realizado una comparación entre el repositorio de la última versión de Dr. Pencilcode y el repositorio master de Dr. Scratch.\newline
+
+\newpage
 
 \texttt{cd drPencilcode}
 
@@ -1444,8 +1510,81 @@ En la \textit{Figura \ref{fig:diff}} se puede observar el número de documentos y
 \cleardoublepage
 \chapter{Resultados}
 
+Una vez explicadas las tecnologías utilizadas para el desarrollo de la web y todas las funcionalidades que ésta dispone, es importante dejar claro cómo funciona la herramienta, qué información recibe el aprendiz del análisis de sus proyectos y qué puede hacer con dicha información, en definitiva, qué ofrece Dr. Pencilcode. Por ello, en este capítulo, se simularán distintas situaciones ejemplo de análisis de proyectos para observar el resultado.\newline
+
+El primer programa a analizar es el mostrado en la \textit{Figura \ref{fig:ejemplo1}}. Se trata de un ejemplo sencillo por lo que se espera que la puntuación alcanzada no sea demasiado alta. El código hace que la tortuga dibuje una flor y luego la rellene de color naranja.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{img/flor1.png}
+  \caption{Programa Ejemplo 1}
+  \label{fig:ejemplo1}
+\end{figure}
 
 
+Una vez introducida la URL del programa en la herramienta, el resultado obtenido y el que se muestra en la página \texttt{dashboard.html} tras realizar el análisis es el mostrado a continuación:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{img/analisisflor1.png}
+  \caption{Análisis Ejemplo 1}
+  \label{fig:analisisejemplo1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=14cm, keepaspectratio]{img/detailsflor1.png}
+  \caption{Sección Details Ejemplo 1}
+  \label{fig:detailsejemplo1}
+\end{figure}
+
+
+Con la información que se muestra por pantalla, el usuario tiene la opción de investigar y navegar por cada una de las secciones del dashboard.  Se puede observar que la puntuación del proyecto es de 4 debido a la escasez de bloques utilizados. 
+La sección \textit{What can you improve?} da consejos sobre como mejorar tu programa; en este caso, hace hincapié en trabajar las categorías de Operators, Text y Sound y anima al usuario a conseguir todos los Bonus.\newline
+
+Si el usuario no sabe como mejorar su código, éste puede pinchar en los enlaces de las categorías que conducen a las páginas de ayuda; en ellas, puede encontrar ejemplos de varios programas donde se explica como utilizar los bloques, así como diversas tablas donde se indican los niveles a los que pertenece cada bloque. Por ejemplo, en la página de ayuda de la categoría \textbf{Control} se incluye un ejemplo de como llegar al nivel 3 de la misma mediante el uso de funciones. Véase la \textit{Figura \ref{fig:level3control}}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=14cm, keepaspectratio]{img/controll3.png}
+  \caption{Nivel 3 de Control}
+  \label{fig:level3control}
+\end{figure}
+
+Una vez que se han consultado las páginas de ayuda, el usuario puede regresar al código de su proyecto para seguir mejorándolo. Para mejorar el programa Ejemplo 1, se han añadido los bloques de: función -$>$ (nivel 3 de Operators), click (nivel 3 de Control), jumpto (nivel 3 de Move)... Ahora, la tortuga dibuja flores de colores aleatorios en las coordenadas donde el usuario hace click con el ratón, \textit{Figura \ref{fig:ejemplo2}}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=14cm, keepaspectratio]{img/flor2.png}
+  \caption{Programa Ejemplo 2}
+  \label{fig:ejemplo2}
+\end{figure}
+
+Una vez añadidos los bloques convenientes, se vuelve a analizar el proyecto. El nuevo resultado es el que se muestra en las \textit{Figuras \ref{fig:analisisejemplo2} y \ref{fig:detailsejemplo2}}.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=16cm, keepaspectratio]{img/analisisflor2.png}
+  \caption{Análisis Ejemplo 2}
+  \label{fig:analisisejemplo2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=14cm, keepaspectratio]{img/detailsflor2.png}
+  \caption{Sección Details Ejemplo 2}
+  \label{fig:detailsejemplo2}
+\end{figure}
+
+Como se puede observar, la puntuación del programa ha pasado de 4 a 13. Además de mejorar las puntuaciones específicas de 3 categorías, se han conseguido Bonus por diversidad, complejidad y repetición de bloque. Aun así, el usuario podría seguir mejorando el código añadiendo bloques de Text y Sonido como se indica en la sección \textit{What can you improve?}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{img/flowerscertif.png}
+  \caption{Certificado Ejemplo 2}
+  \label{fig:certifejemplo2}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1463,7 +1602,7 @@ En esta sección hablaré sobre los objetivos que se han logrado alcanzar y los qu
 \section{Consecución de objetivos}
 \label{sec:consecucion-objetivos}
 
-En primer lugar, el objetivo general de este proyecto era crear una aplicación web capaz de analizar los programas esritos en Pencil Code (CoffeeScript) a la par que se daba soporte y consejos para que los usuarios siguieran mejorando sus habilidades como programadores. A pesar de que la herramienta no ha sido probada en aulas reales, se puede decir que este objetivo sí se ha cumplido.
+En primer lugar, el objetivo general de este proyecto era crear una aplicación web capaz de analizar los programas escritos en Pencil Code (CoffeeScript) a la par que se daba soporte y consejos para que los usuarios siguieran mejorando sus habilidades como programadores. A pesar de que la herramienta no ha sido probada en aulas reales, se puede decir que este objetivo sí se ha cumplido.
 
 En cuanto a los objetivos específicos:
  
@@ -1473,7 +1612,7 @@ En cuanto a los objetivos específicos:
 
 \item \textbf{Creación de un Plugin.} Ligado al primer objetivo. Para poder realizar el análisis de los programas Pencil Code se tuvo que crear el plugin \texttt{Coffee-mastery.py} encargado de ofrecer información sobre los bloques utilizado y las puntuaciones; objetivo que también se ha cumplido.
 
-\item \textbf{Añadir nuevas funcionalidades y secciones a la página web}. En este objetivo no se especificó un número concreto de adiciones. Las novedades que se llevaron a cabo para alcanzar dicho objetivo fueron: la implementación de un formulario, el diseño de 9 páginas de ayuda, los bonus, cambio de apariencia del dashboard incluyendo 3 nuevas secciones.  
+\item \textbf{Añadir nuevas funcionalidades y secciones a la página web}. En este objetivo no se especificó un número concreto de adiciones. Las novedades que se llevaron a cabo para alcanzar dicho objetivo fueron: la implementación de un formulario, el diseño de 9 páginas de ayuda, la inserción de bonus y el cambio de apariencia del dashboard incluyendo 3 nuevas secciones.  
 
 \item \textbf{Aplicación en producción}. Con gran esfuerzo y después de varios intentos, se consiguió subir la web al servidor. A pesar de haber estado disponible durante todo este tiempo, no ha sido posible completar al 100$\%$ este objetivo debido a que la aplicación no ha sido probada todavía por ningún usuario y, por lo tanto, no se ha recibido ningún tipo de retroalimentación por parte de ellos.
 La idea principal era que, una vez terminada la web, los alumnos de Yana probaran nuestra plataforma ya que, al fin y al cabo, son ellos los que trabajan con Pencil Code.
@@ -1493,7 +1632,7 @@ A medida que he ido trabajando y avanzando en el proyecto, he sido testigo del v
 
 \item \textbf{Informática II:} Al igual que Informática I, esta asignatura continuó con mi formación como programadora, aunque el lenguaje con el que trabajé fue Ada y no el utilizado en este proyecto (Python), fue muy útil para seguir mejorando mis habilidades y conocimientos.
 
-\item \textbf{Arquitectura de Internet:} fue la primera que cursé sobre el campo de las Redes de Ordenadores e Internet. En concreto, la asignatura me enseñó como está estructurada la red, así como las arquitecturas de los principales protocolos de redes de ordenadores.
+\item \textbf{Arquitectura de Internet:} fue la primera que cursé sobre el campo de las Redes de Ordenadores e Internet. En concreto, la asignatura me enseñó cómo está estructurada la red, así como las arquitecturas de los principales protocolos de redes de ordenadores.
 
 \item \textbf{Sistemas Telemáticos para Medios Audiovisuales:} siguiendo con los protocolos, aquí conocí el funcionamiento del protocolo HTTP, entre otros.
 \item \textbf{Protocolos para la transmisión de Audio y Vídeo en Internet:} fundamental para la realización de este proyecto ya que fue aquí donde aprendí a programar en Python y gracias a la cual he podido llevar un seguimiento más sencillo en el desarrollo del fichero views.py.
@@ -1522,13 +1661,13 @@ Entre ellos cabe destacar el aprendizaje de nuevas tecnologías - nunca antes vis
 
 \item \textbf{Conceptos avanzados de Python}: A medida que el proyecto iba avanzando, he mejorado mis habilidades de programadora en Python utilizando nuevas estructuras y nuevos módulos como \textit{sets} y \textit{expresiones regulares} (regex).
 
-\item \textbf{Servidor Apache y maquinas virtuales.} Nunca antes había subido una web a un servido por lo que, al igual que con Django, tuve que aprender de forma autodidacta a instalar y configurar el servidor web Apache.
+\item \textbf{Servidor Apache y maquinas virtuales.} Nunca antes había subido una web a un servidor por lo que, al igual que con Django, tuve que aprender de forma autodidacta a instalar y configurar el servidor web Apache.
 
 \end{enumerate}
 
 No todo lo aprendido está relacionado con las tecnologías. Participar en este proyecto, ligado a \textit{Scratch} y \textit{Dr.Scratch}, me dio la oportunidad de formar parte de diversos talleres orientados a niños y personas con discapacidad donde daba soporte y consejos sobre programación.\newline 
 
-Con esto, entra en juego un nuevo concepto que nunca antes había escuchado, el \textbf{pensamiento computacional}. He descubierto que con ayuda de los conceptos básicos de la programación es posible aprender a resolver problemas de la vida cotidiana, analizando la información, organizándola, identificando posible soluciones de forma algorítmica (pasos ordenados), etc. La introducción de la programación en la educación promueve el desarrollo del pensamiento computacional.\newline
+Con esto, entra en juego un nuevo concepto que nunca antes había escuchado, el \textbf{pensamiento computacional}. He descubierto que con ayuda de los conceptos básicos de la programación es posible aprender a resolver problemas de la vida cotidiana, analizando la información, organizándola, identificando posibles soluciones de forma algorítmica (pasos ordenados), etc. La introducción de la programación en la educación promueve el desarrollo del pensamiento computacional.\newline
 
 Estos eventos, escasos pero intensos, me ayudaron a desenvolverme un poco más como persona e impulsaron mi deseo de seguir creciendo con este proyecto con el fin de enseñar lo útil que puede llegar a ser la programación en la enseñanza.\newline
 
@@ -1540,7 +1679,7 @@ Estos eventos, escasos pero intensos, me ayudaron a desenvolverme un poco más co
    \label{figure:FICOD}
 \end{figure}
 
-Por último, he aprendido a realizar evaluaciones objetivas de los proyectos analizados. Quizás, esta parte es la que más tiempo me ha llevado pues la creación de una \textbf{rúbrica}, la evaluación de una tarea, engloba numerosas variables que hay que tener en cuenta. Esto me ha ayudado a ver las cosas desde el punto de vista del docente y no del alumno.
+Por último, he aprendido a realizar evaluaciones objetivas de los proyectos analizados. Quizás, esta parte es la que más tiempo me ha llevado pues la creación de una \textbf{rúbrica}, la evaluación de una tarea, engloba numerosas variables que hay que tener en cuenta. Esta tarea me ha ayudado a ver las cosas desde el punto de vista del docente y no del alumno.
 
 
 \section{Trabajos futuros}
@@ -1560,7 +1699,7 @@ Existen muchas funcionalidades que podrían añadirse a Dr.Pencilcode para que fue
 
 \item \textbf{Mejorar el plugin coffee-mastery}. En lugar de tratar los bonus en el fichero \texttt{views.py} se deberían calcular todas las puntuaciones en dicho plug-in.
 
-\item Por último, una buena vía para comprobar que Dr. Pencilcode cumple su labor y da buenos resultados, sería llevar la \textbf{plataforma a las aulas} españolas. Aunque, para poder realizarlo, sería necesario que Pencil Code se popularizará en nuestro país.
+\item Por último, una buena vía para comprobar que Dr. Pencilcode cumple su labor y da buenos resultados, sería llevar la \textbf{plataforma a las aulas} españolas aunque, para poder realizarlo, sería necesario que Pencil Code se popularizará en nuestro país.
 
 \end{enumerate}
 
@@ -1583,6 +1722,50 @@ Se cierra una etapa de mi vida para dar comienzo a otras nuevas, de las que esto
 \chapter{Información Extra}
 \section{E-mails con Yana}
 \label{app:emails}
+
+En este anexo se muestran algunos de los e-mails que se intercambiaron con David Bau y Yana Malysheva sobre el desarrollo de Dr.Pencilcode
+
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=14cm, keepaspectratio]{img/DavidBau.png}
+   \caption{E-mail David Bau}
+   \label{figure:bau}
+\end{figure}
+
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=12cm, keepaspectratio]{img/Yana1email.png}
+   \caption{Primer e-mail de Yana}
+   \label{figure:mail1yana}
+\end{figure}
+
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=14cm, keepaspectratio]{img/fase1mail.png}
+   \caption{E-mail sobre las categorías de la Fase I}
+   \label{figure:mailcategorias}
+\end{figure}
+
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=12cm, keepaspectratio]{img/helpagesmail.png}
+   \caption{E-mail sobre las páginas de ayuda}
+   \label{figure:mailhelp}
+\end{figure}
+
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=12cm, keepaspectratio]{img/emailsurvey.png}
+   \caption{E-mail sobre el formulario}
+   \label{figure:mailsurvey}
+\end{figure}
+
+
 
 \section{Formulario Dr. Pencilcode}
 \label{app:formulario}
