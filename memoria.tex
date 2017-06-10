@@ -17,7 +17,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[a4paper, 12pt]{book}
+\documentclass[a4paper, 12pt, openany]{book}
 %\usepackage[T1]{fontenc}
 
 \usepackage[spanish, es-tabla]{babel}
@@ -39,7 +39,7 @@
 \usepackage{acronym}
 
 \title{Memoria del Proyecto}
-\author{Nombre del autor}
+\author{Nombre de la autora}
 
 \renewcommand{\baselinestretch}{1.5}  %% Interlineado
 
@@ -173,7 +173,7 @@ A mis hermanos, Alex y Nuria, que siempre sacáis lo mejor de mí. Sois el regalo 
 
 Gracias a mis amigas de siempre, Cristina, Barbara y Cristina, que a pesar de seguir rumbos distintos y no vernos a menudo siempre han estado al pie del cañón, apoyándome cuando más lo necesitaba y soportando mis batallas.
 
-También quiero agradecer a mis amigos de la universidad, sin los cuales, llegar hasta este punto no hubiera sido posible. Gracias, a Raquel y Alba, compañeras de estudio y de vida, por haberme levantado cuando ya no podía más y por haber luchado conmigo hasta el final. Estoy orgullosa de vosotras. A Luismo, Miguel, Diego y Diana por sacarme una sonrisa siempre que os veo. Sé que sois para siempre.
+También quiero agradecer a mis amigos de la universidad, sin los cuales, llegar hasta este punto no hubiera sido posible. Gracias a Raquel y Alba, compañeras de estudio y de vida, por haberme levantado cuando ya no podía más y por haber luchado conmigo hasta el final. Estoy orgullosa de vosotras. A Luismo, Miguel, Diego y Diana por sacarme una sonrisa siempre que os veo. Sé que sois para siempre.
 
 Gracias a mi segunda casa, Suecia, por haberme enseñado a ser independiente y a valorar aún más lo que se tiene, por darme la posibilidad de conocer a gente tan maravillosa que, en tan poco tiempo, me ha ayudado a crecer como persona y, por haberme enseñado grandes lecciones. Aunque estéis lejos siempre os llevo conmigo.
 
@@ -1247,13 +1247,13 @@ El análisis de los proyectos sigue una estructura similar a la de Dr. Scratch, s
 
 Como se ha comentado, con el objetivo de implementar la rúbrica de Dr. Pencilcode se desarrolló \texttt{coffee-mastery.py}; en él se definen seis funciones - una por categoría - donde se encuentran los conjuntos\footnote{NOTA: Un conjunto es una lista desordenada y sin elementos repetidos. Los conjuntos soportan operaciones matemáticas como la unión, la intersección y la diferencia. La función set() puede utilizarse para crear conjuntos \cite{pythonset}.} (básico, intermedio y avanzado) en los que se determinan a que niveles pertenecen los bloques de cada categoría. Coffee-mastery es el que realmente se encarga de analizar los proyectos de Pencil Code; su finalidad es devolver información del proyecto analizado.\newline
 
-Para analizar un proyecto con Coffee-mastery se debe introducir el comando \texttt{python coffee-mastery.py colors.coffee}, especificando como parámetro el nombre del archivo CoffeeScript. La salida del programa es la que se muestra en la \textit{Figura \ref{fig:coffee-mastery}}.
+Para analizar un proyecto con Coffee-mastery se debe introducir el comando \texttt{python coffee-mastery.py colors.coffee}, especificando como parámetro el nombre del archivo CoffeeScript. La salida del programa es la que se muestra en la \textit{Figura \ref{fig:salidacoffee}}.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=16cm, keepaspectratio]{img/salidacoffemastery.png}
   \caption{Salida de coffee-mastery.py}
-  \label{fig:coffee-mastery}
+  \label{fig:salidacoffee}
 \end{figure}
 
 Como se puede observar, coffee-mastery ofrece información sobre los bloques que se han utilizado en cada una de las categorías, indicándose también el nivel al que pertenece cada bloque; los bloques duplicados y el número de veces que se ha repetido cada uno de ellos y, por último, el número total de puntos que se ha obtenido en cada categoría.
@@ -1313,7 +1313,7 @@ A continuación explicaré, a grandes rangos, los pasos que se siguen para el anál
   \centering
   \includegraphics[width=12cm, keepaspectratio]{img/funciones.jpg}
   \caption{Relación entre funciones.}
-  \label{fig:coffee-mastery}
+  \label{fig:funciones}
 \end{figure}
 
 \begin{enumerate}
@@ -1334,16 +1334,7 @@ A continuación explicaré, a grandes rangos, los pasos que se siguen para el anál
 
 \end{enumerate}
 
-En la \textit{Figura ~\ref{fig:analisis}} se puede observar el diagrama de flujo del análisis de los proyectos por URL.
-
-\newpage
-
-\begin{figure}[H]
-   \centering
-   \includegraphics[width=17cm, keepaspectratio]{img/analisis.png}
-   \caption{Análisis por URL}
-   \label{fig:analisis}
-\end{figure}
+En la \textit{Figura \ref{fig:analisis}} del \textit{Apéndice \ref{app:diagrama}} se puede observar el diagrama de flujo del análisis de los proyectos por URL.
 
 \section{Páginas de ayuda}
 \label{sec:ayuda}
@@ -1400,13 +1391,13 @@ Para acceder al formulario, simplemente, se tiene que pinchar en el botón \textb
 \end{figure}
 
 El motivo de abrir una nueva pestaña, es el de facilitar a los usuarios el poder contestar a las preguntas a la vez que analizan sus proyectos, investigan y navegan por la aplicación web. 
-El diseño de la página del formulario es el mostrado en la \textit{Figura~\ref{fig:PagForm}}
+El diseño de la página del formulario es el mostrado en la \textit{Figura~\ref{fig:PaginaForm}}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=14cm, keepaspectratio]{img/formpage.png}
   \caption{Página de formulario}
-  \label{fig:PagForm}
+  \label{fig:PaginaForm}
 \end{figure}
 
 Para desarrollar esta funcionalidad se crea una nueva función en views.py llamada \textit{getFeedback()}. Una vez que el usuario pulsa el botón \textbf{Submit} se lleva a cabo una petición HTTP POST con el recurso /helpus. El documento urls.py es el encargado de enlazar con la función \textit{getFeedback()} de views.py. \newline
@@ -1425,19 +1416,14 @@ En el caso de que alguno de los campos no esté completo o no coincida con lo ind
 
 El siguiente paso es comprobar que los campos de \textit{name} y \textit{user} no existen ya en un mismo registro de la base de datos. Si todo es correcto, se guardarán los datos en la BBDD y se mostrará por pantalla el \textit{mensaje success}, en caso contrario, se pondrá data$\_$exist a True y, al llamar al template, se mostrará por pantalla el \textit{mensaje danger} indicando el error.\newline
 
-Para poder comprender el trabajo de la función \textbf{getFeedback}, se muestra su algoritmo a continuación:
+Para poder comprender el trabajo de la función \textbf{getFeedback}, se muestra su algoritmo en la \textit{Figura \ref{fig:PagForm}} del \textit{Apéndice \ref{app:diagrama}}.
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=14cm, keepaspectratio]{img/formulario.jpg}
-  \caption{Algoritmo de la función getFeedback.}
-  \label{fig:PagForm}
-\end{figure}
+
 
 \section{Certificado}
 \label{sec:Certificado}
 
-Con la intención de motivar aún más a los niños, Dr. Pencilcode, ofrece la posibilidad de conseguir tu propio certificado; en él se indica el nombre del proyecto que se ha analizado y la puntuación asociada al mismo, tal y como se muestra en la \textit{Figura ~\ref{fig:certificado}}. 
+Con la intención de motivar aún más a los niños, Dr. Pencilcode, ofrece la posibilidad de conseguir tu propio certificado; en él se indica el nombre del proyecto que se ha analizado y la puntuación asociada al mismo, tal y como se muestra en la \textit{Figura \ref{fig:certificado}}. 
 Son varios los documentos/funciones que participan en la generación del diploma: 
 
 \begin{itemize}
@@ -1481,8 +1467,6 @@ Algunas funcionalidades de Dr. Pencilcode ya existían previamente en Dr. Scratch
 A estas modificaciones se incluyen también las nuevas funcionalidades y plugins desarrollados en este proyecto, como las nueve páginas de ayuda (\textit{Move.html}, \textit{Art.html}, \textit{Text.html}, \textit{Sound.html}, \textit{Control.html}, \textit{Operators.html}, \textit{Points.html}, \textit{Bonus.html} y \textit{Blocks.html}), las nuevas secciones en la página de \textit{dashboard.html} (bonus, botones, details, etc), el formulario y el plugin \textit{coffee-mastery.py}. \newline 
 
 Para poder demostrar que, realmente, ha habido modificaciones, he realizado una comparación entre el repositorio de la última versión de Dr. Pencilcode y el repositorio master de Dr. Scratch.\newline
-
-\newpage
 
 \texttt{cd drPencilcode}
 
@@ -1578,7 +1562,7 @@ Una vez añadidos los bloques convenientes, se vuelve a analizar el proyecto. El 
   \label{fig:detailsejemplo2}
 \end{figure}
 
-Como se puede observar, la puntuación del programa ha pasado de 4 a 13. Además de mejorar las puntuaciones específicas de tres categorías, se han conseguido \emph{bonus} por diversidad, complejidad y repetición de bloque; aun así, el usuario podría seguir mejorando el código añadiendo bloques de Text y Sound como se indica en la sección \textit{What can you improve?}. Así mismo, el alumno podría descargar el certificado en el que se indica el nombre del proyecto analizado junto con la puntuación obtenida, \textit{Figura \ref{fig:certifejemplo2}}.
+Como se puede observar, la puntuación del programa ha pasado de 4 a 13. Además de mejorar las puntuaciones específicas de tres categorías, se han conseguido \emph{bonus} por diversidad, complejidad y repetición de bloque; aun así, el usuario podría seguir mejorando el código añadiendo bloques de Text y Sound como se indica en la sección \textit{What can you improve?}. Así mismo, el alumno podría descargar el certificado en el que se indica el nombre del proyecto analizado junto con la puntuación obtenida, \textit{Figura \ref{fig:certifejemplo2}}.\newline
 
 \begin{figure}[H]
   \centering
@@ -1672,14 +1656,6 @@ Con esto, entra en juego un nuevo concepto que nunca antes había escuchado, el \
 
 Estos eventos, escasos pero intensos, me ayudaron a desenvolverme un poco más como persona e impulsaron mi deseo de seguir creciendo con este proyecto con el fin de enseñar lo útil que puede llegar a ser la programación en la enseñanza.\newline
 
-
-\begin{figure}[H]
-   \centering
-   \includegraphics[width=12cm, keepaspectratio]{img/FICOD.jpeg}
-   \caption{Taller de superprogramadores en FICOD}
-   \label{figure:FICOD}
-\end{figure}
-
 Por último, he aprendido a realizar evaluaciones objetivas de los proyectos analizados. Quizás, esta parte es la que más tiempo me ha llevado pues la creación de una \textbf{rúbrica}, la evaluación de una tarea, engloba numerosas variables que hay que tener en cuenta. Esta tarea me ha ayudado a ver las cosas desde el punto de vista del docente y no del alumno.
 
 
@@ -1720,8 +1696,8 @@ Se cierra una etapa de mi vida para dar comienzo a otras nuevas, de las que esto
 
 \cleardoublepage
 \appendix
-\chapter{Información Extra}
-\section{Enlaces web}
+\chapter{Enlaces web}
+
 
 Dr. Pencilcode puede encontrarse en la web con los siguientes enlaces:
 \begin{itemize}
@@ -1732,7 +1708,26 @@ Dr. Pencilcode puede encontrarse en la web con los siguientes enlaces:
 \end{itemize}
 
 
-\section{E-mails con Yana}
+\chapter{Diagramas de flujo}
+\label{app:diagrama}
+
+Para entender las funciones de análisis por URL y del formulario de una forma más sencilla, en este apéndice se incluyen las representaciones gráficas de los respectivos algoritmos.
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=17cm, keepaspectratio]{img/analisis.png}
+   \caption{Análisis por URL}
+   \label{fig:analisis}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=14cm, keepaspectratio]{img/formulario.jpg}
+  \caption{Algoritmo de la función getFeedback.}
+  \label{fig:PagForm}
+\end{figure}
+
+\chapter{E-mails}
 \label{app:emails}
 
 En este anexo se muestran algunos de los e-mails que se intercambiaron con David Bau y Yana Malysheva sobre el desarrollo de Dr.Pencilcode
@@ -1778,13 +1773,27 @@ En este anexo se muestran algunos de los e-mails que se intercambiaron con David
 \end{figure}
 
 
-
-\section{Formulario Dr. Pencilcode}
+\chapter{Formulario Dr. Pencilcode}
 \label{app:formulario}
 
-Aquí se muestra el primer formulario a papel que se hizo de Dr. Pencilcode.
+Antes de realizar la implementación del formulario de Dr. Pencilcode en la página web, existió el formulario a papel que se muestra en este anexo.
 
 \includepdf[pages=1-2, width=\textwidth]{docs/Survey.pdf}
+\label{pdf:formulario}
+
+
+\chapter{Talleres}
+\label{app:Talleres}
+
+Como ya se ha mencionado, durante el desarrollo del proyecto tuve la oportunidad de acudir a diversos talleres de Dr. Scratch. Dos de los talleres se realizaron en la Fundación síndrome de Down de Madrid (Down Madrid) donde se introdujo la herramienta a los alumnos y se realizaron diversos programas para, posteriormente, ser analizados. 
+El otro taller tuvo lugar en el Foro Internacional de Contenidos Digitales (FICOD 2015) donde se llevo a cabo el taller de superprogramadores de Orange, \textit{Figura \ref{figure:FICOD}}.\newline
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=12cm, keepaspectratio]{img/FICOD.jpeg}
+   \caption{Taller de superprogramadores en FICOD}
+   \label{figure:FICOD}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
